@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
-
+import Button from "@mui/material/Button";
 import styles from "../styles/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -68,11 +68,20 @@ export default function Layout({ children, home }) {
                 {name}
               </Link>
             </h2>
-            <h2 className={utilStyles.headingLg}>
+            <h3 className={utilStyles.headingLg}>
               <Link href="/Subscribe" className={utilStyles.colorInherit}>
-                Subscribe
+                <Button variant="contained" color="secondary">
+                  Join our Mailing List
+                </Button>
               </Link>
-            </h2>
+            </h3>
+            <h3 className={utilStyles.headingLg}>
+              <Link href="/addBlog" className={utilStyles.colorInherit}>
+                <Button variant="contained" color="secondary">
+                  Create Blog
+                </Button>
+              </Link>
+            </h3>
           </>
         )}
       </header>
