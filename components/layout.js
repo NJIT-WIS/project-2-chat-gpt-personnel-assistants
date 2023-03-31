@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 
-import styles from "./layout.module.css";
+import styles from "../styles/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
@@ -26,6 +26,10 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta charSet="UTF-8" />
+        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="author" content="Jonathan Grossman" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Script
         src="https://connect.facebook.net/en_US/sdk.js"
@@ -49,7 +53,7 @@ export default function Layout({ children, home }) {
           </>
         ) : (
           <>
-            <Link href="/">
+            <Link href="/addBlog">
               <Image
                 priority
                 src="/images/profile.jpg"
@@ -75,7 +79,7 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">← Back to home </Link>
+          <Link href="/">← Back to homes</Link>
         </div>
       )}
     </div>

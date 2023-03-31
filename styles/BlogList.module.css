@@ -48,7 +48,7 @@ li .blog__link {
   justify-content: center;
   flex-direction: column;
   min-height: 38vh;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 .blog__info h2 {
   margin-bottom: 0.5rem;
