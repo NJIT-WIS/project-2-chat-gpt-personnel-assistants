@@ -1,10 +1,12 @@
 ---
-title: The hidden paradise
-author: Father John Misty
-date: '2019-07-08T16:05:29.000Z'
-hero_image: /john-o-nolan-mauritius.jpg
-tags: hidden,paradise
+id: mauritius
+title: 'The hidden paradise test change'
+date: '2023-03-31'
+excerpt: 'Juniperus scopulorum**, the Rocky Mountain juniper, is a species of juniper native to western North America, in Canada in British Columbia and southwest Alberta, in the United States from Washington east t'
+hero_image: '/mauritius.jpg'
+tags: "hidden,paradise"
 ---
+
 **Juniperus scopulorum**, the Rocky Mountain juniper, is a species of juniper native to western North America, in Canada in British Columbia and southwest Alberta, in the United States from Washington east to North Dakota, south to Arizona and also locally western Texas, and northernmost Mexico from Sonora east to Coahuila. It grows at altitudes of 500–2,700 metres (1,600–8,900 ft) on dry soils, often together with other juniper species. "Scopulorum" means "of the mountains.
 
 ![Mauritius Drone Shot](../julia-joppien.jpg)

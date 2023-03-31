@@ -38,6 +38,11 @@ const BlogList = ({ allBlogs }) => {
                 </ReactMarkdown>
               </div>
             </Link>
+            <Link href={`/posts/edit/${encodeURIComponent(post.slug)}`}>
+              <Button variant="contained" color="secondary">
+                Edit
+              </Button>
+            </Link>
           </li>
         ))
       ) : (
