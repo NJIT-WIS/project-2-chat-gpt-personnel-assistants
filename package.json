@@ -20,6 +20,7 @@
     "fs": "0.0.1-security",
     "glob": "^9.3.2",
     "gray-matter": "^4.0.3",
+    "isomorphic-unfetch": "^4.0.2",
     "next": "latest",
     "next-connect": "^0.13.0",
     "raw-loader": "^4.0.2",
