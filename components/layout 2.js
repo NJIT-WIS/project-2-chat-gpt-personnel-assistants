@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Script from 'next/script'
+import Head from "next/head";
+import Image from "next/image";
+import Script from "next/script";
 
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
 
-const name = '[Your Name]'
-export const siteTitle = 'MyWebClass.org'
+const name = "[Your Name]";
+export const siteTitle = "MyWebClass.org";
 
 export default function Layout({ children, home }) {
   return (
@@ -70,9 +70,9 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+          <Link href="/">← Back to home layout 2</Link>
         </div>
       )}
     </div>
-  )
+  );
 }
