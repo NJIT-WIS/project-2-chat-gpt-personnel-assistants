@@ -1,46 +1,57 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
-import Date from "../components/date";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Layout from "../components/Layout";
+import BlogList from "../components/BlogList";
+import SearchBar from "../components/SearchBar";
+import React, { useState } from "react";
 
-export default function Home({ allPostsData }) {
+const Index = (props) => {
+  const [filteredBlogs, setFilteredBlogs] = useState(props.allBlogs);
+
+  const handleSearch = (filteredBlogs) => {
+    setFilteredBlogs(filteredBlogs);
+  };
+
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+    <Layout
+      pathname="/"
+      siteTitle={props.title}
+      siteDescription={props.description}
+    >
+      <section>
+        <SearchBar allBlogs={props.allBlogs} onSearch={handleSearch} />
+        {filteredBlogs.length > 0 ? (
+          <BlogList allBlogs={filteredBlogs} />
+        ) : (
+          <p>No blog posts found.</p>
+        )}
       </section>
     </Layout>
   );
-}
+};
+
+export default Index;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const postsDirectory = `${process.cwd()}/posts`;
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allBlogs = fileNames.map((fileName) => {
+    const slug = fileName.replace(".md", "");
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      frontmatter: data,
+      markdownBody: content,
+    };
+  });
+
   return {
     props: {
-      allPostsData,
+      allBlogs,
     },
   };
 }
