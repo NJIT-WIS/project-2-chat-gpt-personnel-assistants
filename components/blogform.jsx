@@ -9,7 +9,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import axios from "axios";
-
+import AutoGenerateModal from "./AutoGenerateModal";
 const BlogForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
   const [excerpt, setExcerpt] = useState("");
@@ -50,7 +50,29 @@ const BlogForm = ({ onSubmit }) => {
       console.error("Error:", error.response ? error.response.data : error);
     }
   };
+  const handleAutoGenerate = async (prompt) => {
+    try {
+      const response = await axios.post("/api/generate_text", { prompt });
+      if (response.status === 200) {
+        // Assuming the generated_text is in the format: "title,excerpt,description,tags"
+        const [
+          generatedTitle,
+          generatedExcerpt,
+          generatedDescription,
+          generatedTags,
+        ] = response.data.generated_text.split(",");
 
+        setTitle(generatedTitle);
+        setExcerpt(generatedExcerpt);
+        setDescription(generatedDescription);
+        setTags(generatedTags);
+      } else {
+        console.error("Failed to auto-generate post details");
+      }
+    } catch (error) {
+      console.error("Error:", error.response ? error.response.data : error);
+    }
+  };
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
       <TextField
@@ -105,6 +127,7 @@ const BlogForm = ({ onSubmit }) => {
       <Button type="submit" variant="contained" sx={{ mt: 2 }}>
         Create Post
       </Button>
+      <AutoGenerateModal onGenerate={handleAutoGenerate} />
     </Box>
   );
 };
