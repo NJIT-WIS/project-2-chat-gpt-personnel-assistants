@@ -30,6 +30,7 @@ export default function Layout({ children, home }) {
         <meta name="keywords" content="titla, meta, nextjs" />
         <meta name="author" content="Jonathan Grossman" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{siteTitle}</title>
       </Head>
       <Script
         src="https://connect.facebook.net/en_US/sdk.js"
