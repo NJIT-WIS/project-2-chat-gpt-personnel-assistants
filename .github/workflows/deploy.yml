@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+        name: vercel deployment
 
     steps:
     - name: Checkout repository
@@ -23,5 +25,4 @@ jobs:
 
     - name: Deploy to Vercel
       run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
-      environment:
-        name: vercel deployment
+     
