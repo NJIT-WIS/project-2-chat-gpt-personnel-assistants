@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import BlogForm from "../components/blogform";
-import Toast from "../components/Toast";
+import Toast from "../components/toast";
 
 const AddBlogPosts = () => {
   const [showToast, setShowToast] = useState(false);

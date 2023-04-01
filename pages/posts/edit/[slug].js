@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Layout from "../../../components/Layout";
-import Toast from "../../../components/Toast";
+import Toast from "../../../components/toast";
 import React, { useState } from "react";
 const EditPostPage = ({ post }) => {
   const router = useRouter();

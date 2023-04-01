@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 import Button from "@mui/material/Button";
-import styles from "../styles/layout.module.css";
+import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
