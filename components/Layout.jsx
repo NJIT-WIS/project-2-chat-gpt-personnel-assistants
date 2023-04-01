@@ -78,7 +78,7 @@ export default function Layout({ children, home }) {
             <h3 className={utilStyles.headingLg}>
               <Link href="/addBlog" className={utilStyles.colorInherit}>
                 <Button variant="contained" color="secondary">
-                  Create Blog
+                  Create a new blog post!!
                 </Button>
               </Link>
             </h3>
