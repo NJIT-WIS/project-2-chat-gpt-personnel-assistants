@@ -7,7 +7,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
-import Image from "next/image";
 const AutoGenerateImageModal = ({ onGenerate }) => {
   const [open, setOpen] = useState(false);
   const [imageSize, setImageSize] = useState("medium");

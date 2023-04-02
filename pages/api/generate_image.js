@@ -6,10 +6,10 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
-  const { blogPostTopic, style, colorScheme, imageSize } = req.body.blogTopic;
+  const { blogTopic } = req.body;
 
-  console.log(Object.keys(req.body.blogTopic));
-  if (!blogPostTopic || !style || !colorScheme || !imageSize) {
+  console.log(blogTopic);
+  if (!blogTopic) {
     res.status(400).json({ error: "Missing parameters" + req.body });
     return;
   }
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     });
     const openai = new OpenAIApi(configuration);
 
-    const prompt = `Generate an image of a ${style} illustration related to  "${blogPostTopic}" `;
+    const prompt = ` "${blogTopic}"`;
 
     const response = await openai.createImage({
       prompt: prompt,

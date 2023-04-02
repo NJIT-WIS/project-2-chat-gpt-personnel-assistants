@@ -12,6 +12,7 @@ import axios from "axios";
 import AutoGenerateModal from "./AutoGenerateModal";
 import AutoGenerateImageModal from "./AutoGenerateImageModal";
 import Image from "next/image";
+import Toast from "./toast";
 
 const BlogForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
@@ -19,6 +20,8 @@ const BlogForm = ({ onSubmit }) => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [tags, setTags] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [showErrorToast, setShowErrorToast] = useState(false);
   const onClearForm = () => {
     setTitle("");
     setExcerpt("");
@@ -26,6 +29,7 @@ const BlogForm = ({ onSubmit }) => {
     setImage(null);
     setTags("");
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,61 +39,58 @@ const BlogForm = ({ onSubmit }) => {
     formData.append("description", description);
     formData.append("image", image);
     formData.append("tags", tags);
+    if (title && excerpt && tags && image && description) {
+      try {
+        const response = await axios.post("/api/createPost", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
 
-    try {
-      const response = await axios.post("/api/createPost", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+        if (response.status === 200) {
+          console.log("success");
+          onSubmit(formData);
 
-      if (response.status === 200) {
-        console.log("success");
-        onSubmit(formData);
-
-        onClearForm();
-      } else {
-        console.error("Failed to create post");
+          onClearForm();
+        } else {
+          setErrorMessage("Failed to create post");
+          setShowErrorToast(true);
+        }
+      } catch (error) {
+        setErrorMessage("Failed to create post");
+        setShowErrorToast(true);
       }
-    } catch (error) {
-      console.error("Error:", error.response ? error.response.data : error);
     }
   };
+
   const handleAutoGenerate = async (prompt) => {
     try {
       const response = await axios.post("/api/generate_text", { prompt });
       if (response.status === 200) {
         // Assuming the generated_text is in the format: "title,excerpt,description,tags"
 
-        const GeneratedBloglist = response.data.generated_text.split("\n");
-        console.log(GeneratedBloglist);
-        const generatedTitle = GeneratedBloglist[0];
-        const generatedExcerpt = GeneratedBloglist[2];
-        const generatedDescription = GeneratedBloglist[4];
-        const generatedTags = GeneratedBloglist[6];
-
+        const generatedTitle = response.data.title;
+        const generatedExcerpt = response.data.excerpt;
+        const generatedDescription = response.data.description;
+        const generatedTags = response.data.tags;
+        console.log(tags);
         setTitle(generatedTitle);
         setExcerpt(generatedExcerpt);
         setDescription(generatedDescription);
         setTags(generatedTags);
+        handleAutoGenerateImage(generatedTitle);
       } else {
-        console.error("Failed to auto-generate post details");
+        setErrorMessage("Failed to auto-generate post details");
+        setShowErrorToast(true);
       }
     } catch (error) {
-      console.error("Error:", error.response ? error.response.data : error);
+      setErrorMessage("Failed to auto-generate post details");
+      setShowErrorToast(true);
     }
   };
 
-  const handleAutoGenerateImage = async (
-    blogTopic,
-    style,
-    color,
-    imageSize
-  ) => {
+  const handleAutoGenerateImage = async (blogTopic) => {
     try {
       const response = await axios.post("/api/generate_image", {
         blogTopic,
-        style,
-        color,
-        imageSize,
       });
 
       if (response.status === 200) {
@@ -103,10 +104,12 @@ const BlogForm = ({ onSubmit }) => {
 
         imageElement.src = generatedImage;
       } else {
-        console.error("Failed to auto-generate image");
+        setErrorMessage("Failed to auto-generate image");
+        setShowErrorToast(true);
       }
     } catch (error) {
-      console.error("Error:", error.response ? error.response.data : error);
+      setErrorMessage("Failed to auto-generate image");
+      setShowErrorToast(true);
     }
   };
   return (
@@ -173,7 +176,6 @@ const BlogForm = ({ onSubmit }) => {
         }}
       >
         <AutoGenerateModal onGenerate={handleAutoGenerate} />
-        <AutoGenerateImageModal onGenerate={handleAutoGenerateImage} />
       </Box>
       <Box
         sx={{
