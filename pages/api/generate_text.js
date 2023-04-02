@@ -37,22 +37,7 @@ export default async function handler(req, res) {
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
-    /*
-    const parser = StructuredOutputParser.fromNamesAndDescriptions({
-      description: "Create  blog content about the users topic. ",
 
-      title: "give a title for the blog.",
-      excerpt: "write a short excertp about the blog content",
-      tags: "generare a list of related tags to the blog",
-    });
-    const formatInstructions = parser.getFormatInstructions();
-
-    const promptTemp = new PromptTemplate({
-      template:
-        "Create a blog post for the users topic as best as possible. each instruction should be seperated by commas.\n{format_instructions}\n{question}",
-      inputVariables: ["question"],
-      partialVariables: { format_instructions: formatInstructions },
-    }); */
     const model = new OpenAI({
       openAIApiKey: process.env.OPENAI_API_KEY,
       temperature: 0.9,
@@ -78,14 +63,12 @@ export default async function handler(req, res) {
         `${description}`
     );
 
-    res
-      .status(200)
-      .json({
-        title: title,
-        excerpt: excerpt,
-        description: description,
-        tags: tags,
-      });
+    res.status(200).json({
+      title: title,
+      excerpt: excerpt,
+      description: description,
+      tags: tags,
+    });
   } catch (error) {
     console.error(
       "Error in OpenAI API call:",
