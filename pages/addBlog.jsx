@@ -6,8 +6,15 @@ import Toast from "../components/toast";
 const AddBlogPosts = () => {
   const [showToast, setShowToast] = useState(false);
   const [formData, setFormData] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleSubmit = (postData) => {
+    // Perform validation and handle errors
+    if (!postData.title || !postData.content) {
+      setErrorMessage("Title and content are required!");
+      return;
+    }
+
     setFormData(postData);
     setShowToast(true);
   };
@@ -28,6 +35,14 @@ const AddBlogPosts = () => {
       <h1>Add Blog Posts!!</h1>
       <p>Please enter details below</p>
       <BlogForm onSubmit={handleSubmit} onClearForm={clearForm} />
+      {errorMessage && (
+        <Toast
+          open={true}
+          handleClose={() => setErrorMessage(null)}
+          message={errorMessage}
+          severity="error"
+        />
+      )}
       <Toast
         open={showToast}
         handleClose={handleToastClose}

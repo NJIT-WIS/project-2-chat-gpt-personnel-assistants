@@ -7,6 +7,7 @@
     "test": "npx playwright test"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^2.4.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
@@ -21,12 +22,15 @@
     "glob": "^9.3.2",
     "gray-matter": "^4.0.3",
     "isomorphic-unfetch": "^4.0.2",
+    "langchain": "^0.0.45",
     "next": "latest",
     "next-connect": "^0.13.0",
+    "openai": "^3.2.1",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.6",
+    "relaxed-json": "^1.0.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "uuid": "^9.0.0"

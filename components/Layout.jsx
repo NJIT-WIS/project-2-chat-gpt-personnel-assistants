@@ -27,7 +27,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta charSet="UTF-8" />
-        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="keywords" content="title, meta, nextjs" />
         <meta name="author" content="Jonathan Grossman" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
