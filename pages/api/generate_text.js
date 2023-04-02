@@ -7,6 +7,7 @@ const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
   const { prompt } = req.body;
+  console.log(prompt);
 
   if (!prompt) {
     res.status(400).json({ error: "Missing prompt" });
@@ -23,13 +24,17 @@ export default async function handler(req, res) {
 
     const openaiResponse = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: "write a blog post about ice cream\n\n",
+      prompt:
+        "write a blog post about" +
+        `${prompt}` +
+        " with a title, excerpt ,decription and keyword tags , write in markdown format \n",
       temperature: 0.4,
       max_tokens: 618,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
     });
+
     res
       .status(200)
       .json({ generated_text: openaiResponse.data.choices[0].text.trim() });

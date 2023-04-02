@@ -10,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import axios from "axios";
 import AutoGenerateModal from "./AutoGenerateModal";
+import AutoGenerateImageModal from "./AutoGenerateImageModal";
+import Image from "next/image";
+
 const BlogForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
   const [excerpt, setExcerpt] = useState("");
@@ -55,12 +58,13 @@ const BlogForm = ({ onSubmit }) => {
       const response = await axios.post("/api/generate_text", { prompt });
       if (response.status === 200) {
         // Assuming the generated_text is in the format: "title,excerpt,description,tags"
-        const [
-          generatedTitle,
-          generatedExcerpt,
-          generatedDescription,
-          generatedTags,
-        ] = response.data.generated_text.split(",");
+
+        const GeneratedBloglist = response.data.generated_text.split("\n");
+        console.log(GeneratedBloglist);
+        const generatedTitle = GeneratedBloglist[0];
+        const generatedExcerpt = GeneratedBloglist[2];
+        const generatedDescription = GeneratedBloglist[4];
+        const generatedTags = GeneratedBloglist[6];
 
         setTitle(generatedTitle);
         setExcerpt(generatedExcerpt);
@@ -68,6 +72,38 @@ const BlogForm = ({ onSubmit }) => {
         setTags(generatedTags);
       } else {
         console.error("Failed to auto-generate post details");
+      }
+    } catch (error) {
+      console.error("Error:", error.response ? error.response.data : error);
+    }
+  };
+
+  const handleAutoGenerateImage = async (
+    blogTopic,
+    style,
+    color,
+    imageSize
+  ) => {
+    try {
+      const response = await axios.post("/api/generate_image", {
+        blogTopic,
+        style,
+        color,
+        imageSize,
+      });
+
+      if (response.status === 200) {
+        // Assuming the image is returned as a base64 encoded string
+        const generatedImage = response.data.generated_image_url;
+        console.log(Object.keys(response.data));
+        setImage(generatedImage);
+
+        // Display the image in an img element
+        const imageElement = document.getElementById("generated-image");
+
+        imageElement.src = generatedImage;
+      } else {
+        console.error("Failed to auto-generate image");
       }
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error);
@@ -127,7 +163,29 @@ const BlogForm = ({ onSubmit }) => {
       <Button type="submit" variant="contained" sx={{ mt: 2 }}>
         Create Post
       </Button>
-      <AutoGenerateModal onGenerate={handleAutoGenerate} />
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          mt: 2,
+        }}
+      >
+        <AutoGenerateModal onGenerate={handleAutoGenerate} />
+        <AutoGenerateImageModal onGenerate={handleAutoGenerateImage} />
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          mt: 2,
+        }}
+      >
+        <Image id="generated-image" alt="Generated blog post image" src="" />
+      </Box>
     </Box>
   );
 };
