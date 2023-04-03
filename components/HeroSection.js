@@ -55,7 +55,7 @@ const HeroSection = () => {
             <Typography variant="h5" color="inherit" paragraph>
               Help us build an amazing learning experience for everyone.
             </Typography>
-            <Link href="/volunteer-signup" passHref>
+            <Link href="/Subscribe" passHref>
               <Button variant="contained" color="primary" size="large">
                 Sign Up to Volunteer
               </Button>

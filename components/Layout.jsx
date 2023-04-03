@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-
+import HeroSection from "../components/HeroSection";
 const name = "[Your Name]";
 export const siteTitle = "MyWebClass.org";
 
@@ -39,51 +39,7 @@ export default function Layout({ children, home }) {
         }
       />
       <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/addBlog">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-            <h3 className={utilStyles.headingLg}>
-              <Link href="/Subscribe" className={utilStyles.colorInherit}>
-                <Button variant="contained" color="secondary">
-                  Join our Mailing List
-                </Button>
-              </Link>
-            </h3>
-            <h3 className={utilStyles.headingLg}>
-              <Link href="/addBlog" className={utilStyles.colorInherit}>
-                <Button variant="contained" color="secondary">
-                  Create a new blog post!!
-                </Button>
-              </Link>
-            </h3>
-          </>
-        )}
+        <HeroSection />
       </header>
       <main>{children}</main>
       {!home && (
