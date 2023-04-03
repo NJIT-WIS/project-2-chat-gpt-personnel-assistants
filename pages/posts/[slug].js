@@ -4,8 +4,15 @@ import ReactMarkdown from "react-markdown";
 import fs from "fs";
 import path from "path";
 import Layout from "../../components/Layout";
-import styles from "../../styles/Blog.module.css";
-import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Stack,
+  CardHeader,
+  CardActionArea,
+  CardMedia,
+} from "@mui/material";
 
 function reformatDate(fullDate) {
   const date = new Date(fullDate);
@@ -15,27 +22,29 @@ function reformatDate(fullDate) {
 export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
   return (
     <Layout>
-      <article className={styles.blog}>
-        <figure className={styles.blog__hero}>
-          <Image
-            width="1920"
-            height="1080"
-            src={frontmatter.hero_image}
-            alt={`blog_hero_${frontmatter.title}`}
+      <Card sx={{ display: "flex" }}>
+        <CardContent sx={{ flex: 1 }}>
+          <Typography component="h2" variant="h5">
+            {frontmatter.title}
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            {reformatDate(frontmatter.date)}
+          </Typography>
+          <CardMedia
+            component="img"
+            sx={{ width: 500, display: { xs: "none", sm: "block" } }}
+            image={frontmatter.hero_image}
+            alt={"picture of blog"}
           />
-        </figure>
-        <div className={styles.blog__info}>
-          <h1>{frontmatter.title}</h1>
-          <h3>{reformatDate(frontmatter.date)}</h3>
-        </div>
-        <div className={styles.blog__body}>
-          <ReactMarkdown>{markdownBody}</ReactMarkdown>
-        </div>
-        <h2 className={styles.blog__footer}>Tags: {frontmatter.tags}</h2>
-      </article>
+          <Typography variant="subtitle1" paragraph>
+            <ReactMarkdown>{markdownBody}</ReactMarkdown>
+          </Typography>
+        </CardContent>
+      </Card>
     </Layout>
   );
 }
+
 export async function getStaticPaths() {
   const postsDirectory = `${process.cwd()}/posts`;
   const fileNames = fs.readdirSync(postsDirectory);

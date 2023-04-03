@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import BlogList from "../components/BlogList";
 import SearchBar from "../components/SearchBar";
 import React, { useState } from "react";
+import HeroSection from "../components/HeroSection";
 
 const Index = (props) => {
   const [filteredBlogs, setFilteredBlogs] = useState(props.allBlogs);
@@ -12,13 +13,16 @@ const Index = (props) => {
   const handleSearch = (filteredBlogs) => {
     setFilteredBlogs(filteredBlogs);
   };
-
+  console.log(filteredBlogs);
   return (
     <Layout
       pathname="/"
       siteTitle={props.title}
-      siteDescription={props.description}
+      si
+      teDescription={props.description}
     >
+      {" "}
+      <HeroSection />
       <section>
         <SearchBar allBlogs={props.allBlogs} onSearch={handleSearch} />
         {filteredBlogs.length > 0 ? (

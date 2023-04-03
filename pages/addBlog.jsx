@@ -10,10 +10,7 @@ const AddBlogPosts = () => {
 
   const handleSubmit = (postData) => {
     // Perform validation and handle errors
-    if (!postData.title || !postData.content) {
-      setErrorMessage("Title and content are required!");
-      return;
-    }
+    console.log(postData);
 
     setFormData(postData);
     setShowToast(true);
