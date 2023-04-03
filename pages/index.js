@@ -22,6 +22,7 @@ const Index = (props) => {
       si
       teDescription={props.description}
     >
+      <HeroSection></HeroSection>
       <section>
         <Link href="/addBlog">
           <Button variant="contained" color="secondary">

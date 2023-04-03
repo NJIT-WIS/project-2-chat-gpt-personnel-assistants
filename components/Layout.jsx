@@ -38,9 +38,7 @@ export default function Layout({ children, home }) {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
-      <header className={styles.header}>
-        <HeroSection />
-      </header>
+      <header></header>
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
