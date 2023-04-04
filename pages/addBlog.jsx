@@ -10,7 +10,6 @@ const AddBlogPosts = () => {
 
   const handleSubmit = (postData) => {
     // Perform validation and handle errors
-    console.log(postData);
 
     setFormData(postData);
     setShowToast(true);

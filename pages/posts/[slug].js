@@ -18,7 +18,7 @@ function reformatDate(fullDate) {
   const date = new Date(fullDate);
   return date.toDateString().slice(4);
 }
-
+import Markdown from "../../components/Markdown";
 export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
   return (
     <Layout>
@@ -36,9 +36,9 @@ export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
             image={frontmatter.hero_image}
             alt={"picture of blog"}
           />
-          <Typography variant="subtitle1" paragraph>
-            <ReactMarkdown>{markdownBody}</ReactMarkdown>
-          </Typography>
+          <Markdown className="markdown" key={markdownBody.substring(0, 40)}>
+            {markdownBody}
+          </Markdown>
         </CardContent>
       </Card>
     </Layout>
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 
   const paths = fileNames.map((fileName) => {
     const slug = fileName.replace(".md", "");
-    console.log(slug);
+
     return {
       params: {
         slug: slug,

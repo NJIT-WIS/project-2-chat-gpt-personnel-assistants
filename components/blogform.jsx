@@ -47,7 +47,6 @@ const BlogForm = ({ onSubmit }) => {
         });
 
         if (response.status === 200) {
-          console.log("success");
           onSubmit(formData);
 
           onClearForm();
@@ -72,14 +71,13 @@ const BlogForm = ({ onSubmit }) => {
         const generatedExcerpt = response.data.excerpt;
         const generatedDescription = response.data.description;
         const generatedTags = response.data.tags;
-        console.log(generatedTags);
+        console.log(generatedTitle);
 
-        console.log(generatedDescription);
         setTitle(generatedTitle);
         setExcerpt(generatedExcerpt);
         setDescription(generatedDescription);
         setTags(generatedTags);
-        // handleAutoGenerateImage(generatedTitle);
+        //handleAutoGenerateImage(prompt);
       } else {
         setErrorMessage("Failed to auto-generate post details");
         setShowErrorToast(true);
