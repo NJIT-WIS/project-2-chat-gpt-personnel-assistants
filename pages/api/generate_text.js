@@ -7,7 +7,6 @@ import {
 } from "langchain/output_parsers";
 import { LLMChain } from "langchain/chains";
 import { ChatOpenAI } from "langchain/chat_models";
-import { rJSON } from "relaxed-json";
 import {
   ChatPromptTemplate,
   HumanMessagePromptTemplate,
@@ -41,11 +40,19 @@ export default async function handler(req, res) {
     const model = new OpenAI({
       openAIApiKey: process.env.OPENAI_API_KEY,
       temperature: 0.4,
+      model: "text-davinci-003",
+    });
+    const shortmodel = new OpenAI({
+      openAIApiKey: process.env.OPENAI_API_KEY,
+      temperature: 0.4,
+      max_tokens: 25,
+      model: "text-davinci-003",
     });
 
     const title = await model.call(
-      "write response in markdown format. create a title for my blog with this " +
-        `${topic}`
+      " create a title without double quotes for my blog with this." +
+        `${topic}` +
+        ". here is example output: Blog Title."
     );
 
     const description = await model.call(
@@ -53,19 +60,16 @@ export default async function handler(req, res) {
         `${title}`
     );
 
-    const excerpt = await model.call(
-      "write response in markdown format. write a one sentence summary given this blog content " +
-        `${title}`
+    const excerpt = await shortmodel.call(
+      "format. write a summary given this blog content. " + `${title}`
     );
 
-    const tags = await model.call(
-      "write response in markdown format. create tags related to this " +
+    const tags = await shortmodel.call(
+      "write response in yaml safe format. create keyword related to this " +
         `${description}` +
-        " here is example output tag1, tag2,tag3"
+        " here is example output tag1,tag2,tag3"
     );
-    console.log(tags);
-    console.log(excerpt);
-    console.log(description);
+    console.log(title);
 
     res.status(200).json({
       title: title,
