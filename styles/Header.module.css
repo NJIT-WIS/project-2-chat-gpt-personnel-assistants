@@ -13,7 +13,7 @@
   .nav h1:hover {
     cursor: pointer;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .header {
       height: 100vh;
       position: fixed;

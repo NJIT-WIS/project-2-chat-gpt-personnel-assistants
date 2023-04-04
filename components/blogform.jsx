@@ -13,6 +13,7 @@ import AutoGenerateModal from "./AutoGenerateModal";
 import AutoGenerateImageModal from "./AutoGenerateImageModal";
 import Image from "next/image";
 import Toast from "./toast";
+import { Description } from "@mui/icons-material";
 
 const BlogForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
@@ -71,12 +72,14 @@ const BlogForm = ({ onSubmit }) => {
         const generatedExcerpt = response.data.excerpt;
         const generatedDescription = response.data.description;
         const generatedTags = response.data.tags;
-        console.log(tags);
+        console.log(generatedTags);
+
+        console.log(generatedDescription);
         setTitle(generatedTitle);
         setExcerpt(generatedExcerpt);
         setDescription(generatedDescription);
         setTags(generatedTags);
-        handleAutoGenerateImage(generatedTitle);
+        // handleAutoGenerateImage(generatedTitle);
       } else {
         setErrorMessage("Failed to auto-generate post details");
         setShowErrorToast(true);
