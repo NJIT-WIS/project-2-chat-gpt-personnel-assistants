@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Typography,
@@ -13,6 +13,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = () => {
+  const [heroData, setHeroData] = useState({
+    headline: "Unleash Your Creativity",
+    subtitle:
+      "Shape the future by contributing your innovative ideas to our web class.",
+  });
+
   return (
     <Paper
       sx={{
@@ -23,7 +29,7 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: `url(${"/2b0555ea-e57d-4a48-816b-c063cb2eefaf.jpg"})`,
+        backgroundImage: `url(${"/catmaid.png"})`,
         height: "75vh",
       }}
     >
@@ -46,8 +52,8 @@ const HeroSection = () => {
         }}
       />
       <Container maxWidth="lg">
-        <Grid container alignItems="center" style={{ height: "100%" }}>
-          <Grid item md={6}>
+        <Grid container alignItems="center" style={{ height: "75%" }}>
+          <Grid item xs={12} md={6}>
             <Box
               sx={{
                 position: "relative",
@@ -61,19 +67,65 @@ const HeroSection = () => {
                 color="inherit"
                 fontWeight="bold"
                 gutterBottom
+                sx={{
+                  fontSize: {
+                    xs: "2.5rem",
+                    sm: "3.0rem",
+                    md: "3.5rem",
+                    lg: "4rem",
+                  },
+                }}
               >
-                Unleash Your Creativity
+                {heroData.headline}
               </Typography>
-              <Typography variant="h4" color="inherit" paragraph>
-                Shape the future by contributing your innovative ideas to our
-                web class.
+              <Typography
+                variant="h4"
+                color="inherit"
+                paragraph
+                sx={{
+                  fontSize: {
+                    xs: "1.5rem",
+                    sm: "1.75rem",
+                    md: "2rem",
+                    lg: "2.25rem",
+                  },
+                }}
+              >
+                {" "}
+                {heroData.subtitle}
               </Typography>
-              <Typography variant="body1" color="inherit" paragraph>
+              <Typography
+                variant="body1"
+                color="inherit"
+                paragraph
+                sx={{
+                  fontSize: {
+                    xs: "0.9rem",
+                    sm: "1rem",
+                    md: "1.1rem",
+                    lg: "1.2rem",
+                  },
+                }}
+              >
                 Below, you'll find post lessons to learn and contribute to,
                 creating a better learning experience for everyone.
               </Typography>
               <Link href="/Subscribe" passHref>
-                <Button variant="contained" color="primary" size="large">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    minWidth: { xs: "100%", sm: "auto" },
+                    fontSize: {
+                      xs: "0.9rem",
+                      sm: "1rem",
+                      md: "1.1rem",
+                      lg: "1.2rem",
+                    },
+                    py: { xs: 1, sm: "auto" },
+                    mt: { xs: 2, sm: "auto" },
+                  }}
+                >
                   Join as a Creator
                 </Button>
               </Link>
