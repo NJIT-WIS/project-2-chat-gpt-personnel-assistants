@@ -22,10 +22,7 @@ function reformatDate(fullDate) {
 }
 
 const FeaturedBlog = ({ allBlogs }) => {
-  // shuffle the array of posts to randomize their order
-  const shuffledPosts = allBlogs.sort(() => 0.5 - Math.random());
-
-  // take the first two posts from the shuffled array
+ 
   const randomPosts = allBlogs.slice(0, 2);
 
   return (
@@ -44,7 +41,7 @@ const FeaturedBlog = ({ allBlogs }) => {
                   {post.frontmatter.title}
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary">
-                  {post.frontmatter.date}
+                {reformatDate(post.frontmatter.date)}
                 </Typography>
 
                 <Link href={{ pathname: `/posts/${post.slug}` }}>
@@ -56,8 +53,8 @@ const FeaturedBlog = ({ allBlogs }) => {
               <CardMedia
                 component="img"
                 sx={{
-                  width: 400,
-                  height: 400,
+                  width: 200,
+                  height: 200,
                   display: { xs: "none", sm: "block" },
                 }}
                 src={post.frontmatter.hero_image}

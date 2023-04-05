@@ -25,8 +25,8 @@ const Index = (props) => {
     >
       <HeroSection></HeroSection>
       <section>
-        <FeaturedBlog allBlogs={props.allBlogs}></FeaturedBlog>
-        <SearchBar allBlogs={props.allBlogs} onSearch={handleSearch} />
+        <FeaturedBlog allBlogs={props.allPosts}></FeaturedBlog>
+        <SearchBar allBlogs={props.allPosts} onSearch={handleSearch} />
 
         {filteredBlogs.length > 0 ? (
           <BlogList allBlogs={filteredBlogs} />
@@ -40,25 +40,34 @@ const Index = (props) => {
 
 export default Index;
 
+
 export async function getStaticProps() {
   const postsDirectory = `${process.cwd()}/posts`;
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allBlogs = fileNames.map((fileName) => {
-    const slug = fileName.replace(".md", "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
+  const aboutDirectory = `${process.cwd()}/about`;
 
-    return {
-      slug,
-      frontmatter: data,
-      markdownBody: content,
-    };
-  });
+  const readDirectory = (directory) => {
+    const fileNames = fs.readdirSync(directory);
+    return fileNames.map((fileName) => {
+      const slug = fileName.replace(".md", "");
+      const fullPath = path.join(directory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data, content } = matter(fileContents);
+
+      return {
+        slug,
+        frontmatter: data,
+        markdownBody: content,
+      };
+    });
+  };
+
+  const allPosts = readDirectory(postsDirectory);
+  const allAbouts = readDirectory(aboutDirectory);
 
   return {
     props: {
-      allBlogs,
+      allPosts,
+      allAbouts,
     },
   };
 }
