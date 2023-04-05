@@ -2,11 +2,18 @@
     "pages": [
       {
         "path": "/",
-        "title": "MyWebClass.org"
+        "title": "MyWebClass.org",
+        "headerTags": ["h1", "h2", "h3"]
       },
       {
-        "path": "/about",
-        "title": "MyWebClass.org | About"
+        "path": "/Subscribe",
+        "title": "MyWebClass.org",
+        "headerTags": ["h1", "h2", "h3"]
+      },
+      {
+        "path": "/addBlog",
+        "title": "MyWebClass.org",
+        "headerTags": ["h1", "h2", "h3"]
       }
     ]
 }
