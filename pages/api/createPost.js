@@ -18,6 +18,7 @@ handler.post(async (req, res) => {
     const { title, excerpt, description, tags } = fields;
     const id = uuidv4();
     const date = new Date().toISOString().slice(0, 10);
+    var arr = { key1: "value1", key2: "value2" };
 
     const postData = `---
 id: ${id}

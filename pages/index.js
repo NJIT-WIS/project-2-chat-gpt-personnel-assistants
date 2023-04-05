@@ -8,13 +8,14 @@ import React, { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import Link from "next/link";
 import Button from "@mui/material/Button";
+import FeaturedBlog from "../components/FeaturedBlogs";
 const Index = (props) => {
   const [filteredBlogs, setFilteredBlogs] = useState(props.allBlogs);
 
   const handleSearch = (filteredBlogs) => {
     setFilteredBlogs(filteredBlogs);
   };
-  console.log(filteredBlogs);
+
   return (
     <Layout
       pathname="/"
@@ -24,12 +25,9 @@ const Index = (props) => {
     >
       <HeroSection></HeroSection>
       <section>
-        <Link href="/addBlog">
-          <Button variant="contained" color="secondary">
-            Create a new blog post!!
-          </Button>
-        </Link>
+        <FeaturedBlog allBlogs={props.allBlogs}></FeaturedBlog>
         <SearchBar allBlogs={props.allBlogs} onSearch={handleSearch} />
+
         {filteredBlogs.length > 0 ? (
           <BlogList allBlogs={filteredBlogs} />
         ) : (

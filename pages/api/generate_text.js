@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     const shortmodel = new OpenAI({
       openAIApiKey: process.env.OPENAI_API_KEY,
       temperature: 0.4,
-      max_tokens: 25,
+      max_tokens: 10,
       model: "text-davinci-003",
     });
 
@@ -61,9 +61,9 @@ export default async function handler(req, res) {
     );
 
     const excerpt = await shortmodel.call(
-      "format. write a summary given this blog content. " + `${title}`
+      " Summerize in as few words as possible. " + `${description}`
     );
-
+    console.log(excerpt);
     const tags = await shortmodel.call(
       "write response in yaml safe format. create keyword related to this " +
         `${description}` +

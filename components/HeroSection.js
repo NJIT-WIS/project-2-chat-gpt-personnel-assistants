@@ -11,13 +11,28 @@ import {
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 import Image from "next/image";
 import Link from "next/link";
-
+import Cookies from "js-cookie";
+import { useHeroText } from "../hooks/useHeroText";
+import InfiniteSpinner from "./InfiniteSpinner";
+function getRandomIndex(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 const HeroSection = () => {
-  const [heroData, setHeroData] = useState({
-    headline: "Unleash Your Creativity",
-    subtitle:
-      "Shape the future by contributing your innovative ideas to our web class.",
-  });
+  const [number, setNumber] = useState(null);
+  const randomIndex = getRandomIndex(4, 8);
+
+  const { heroText, isLoading, error } = useHeroText(number);
+
+  useEffect(() => {
+    const storedNumber = Cookies.get("number");
+    if (storedNumber) {
+      setNumber(parseInt(storedNumber, 10));
+    } else {
+      const newNumber = Math.floor(Math.random() * 8) + 1;
+      Cookies.set("number", newNumber, { expires: 1 });
+      setNumber(newNumber);
+    }
+  }, []);
 
   return (
     <Paper
@@ -29,8 +44,7 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: `url(${"/catmaid.png"})`,
-        height: "75vh",
+        backgroundImage: `url(${"/7393317f-08be-433d-b61b-4d1095a03c0a.jpg"})`,
       }}
     >
       {/* Increase the priority of the hero background image */}
@@ -52,7 +66,7 @@ const HeroSection = () => {
         }}
       />
       <Container maxWidth="lg">
-        <Grid container alignItems="center" style={{ height: "75%" }}>
+        <Grid container alignItems="center">
           <Grid item xs={12} md={6}>
             <Box
               sx={{
@@ -61,39 +75,47 @@ const HeroSection = () => {
                 pr: { md: 0 },
               }}
             >
-              <Typography
-                component="h1"
-                variant="h2"
-                color="inherit"
-                fontWeight="bold"
-                gutterBottom
-                sx={{
-                  fontSize: {
-                    xs: "2.5rem",
-                    sm: "3.0rem",
-                    md: "3.5rem",
-                    lg: "4rem",
-                  },
-                }}
-              >
-                {heroData.headline}
-              </Typography>
-              <Typography
-                variant="h4"
-                color="inherit"
-                paragraph
-                sx={{
-                  fontSize: {
-                    xs: "1.5rem",
-                    sm: "1.75rem",
-                    md: "2rem",
-                    lg: "2.25rem",
-                  },
-                }}
-              >
-                {" "}
-                {heroData.subtitle}
-              </Typography>
+              <Box>
+                {!heroText ? (
+                  <InfiniteSpinner />
+                ) : (
+                  <>
+                    <Typography
+                      component="h1"
+                      variant="h2"
+                      color="inherit"
+                      fontWeight="bold"
+                      gutterBottom
+                      sx={{
+                        fontSize: {
+                          xs: "2.5rem",
+                          sm: "3.0rem",
+                          md: "3.5rem",
+                          lg: "4.0rem",
+                        },
+                      }}
+                    >
+                      {heroText[0].title}
+                    </Typography>
+
+                    <Typography
+                      variant="h4"
+                      color="inherit"
+                      paragraph
+                      sx={{
+                        fontSize: {
+                          xs: "1.5rem",
+                          sm: "1.75rem",
+                          md: "2rem",
+                          lg: "2.25rem",
+                        },
+                      }}
+                    >
+                      {heroText[1].subtitle}
+                    </Typography>
+                  </>
+                )}
+              </Box>
               <Typography
                 variant="body1"
                 color="inherit"

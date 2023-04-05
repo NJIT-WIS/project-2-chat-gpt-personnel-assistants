@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "index-posts": "node scripts/indexer.js",
+    "index": "node scripts/heroIndexer.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -8,6 +10,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^2.4.0",
+    "@elastic/elasticsearch": "^8.6.0",
     "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
@@ -24,6 +27,7 @@
     "glob": "^9.3.2",
     "gray-matter": "^4.0.3",
     "isomorphic-unfetch": "^4.0.2",
+    "js-cookie": "^3.0.1",
     "langchain": "^0.0.45",
     "next": "latest",
     "next-connect": "^0.13.0",
@@ -33,6 +37,7 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.6",
+    "react-query": "^3.39.3",
     "relaxed-json": "^1.0.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",

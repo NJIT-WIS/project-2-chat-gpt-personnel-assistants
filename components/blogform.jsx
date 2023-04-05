@@ -71,7 +71,6 @@ const BlogForm = ({ onSubmit }) => {
         const generatedExcerpt = response.data.excerpt;
         const generatedDescription = response.data.description;
         const generatedTags = response.data.tags;
-        console.log(generatedTitle);
 
         setTitle(generatedTitle);
         setExcerpt(generatedExcerpt);
