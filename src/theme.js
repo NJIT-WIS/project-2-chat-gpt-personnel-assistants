@@ -13,18 +13,30 @@ export const roboto = Roboto({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#1976d2',
     },
     secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
+      main: '#dc004e',
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontSize: '3rem',
+    },
+    h4: {
+      fontSize: '1.5rem',
+      fontWeight: 500,
+    },
+  },
+  spacing: 8,
+  custom: {
+    sectionSpacing: (multiplier = 1) => ({
+      marginTop: theme.spacing(4 * multiplier),
+      marginBottom: theme.spacing(4 * multiplier),
+    }),
   },
 });
+
 
 export default theme;

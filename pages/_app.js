@@ -1,4 +1,4 @@
-import "../styles/global.css";
+import "../styles/globals.css";
 
 import * as React from "react";
 import PropTypes from "prop-types";
@@ -15,7 +15,7 @@ const clientSideEmotionCache = createEmotionCache();
 export default function App(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const queryClient = new QueryClient();
-
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -25,7 +25,7 @@ export default function App(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
         </QueryClientProvider>
       </ThemeProvider>
     </CacheProvider>

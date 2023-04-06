@@ -7,39 +7,69 @@ import SearchBar from "../components/SearchBar";
 import React, { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import Link from "next/link";
-import Button from "@mui/material/Button";
+import Head from 'next/head';
 import FeaturedBlog from "../components/FeaturedBlogs";
+import AboutUS from "../components/AboutUS";
+import BaseLayout from "../layouts/BaseLayout";
+import {
+  Typography,
+  Box,
+  Card,
+  Container,
+  Button,
+  styled,
+  Stack
+} from '@mui/material';
+
+const HeaderWrapper = styled(Card)(
+  ({ theme }) => `
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: ${theme.spacing(5)};
+  margin-bottom: ${theme.spacing(5)};
+`
+);
+
+const OverviewWrapper = styled(Box)(
+  ({ theme }) => `
+    overflow: auto;
+    background: ${theme.palette.common.white};
+    flex: 1;
+    overflow-x: hidden;
+`
+);
+
 const Index = (props) => {
-  const [filteredBlogs, setFilteredBlogs] = useState(props.allBlogs);
+  const [filteredBlogs, setFilteredBlogs] = useState(props.allPosts);
 
   const handleSearch = (filteredBlogs) => {
     setFilteredBlogs(filteredBlogs);
   };
 
+  console.log(props.allAbouts);
   return (
-    <Layout
-      pathname="/"
-      siteTitle={props.title}
-      si
-      teDescription={props.description}
-    >
-      <HeroSection></HeroSection>
-      <section>
-        <FeaturedBlog allBlogs={props.allPosts}></FeaturedBlog>
-        <SearchBar allBlogs={props.allPosts} onSearch={handleSearch} />
-
-        {filteredBlogs.length > 0 ? (
-          <BlogList allBlogs={filteredBlogs} />
-        ) : (
-          <p>No blog posts found.</p>
-        )}
-      </section>
-    </Layout>
+    <OverviewWrapper>
+      <HeaderWrapper>
+        <Head>
+          <title>Welcome my AI generated Site!!!!!</title>
+        </Head>
+      </HeaderWrapper>
+      <Container maxWidth="100vh">
+        <Stack spacing={4}>
+         
+          <FeaturedBlog allBlogs={props.allPosts}></FeaturedBlog>
+          <AboutUS props={props.allAbouts}></AboutUS>
+        </Stack>
+      </Container>
+    </OverviewWrapper>
   );
 };
 
 export default Index;
-
+Index.getLayout = function getLayout(page) {
+  return <BaseLayout>{page}</BaseLayout>;
+};
 
 export async function getStaticProps() {
   const postsDirectory = `${process.cwd()}/posts`;
@@ -63,6 +93,7 @@ export async function getStaticProps() {
 
   const allPosts = readDirectory(postsDirectory);
   const allAbouts = readDirectory(aboutDirectory);
+  console.log(allAbouts);
 
   return {
     props: {

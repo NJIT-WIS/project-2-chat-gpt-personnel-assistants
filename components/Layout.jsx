@@ -1,17 +1,35 @@
-import Head from "next/head";
-import Image from "next/image";
-import Script from "next/script";
-import Button from "@mui/material/Button";
-import styles from "../styles/Layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
-import HeroSection from "../components/HeroSection";
-const name = "[Your Name]";
+import React from 'react';
+import Head from 'next/head';
+import Script from 'next/script';
+import Link from 'next/link';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Container,
+} from '@mui/material';
+import { styled } from '@mui/system';
+
+const LayoutContainer = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
+  // Set your desired maximum viewport width
+  marginLeft: 'auto',
+  marginRight: 'auto',
+});
+
+const MainContent = styled(Box)({
+  flexGrow: 1,
+});
+
 export const siteTitle = "MyWebClass.org";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <LayoutContainer>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -38,13 +56,35 @@ export default function Layout({ children, home }) {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
-      <header></header>
-      <main>{children}</main>
+  
+        <Container maxWidth="75vh"mb={2}  mt={2} >
+        <AppBar position="static" color="primary" >
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              MyWebClass.org
+            </Typography>
+            <Link href="/" passHref>
+              <Button color="inherit" >
+                Home
+              </Button>
+            </Link>
+         
+          </Toolbar>
+          </AppBar>
+        </Container>
+   
+      <Container maxWidth="75vh">
+        <MainContent component="main">{children}</MainContent>
+      </Container>
       {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to homes</Link>
-        </div>
+        <Box mt={2} mb={2} textAlign="center">
+          <Link href="/" passHref>
+            <Button color="primary" variant="contained" >
+              ← Back to home
+            </Button>
+          </Link>
+        </Box>
       )}
-    </div>
+    </LayoutContainer>
   );
 }

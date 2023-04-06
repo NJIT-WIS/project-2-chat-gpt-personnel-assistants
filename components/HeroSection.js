@@ -44,15 +44,16 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: `url(${"/7393317f-08be-433d-b61b-4d1095a03c0a.jpg"})`,
+        backgroundImage: `url(${"/abstratc_woman_2.png"})`,
+       
       }}
     >
       {/* Increase the priority of the hero background image */}
       {
         <img
           style={{ display: "none" }}
-          src={"2b0555ea-e57d-4a48-816b-c063cb2eefaf.jpg"}
-          alt={"2b0555ea-e57d-4a48-816b-c063cb2eefaf.jpg"}
+          src={"creator.png"}
+          alt={"creator.png"}
         />
       }
       <Box
@@ -65,8 +66,8 @@ const HeroSection = () => {
           backgroundColor: "rgba(0,0,0,.5)",
         }}
       />
-      <Container maxWidth="lg">
-        <Grid container alignItems="center">
+      <Container maxWidth="100vh">
+        <Grid container  maxWidth="75vh" justifyContent="flex-start">
           <Grid item xs={12} md={6}>
             <Box
               sx={{

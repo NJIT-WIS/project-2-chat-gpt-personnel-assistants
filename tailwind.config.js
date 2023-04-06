@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+      extend: {
+        colors: {
+          orange: "#f99a0e",
+          gray: { "100": "#8e8e94", "200": "rgba(255, 255, 255, 0.2)" },
+          aliceblue: "#f3f7fb",
+          whitesmoke: "#eaeaea",
+          saddlebrown: "#99600a",
+          peru: "#9e6104",
+          "primary-contrast": "#fff",
+          slategray: "#576074",
+          darkslategray: { "100": "#434343", "200": "#424242", "300": "#303030" },
+          cornflowerblue: {
+            "100": "#4dabff",
+            "200": "#1262af",
+            "300": "#1262ae",
+          },
+          gainsboro: "rgba(226, 226, 226, 0.1)",
+          lavender: "#ccdcec",
+          darkgray: "#999",
+          yellowgreen: "#79ca00",
+          gold: "#fdbf00",
+          sandybrown: "#ff9b53",
+          lightgray: "#cecece",
+          skyblue: "#99d2f5",
+          black: "#000",
+        },
+        fontFamily: {
+          "components-button-large": "Roboto",
+          "baloo-bhai": "'Baloo Bhai'",
+          "new-york-small": "'New York Small'",
+          "sf-pro-text": "'SF Pro Text'",
+          "new-york-extra-large": "'New York Extra Large'",
+          "sf-mono": "'SF Mono'",
+          "sf-pro-display": "'SF Pro Display'",
+        },
+        borderRadius: {
+          "10xs": "3px",
+          "4xl-2": "23.2px",
+          "5xs-5": "7.5px",
+          xs: "12px",
+        },
+      },
+      fontSize: {
+        xs: "0.75rem",
+        mini: "0.94rem",
+        "sm-5": "0.84rem",
+        "3xl-4": "1.4rem",
+        "xs-2": "0.7rem",
+        "base-5": "1.03rem",
+        xl: "1.25rem",
+        "3xl": "1.38rem",
+        "4xl-9": "1.49rem",
+        "9xl-4": "1.78rem",
+        "2xs-5": "0.66rem",
+        "mid-9": "1.12rem",
+      },
+      screens: {
+        lg: { max: "1440px" },
+        md: { max: "768px" },
+        sm: { max: "428px" },
+      },
+    },
+    corePlugins: { preflight: false },
+  };
+  
