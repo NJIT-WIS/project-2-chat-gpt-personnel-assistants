@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { Box,  styled,createTheme } from '@mui/material';
 import HeroSection from "../components/HeroSection";
-const BaseLayout = ({ children }) => {
+
+const BaseLayout = ({ children}) => {
  
   const OverviewWrapper = styled(Box)(
     ({ theme }) => `
@@ -11,11 +12,14 @@ const BaseLayout = ({ children }) => {
       height: 100%;
       
     `
-  );
+  ); 
+
+ 
+ 
   return (
     <OverviewWrapper
     >
-       <HeroSection></HeroSection>
+       <HeroSection ></HeroSection>
       {children}
     </OverviewWrapper>
   );
@@ -26,3 +30,5 @@ BaseLayout.propTypes = {
 };
 
 export default BaseLayout;
+
+

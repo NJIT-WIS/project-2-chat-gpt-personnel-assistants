@@ -7,7 +7,7 @@ import SearchBar from "../components/SearchBar";
 import React, { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import Link from "next/link";
-import Head from 'next/head';
+import Head from "next/head";
 import FeaturedBlog from "../components/FeaturedBlogs";
 import AboutUS from "../components/AboutUS";
 import BaseLayout from "../layouts/BaseLayout";
@@ -18,8 +18,8 @@ import {
   Container,
   Button,
   styled,
-  Stack
-} from '@mui/material';
+  Stack,
+} from "@mui/material";
 
 const HeaderWrapper = styled(Card)(
   ({ theme }) => `
@@ -40,6 +40,7 @@ const OverviewWrapper = styled(Box)(
 `
 );
 
+
 const Index = (props) => {
   const [filteredBlogs, setFilteredBlogs] = useState(props.allPosts);
 
@@ -47,7 +48,7 @@ const Index = (props) => {
     setFilteredBlogs(filteredBlogs);
   };
 
-  console.log(props.allAbouts);
+ 
   return (
     <OverviewWrapper>
       <HeaderWrapper>
@@ -57,7 +58,6 @@ const Index = (props) => {
       </HeaderWrapper>
       <Container maxWidth="100vh">
         <Stack spacing={4}>
-         
           <FeaturedBlog allBlogs={props.allPosts}></FeaturedBlog>
           <AboutUS props={props.allAbouts}></AboutUS>
         </Stack>
@@ -74,6 +74,7 @@ Index.getLayout = function getLayout(page) {
 export async function getStaticProps() {
   const postsDirectory = `${process.cwd()}/posts`;
   const aboutDirectory = `${process.cwd()}/about`;
+
 
   const readDirectory = (directory) => {
     const fileNames = fs.readdirSync(directory);
@@ -93,12 +94,14 @@ export async function getStaticProps() {
 
   const allPosts = readDirectory(postsDirectory);
   const allAbouts = readDirectory(aboutDirectory);
-  console.log(allAbouts);
 
+  // Read the JSON data from the directory
+ 
   return {
     props: {
       allPosts,
       allAbouts,
+   
     },
   };
 }

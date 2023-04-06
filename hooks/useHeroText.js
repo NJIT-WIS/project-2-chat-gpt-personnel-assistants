@@ -2,9 +2,8 @@
 import { useQuery } from "react-query";
 
 export function useHeroText(number) {
-  const fetchHeroText = async (indexName) => {
-    console.log(number);
-    const response = await fetch(`/api/searchArchetype?indexName=${indexName}`);
+  const fetchHeroText = async (number) => {
+    const response = await fetch(`/api/getHeroText?number=${number}`);
     const data = await response.json();
     return data.heroText.hero_texts;
   };
@@ -13,7 +12,7 @@ export function useHeroText(number) {
     data: heroText,
     isLoading,
     error,
-  } = useQuery(["heroText", number], () => fetchHeroText(`creator${number}`), {
+  } = useQuery(["heroText", number], () => fetchHeroText(number), {
     enabled: !!number,
   });
 

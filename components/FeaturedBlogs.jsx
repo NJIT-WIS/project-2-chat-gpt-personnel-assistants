@@ -87,7 +87,7 @@ const FeaturedBlog = ({ allBlogs }) => {
     >
       {randomPosts.length > 0 ? (
         randomPosts.map((post) => (
-          <CircleImageCard>
+          <CircleImageCard  key={post.slug}>
           <CircleImage image="/creator.png" />
           <CircleImageCardContent>
             <CircleImageCardTitle variant="h5" component="h2" gutterBottom>

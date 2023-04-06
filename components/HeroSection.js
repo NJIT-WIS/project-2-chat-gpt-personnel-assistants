@@ -6,7 +6,7 @@ import {
   Box,
   Paper,
   Grid,
-  IconButton,
+  IconButton,styled
 } from "@mui/material";
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 import Image from "next/image";
@@ -17,12 +17,26 @@ import InfiniteSpinner from "./InfiniteSpinner";
 function getRandomIndex(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-const HeroSection = () => {
+const HeroSection = ()=> {
+  const [heroText, setHeroText] = useState(null);
+  const [heroTitle, setHeroTitle] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [number, setNumber] = useState(null);
-  const randomIndex = getRandomIndex(4, 8);
-
-  const { heroText, isLoading, error } = useHeroText(number);
-
+  const CustomButton = styled(Button)({
+    background: "#112826",
+    border: "3px solid #233A39",
+    borderRadius: "31px",
+    color: "#fff",
+    padding: "10px 20px",
+    fontSize: "16px",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    "&:hover": {
+      background: "#233A39",
+      border: "3px solid #233A39",
+    },
+  });
   useEffect(() => {
     const storedNumber = Cookies.get("number");
     if (storedNumber) {
@@ -32,21 +46,50 @@ const HeroSection = () => {
       Cookies.set("number", newNumber, { expires: 1 });
       setNumber(newNumber);
     }
-  }, []);
+
+    const fetchHeroText = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/api/searchArchetype?indexName=creator${number}`);
+        const data = await response.json();
+        console.log(data.heroText.hero_texts[0].title);
+        const title=data.heroText.hero_texts[0].title;
+        const content= data.heroText.hero_texts[1].subtitle;
+        setHeroTitle(title);
+        setHeroText(content);
+        console.log(heroText);
+        console.log(heroTitle);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        setError(error.message);
+      }
+    };
+
+    if (number) {
+      fetchHeroText();
+    }
+  }, [number]);
+
+
 
   return (
     <Paper
-      sx={{
-        position: "relative",
-        backgroundColor: "grey.800",
-        color: "#fff",
-        mb: 4,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundImage: `url(${"/abstratc_woman_2.png"})`,
-       
-      }}
+    sx={{
+      position: "relative",
+      backgroundColor: "grey.800",
+      color: "#fff",
+      mb: 4,
+      mt:4,
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundImage: `url(${"/abstratc_woman_2.png"})`,
+      height: "100%", // set height here
+      width: "100%", // set width here
+
+    
+    }}
     >
       {/* Increase the priority of the hero background image */}
       {
@@ -94,15 +137,17 @@ const HeroSection = () => {
                           md: "3.5rem",
                           lg: "4.0rem",
                         },
+                        fontFamily: '"Victor Mono", monospace'
                       }}
                     >
-                      {heroText[0].title}
+                        {heroTitle}
                     </Typography>
-
+                  
                     <Typography
                       variant="h4"
                       color="inherit"
                       paragraph
+                      
                       sx={{
                         fontSize: {
                           xs: "1.5rem",
@@ -110,9 +155,11 @@ const HeroSection = () => {
                           md: "2rem",
                           lg: "2.25rem",
                         },
+                        fontFamily: '"Victor Mono", monospace'
                       }}
+                      
                     >
-                      {heroText[1].subtitle}
+                             {heroText}
                     </Typography>
                   </>
                 )}
@@ -128,15 +175,15 @@ const HeroSection = () => {
                     md: "1.1rem",
                     lg: "1.2rem",
                   },
+                  fontFamily: '"Victor Mono", monospace'
                 }}
               >
                 Below, you'll find post lessons to learn and contribute to,
                 creating a better learning experience for everyone.
               </Typography>
               <Link href="/Subscribe" passHref>
-                <Button
-                  variant="contained"
-                  color="primary"
+                <CustomButton
+                
                   sx={{
                     minWidth: { xs: "100%", sm: "auto" },
                     fontSize: {
@@ -150,7 +197,7 @@ const HeroSection = () => {
                   }}
                 >
                   Join as a Creator
-                </Button>
+                </CustomButton>
               </Link>
             </Box>
           </Grid>
