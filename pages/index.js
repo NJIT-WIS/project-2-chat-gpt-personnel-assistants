@@ -1,66 +1,29 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Layout from "../components/Layout";
-import BlogList from "../components/BlogList";
-import SearchBar from "../components/SearchBar";
-import React, { useState } from "react";
-import HeroSection from "../components/HeroSection";
-import Link from "next/link";
-import Button from "@mui/material/Button";
-const Index = (props) => {
-  const [filteredBlogs, setFilteredBlogs] = useState(props.allBlogs);
+import { indexQuery, heroQuery } from '../lib/queries'
+import { getClient, overlayDrafts } from '../lib/sanity.server'
+import { PreviewSuspense } from 'next-sanity/preview'
+import { lazy } from 'react'
+import Landing from '../components/landing'
 
-  const handleSearch = (filteredBlogs) => {
-    setFilteredBlogs(filteredBlogs);
-  };
-  console.log(filteredBlogs);
-  return (
-    <Layout
-      pathname="/"
-      siteTitle={props.title}
-      si
-      teDescription={props.description}
-    >
-      <HeroSection></HeroSection>
-      <section>
-        <Link href="/addBlog">
-          <Button variant="contained" color="secondary">
-            Create a new blog post!!
-          </Button>
-        </Link>
-        <SearchBar allBlogs={props.allBlogs} onSearch={handleSearch} />
-        {filteredBlogs.length > 0 ? (
-          <BlogList allBlogs={filteredBlogs} />
-        ) : (
-          <p>No blog posts found.</p>
-        )}
-      </section>
-    </Layout>
-  );
-};
+const LandingPreview = lazy(() => import('../components/landing-preview'))
 
-export default Index;
+export default function IndexPage({Hero, allPosts, preview }) {
+  if (preview) {
+    return (
+      <PreviewSuspense fallback="Loading...">
+        <LandingPreview  allPosts={allPosts} />
+      </PreviewSuspense>
+    )
+  }
 
-export async function getStaticProps() {
-  const postsDirectory = `${process.cwd()}/posts`;
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allBlogs = fileNames.map((fileName) => {
-    const slug = fileName.replace(".md", "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
+  return <Landing allPosts={allPosts} Hero={Hero} />
+}
 
-    return {
-      slug,
-      frontmatter: data,
-      markdownBody: content,
-    };
-  });
-
+export async function getStaticProps({ preview = false }) {
+  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
+  const Hero= overlayDrafts(await getClient(preview).fetch(heroQuery))
   return {
-    props: {
-      allBlogs,
-    },
-  };
+    props: { allPosts,Hero, preview },
+    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
+    revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
+  }
 }
