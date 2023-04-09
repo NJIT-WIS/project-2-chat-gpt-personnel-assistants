@@ -2,7 +2,7 @@ import PostPlug from './post-plug'
 
 export default function MoreStories({ posts }) {
   return (
-    <section>
+    <section className=' heroComp'> 
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Lesson Posts
       </h2>
