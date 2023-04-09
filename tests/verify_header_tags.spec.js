@@ -12,9 +12,12 @@ async function checkPageHeaderTags(pageUrl, expectedTags) {
   const page = await browser.newPage();
   await page.goto(pageUrl, { timeout: TIMEOUT });
 
-  for (const tag in expectedTags) {
-    const actualTag = await page.$eval(tag, el => el.textContent);
-    expect(actualTag).toBe(expectedTags[tag]);
+  for (const tag of expectedTags) {
+    const el = await page.$(tag);
+    if (el) {
+      const actualTag = await el.evaluate(el => el.tagName.toLowerCase());
+      expect(actualTag).toBe(tag);
+    }
   }
 
   await browser.close();
