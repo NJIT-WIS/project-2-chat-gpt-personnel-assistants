@@ -77,31 +77,33 @@ export default function HeroComp({
         <Toast.Viewport className="ToastViewport" />
       </Toast.Provider>
       <div className="relative w-full h-[500px]">
-        <Image
+        <img
           src={backgroundImage}
-          fill
-          objectFit="cover"
-          objectPosition="center"
+          className="absolute w-full h-full object-cover object-center"
           alt={title}
         />
-      </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-start pt-6 pl-6">
-        <h2 className="text-white text-xl font-bold">My Webclass</h2>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full h-full flex flex-col justify-end items-start pb-10 pl-10">
-        <h1 className="text-white text-4xl font-bold max-w-xl">{title}</h1>
-        {subtitle && (
-          <p className="text-white text-2xl mt-4 max-w-md">{subtitle}</p>
-        )}
-        {ctaText && (
-          <button
-            onClick={() => setModalOpen(true)}
-            className="bg-green-900 border-3 border-green-800 rounded-full text-white px-6 py-2 text-lg font-bold uppercase hover:bg-green-800 hover:border-green-800 transition duration-200 whitespace-normal"
-          >
-            volunteer
-          </button>
-        )}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-start p-6 space-y-2 md:space-y-4">
+          <h2 className="text-white text-lg font-bold md:text-xl">
+            My Webclass
+          </h2>
+          <h1 className="text-white text-2xl font-bold max-w-xl md:text-3xl lg:text-4xl">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="text-white text-lg mt-2 max-w-md md:text-xl lg:text-2xl">
+              {subtitle}
+            </p>
+          )}
+          {ctaText && (
+            <button
+              onClick={() => setModalOpen(true)}
+              className="bg-green-900 border-3 border-green-800 rounded-full text-white px-4 py-1 text-base font-bold uppercase hover:bg-green-800 hover:border-green-800 transition duration-200 whitespace-normal md:text-lg md:px-6 md:py-2"
+            >
+              volunteer
+            </button>
+          )}
+        </div>
       </div>
 
       <ModalMailchimps
