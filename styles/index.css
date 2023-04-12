@@ -89,8 +89,56 @@ button {
   }
 }
 .heroComp {
-    font-family: 'Victor Mono', monospace;
+  font-family: 'Victor Mono', monospace;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+}
+
+/* Responsive Breakpoints */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .heroComp {
+    font-size: 16px;
+    padding: 15px;
   }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .heroComp {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .heroComp {
+    font-size: 20px;
+    padding: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .heroComp {
+    font-size: 22px;
+    padding: 40px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .heroComp {
+    font-size: 24px;
+    padding: 50px;
+  }
+}
+
 .ToastTitle {
   grid-area: title;
   margin-bottom: 5px;
