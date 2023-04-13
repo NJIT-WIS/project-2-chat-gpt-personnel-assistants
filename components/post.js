@@ -17,7 +17,7 @@ export default function Post({ data = {}, preview = false }) {
 
   const { post, morePosts } = data;
   const slug = post?.slug;
-  console.log("markdown", post.markdown);
+
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -54,7 +54,7 @@ export default function Post({ data = {}, preview = false }) {
                 author={post.author}
               />
               <PostBody
-                content={post.markdown ? post.markdown : post.content}
+                content={post.markdown}
               />
             </article>
             <SectionSeparator />
