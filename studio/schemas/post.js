@@ -6,7 +6,7 @@ export const post = {
     {
       name: "title",
       title: "Title",
-      type: "string", //
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
     {

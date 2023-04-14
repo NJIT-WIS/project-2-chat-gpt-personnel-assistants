@@ -7,25 +7,14 @@ import Menu from "../../components/menu";
 import Container from "../../components/container";
 import PostComponent from "../../components/PostComponent";
 import MoreStories from "../../components/more-stories";
-import Markdown from "../../components/markdown";
-import PostBody from "../../components/post-body";
 
-// TODO need to define about component, about component doesn't exist yet
-// create a display content component
-// need a generalized page framework for every page
-// only change the content of the page
-
-// the following query is used to generate the paths for the static pages
 export default function Page({ pageData }) {
-  // the router is used to get the slug of the current page
   const router = useRouter();
-  console.log(Object.keys(pageData.content));
-  const markdownBody=pageData.content.Markdown;
-  // if the page is not yet generated, this will be displayed
+
   if (!pageData) {
     return <div>Loading...</div>;
   }
-  // if the generated page is not found, this will be displayed
+
   return (
     <div className="min-h-screen">
       <Container>
@@ -39,25 +28,15 @@ export default function Page({ pageData }) {
             ctaLink={pageData.hero.ctaLink}
           />
         )}
-
+   
        
-          
-        
-<PostBody
-                content={markdownBody}
-              />
+          < MoreStories posts={pageData.posts}  />
      
-      </Container>
-      <Container>
-      <PostBody
-                content={markdownBody}
-              />
-
       </Container>
     </div>
   );
 }
-// this function gets called at build time
+
 export async function getStaticProps({ params }) {
   const pageData = await getClient().fetch(pageBySlugQuery, {
     slug: params.slug,
