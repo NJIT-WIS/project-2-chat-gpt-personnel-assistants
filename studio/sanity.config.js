@@ -12,6 +12,7 @@ import { menu, menuItem } from "./schemas/menu";
 import { page } from "./schemas/page";
 import { footer } from "./schemas/footer";
 import { seo } from "./schemas/seo";
+import {content} from "./schemas/content";
 const title =
   import.meta.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
   "Next.js Blog with Sanity.io";
@@ -25,7 +26,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [author, post, hero, menu, menuItem, page, richText,footer,seo],
+    types: [author, post, hero, menu, menuItem, page, richText,footer,seo,content],
   },
   document: {
     productionUrl: resolveProductionUrl,

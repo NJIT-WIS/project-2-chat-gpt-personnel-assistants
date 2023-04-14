@@ -33,6 +33,13 @@ export const page = {
         to: [{ type: "hero" }],
         description: "Select a hero post to be displayed on this page",
       },
+      {
+        name: "content",
+        title: "Content",
+        type: "reference",
+        to: [{ type: "content" }],
+        description: "Select content to be displayed on this page",
+      },
      
       {
         name: "posts",
@@ -62,13 +69,14 @@ export const page = {
             hero: "hero.title",
             menu: "menu.title",
             seoTitle: 'seo.title',
+            contentTitle: 'content.title',
             footer: 'footer.title',
           },
       prepare(selection) {
         const { hero, menu, seoTitle, footer } = selection;
         return {
           title: selection.title,
-          subtitle: `Hero: ${hero || 'None'}, Menu: ${menu || 'None'}, SEO: ${seoTitle || 'None'}, Footer: ${footer || 'None'}`,
+          subtitle: `Hero: ${hero || 'None'}, content: ${contentTitle || 'None'}, Menu: ${menu || 'None'}, SEO: ${seoTitle || 'None'}, Footer: ${footer || 'None'}`,
         };
       },
     },
