@@ -7,26 +7,27 @@ import { pageBySlugQuery } from "../lib/queries";
 import Page from "./page/[slug]";
 const LandingPreview = lazy(() => import('../components/landing-preview'))
 
-export default function IndexPage({Hero, allPosts,pageData, preview }) {
+export default function IndexPage({ Hero, allPosts, pageData, preview }) {
 
   if (preview) {
     return (
       <PreviewSuspense fallback="Loading...">
-        <LandingPreview  allPosts={allPosts} />
+        <LandingPreview allPosts={allPosts} />
       </PreviewSuspense>
     )
   }
-
-  return <Page pageData={pageData}/>
+  // this is the page component that will be used to render the page
+  // called by the page/[slug] component
+  return <Page pageData={pageData} />
 }
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
   const Hero = overlayDrafts(await getClient(preview).fetch(heroQuery));
   const slug = "home";
-  const  pageData = await getClient(preview).fetch(pageBySlugQuery, { slug });
+  const pageData = await getClient(preview).fetch(pageBySlugQuery, { slug });
 
-  console.log(pageData);
+
   return {
     props: { allPosts, Hero, pageData, preview },
     // If webhooks isn't setup then attempt to re-generate in 1-minute intervals
