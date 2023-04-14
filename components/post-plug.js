@@ -12,8 +12,8 @@ export default function PostPlug({
   slug,
 }) {
   return (
-    <div>
-      <div className="mb-5">
+    <div className='px-5 rounded-lg shadow-lg mb-5   '>
+      <div className="mb-5 mt-10">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
       <h3 className="mb-3 text-3xl leading-snug">

@@ -3,10 +3,12 @@ import { getClient, overlayDrafts } from '../lib/sanity.server'
 import { PreviewSuspense } from 'next-sanity/preview'
 import { lazy } from 'react'
 import Landing from '../components/landing'
-
+import { pageBySlugQuery } from "../lib/queries";
+import Page from "./page/[slug]";
 const LandingPreview = lazy(() => import('../components/landing-preview'))
 
-export default function IndexPage({Hero, allPosts, preview }) {
+export default function IndexPage({Hero, allPosts,pageData, preview }) {
+
   if (preview) {
     return (
       <PreviewSuspense fallback="Loading...">
@@ -15,15 +17,19 @@ export default function IndexPage({Hero, allPosts, preview }) {
     )
   }
 
-  return <Landing allPosts={allPosts} Hero={Hero} />
+  return <Page pageData={pageData}/>
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
-  const Hero= overlayDrafts(await getClient(preview).fetch(heroQuery))
+  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
+  const Hero = overlayDrafts(await getClient(preview).fetch(heroQuery));
+  const slug = "home";
+  const  pageData = await getClient(preview).fetch(pageBySlugQuery, { slug });
+
+  console.log(pageData);
   return {
-    props: { allPosts,Hero, preview },
-    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
+    props: { allPosts, Hero, pageData, preview },
+    // If webhooks isn't setup then attempt to re-generate in 1-minute intervals
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
-  }
+  };
 }

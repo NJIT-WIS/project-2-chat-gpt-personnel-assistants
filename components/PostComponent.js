@@ -13,10 +13,10 @@ import PostBody from "./post-body";
 import SectionSeparator from "./section-separator";
 import MoreStories from "./more-stories";
 
-export default function Post({ data = {}, preview = false }) {
+export default function PostComponent({ data = {}, preview = false }) {
   const router = useRouter();
+    const post=data
 
-  const { post, morePosts } = data;
   const slug = post?.slug;
 
   if (!router.isFallback && !slug) {
@@ -24,7 +24,7 @@ export default function Post({ data = {}, preview = false }) {
   }
 
   return (
-    <Layout preview={preview}>
+  
       <PostContainer >
         <Header />
         {router.isFallback ? (
@@ -59,10 +59,10 @@ export default function Post({ data = {}, preview = false }) {
               />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      
           </>
         )}
       </PostContainer>
-    </Layout>
+
   );
 }

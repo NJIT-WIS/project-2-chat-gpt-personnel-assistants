@@ -9,6 +9,7 @@ import MoreStories from "./more-stories";
 import HeroComp from "./hero"; // Import the Hero component
 import Cookies from "js-cookie";
 import React, { useState, useEffect } from "react";
+import PostContainer from "./PostContainer";
 export default function Landing({ allPosts, Hero, preview }) {
   const [heroPost, ...morePosts] = allPosts || [];
   const [number, setNumber] = useState(null);

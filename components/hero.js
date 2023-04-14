@@ -54,7 +54,7 @@ export default function HeroComp({
   };
 
   return (
-    <section className="relative heroComp">
+    <section className="relative heroComp ">
       <Toast.Provider>
         <Toast.Root
           className="ToastRoot"
