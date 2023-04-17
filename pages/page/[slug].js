@@ -9,7 +9,9 @@ import PostComponent from "../../components/PostComponent";
 import MoreStories from "../../components/more-stories";
 import Markdown from "../../components/markdown";
 import PostBody from "../../components/post-body";
-
+import markdownStyles from "../../components/markdown-styles.module.css";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 // TODO need to define about component, about component doesn't exist yet
 // create a display content component
 // need a generalized page framework for every page
@@ -20,7 +22,7 @@ export default function Page({ pageData }) {
   // the router is used to get the slug of the current page
   const router = useRouter();
   console.log(Object.keys(pageData.content));
-  const markdownBody=pageData.content.Markdown;
+  const markdownBody=pageData.content.markdown;
   // if the page is not yet generated, this will be displayed
   if (!pageData) {
     return <div>Loading...</div>;
@@ -42,19 +44,15 @@ export default function Page({ pageData }) {
 
        
           
-        
-<PostBody
-                content={markdownBody}
-              />
+<div class={`bg-white p-6 rounded-lg shadow-md max-w-full mx-auto  ${markdownStyles.markdown}`}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownBody}</ReactMarkdown>
+</div>
+
      
       </Container>
-      <Container>
-      <PostBody
-                content={markdownBody}
-              />
-
-      </Container>
+  
     </div>
+    
   );
 }
 // this function gets called at build time
