@@ -12,6 +12,7 @@ import PostBody from "../../components/post-body";
 import markdownStyles from "../../components/markdown-styles.module.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Footer from "../../components/footer"
 // TODO need to define about component, about component doesn't exist yet
 // create a display content component
 // need a generalized page framework for every page
@@ -48,7 +49,7 @@ export default function Page({ pageData }) {
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownBody}</ReactMarkdown>
 </div>
 
-     
+     <Footer></Footer>
       </Container>
   
     </div>
