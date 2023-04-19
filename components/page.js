@@ -15,7 +15,7 @@ import Layout from "./layout";
 // only change the content of the page
 
 // the following query is used to generate the paths for the static pages
-export default function Page({ pageData, allPosts ,Hero}) {
+export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   // the router is used to get the slug of the current page
   const router = useRouter();
   const [number, setNumber] = useState(null);
@@ -45,7 +45,7 @@ export default function Page({ pageData, allPosts ,Hero}) {
     <Layout menuData={menu}>
       <Container>
   
-        {pageData.hero && (
+        {HeroShow && (
           <HeroComp
             title={hero.title}
             subtitle={hero.subtitle}
