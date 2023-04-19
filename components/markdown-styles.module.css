@@ -1,12 +1,18 @@
-.markdown {
-  @apply text-lg leading-relaxed;
-}
 
+
+.markdown {
+  @apply text-lg leading-relaxed font-mono;
+  font-family: 'Victor Mono', monospace;
+}
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+}
+
+.markdown h1 {
+  @apply text-4xl mt-16 mb-6 leading-snug;
 }
 
 .markdown h2 {
@@ -15,4 +21,30 @@
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-4 leading-snug;
+}
+
+.markdown h5,
+.markdown h6 {
+  @apply text-lg mt-4 mb-4 leading-snug;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply list-disc list-outside pl-6;
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+
+.markdown blockquote {
+  @apply border-l-4 pl-4 italic;
+  border-color: rgb(12, 4, 4);
+}
+.markdown a {
+  @apply text-blue-600 hover:text-blue-800 underline;
 }

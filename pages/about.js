@@ -1,30 +1,31 @@
+// about.js
 import { indexQuery, heroQuery } from '../lib/queries'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 import { PreviewSuspense } from 'next-sanity/preview'
 import { lazy } from 'react'
-import Landing from '../components/landing'
+
 import { pageBySlugQuery } from "../lib/queries";
 import Page from "../components/page";
 const LandingPreview = lazy(() => import('../components/landing-preview'))
 
-export default function IndexPage({ Hero, allPosts, pageData, preview }) {
 
+export default function AboutPage({ Hero, allPosts, pageData, preview}) {
+  
   if (preview) {
     return (
       <PreviewSuspense fallback="Loading...">
-        <LandingPreview allPosts={allPosts} />
+      <LandingPreview  allPosts={allPosts} />
       </PreviewSuspense>
-    )
+    );
   }
-  // this is the page component that will be used to render the page
-  // called by the page/[slug] component
-  return <Page pageData={pageData} Hero={Hero}  allPosts={allPosts}/>
+  // TODO need to define about component, about component doesn't exist yet
+  return <Page pageData={pageData} Hero={Hero}  />
 }
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
   const Hero = overlayDrafts(await getClient(preview).fetch(heroQuery));
-  const slug = "home";
+  const slug = "about";
   const pageData = await getClient(preview).fetch(pageBySlugQuery, { slug });
 
 

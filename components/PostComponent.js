@@ -13,10 +13,10 @@ import PostBody from "./post-body";
 import SectionSeparator from "./section-separator";
 import MoreStories from "./more-stories";
 
-export default function Post({ data = {}, preview = false }) {
+export default function PostComponent({ data = {}, preview = false }) {
   const router = useRouter();
+    const post=data
 
-  const { post, morePosts } = data;
   const slug = post?.slug;
 
   if (!router.isFallback && !slug) {
@@ -24,9 +24,9 @@ export default function Post({ data = {}, preview = false }) {
   }
 
   return (
-    <Layout  menuData={data.menu}preview={preview}>
+  
       <PostContainer >
-     
+        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -34,15 +34,15 @@ export default function Post({ data = {}, preview = false }) {
             <article>
               <Head>
                 <title>
-                  {post.title} 
+                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
                 </title>
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
                     property="og:image"
                     content={urlForImage(post.coverImage)
-                      .width(500)
-                      .height(250)
+                      .width(1200)
+                      .height(627)
                       .fit("crop")
                       .url()}
                   />
@@ -57,13 +57,12 @@ export default function Post({ data = {}, preview = false }) {
               <PostBody
                 content={post.markdown}
               />
-         
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      
           </>
         )}
       </PostContainer>
-    </Layout>
+
   );
 }

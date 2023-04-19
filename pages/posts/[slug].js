@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 import { PreviewSuspense } from 'next-sanity/preview'
-import { postQuery, postSlugsQuery } from '../../lib/queries'
+import { postQuery, postSlugsQuery,menuBySlugQuery } from '../../lib/queries'
 import { getClient, overlayDrafts, sanityClient } from '../../lib/sanity.server'
 import Post from '../../components/post'
 
@@ -22,13 +22,17 @@ export async function getStaticProps({ params, preview = false }) {
   const { post, morePosts } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   })
-
+  const menu = await getClient(preview).fetch(menuBySlugQuery, {
+    slug:"main-menu",
+  })
+console.log(menu);
   return {
     props: {
       preview,
       data: {
         post,
         morePosts: overlayDrafts(morePosts),
+        menu
       },
     },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
