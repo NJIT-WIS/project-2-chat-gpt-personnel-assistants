@@ -54,6 +54,12 @@ export const post = {
       description: "A Github flavored markdown field with image uploading",
       name: "markdown",
     },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo', // Change this from 'reference' to 'seo'
+      description: 'Search engine optimization settings for this page',
+    },
   ],
   preview: {
     select: {

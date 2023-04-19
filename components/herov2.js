@@ -1,6 +1,6 @@
 // components/Hero.js
 export default function Hero({ data }) {
-    console.log(data);
+  
     return (
       <div className="bg-cover bg-center mb-8" style={{ backgroundImage: `url(${data.backgroundImage})` }}>
         <div className="text-white p-8">
