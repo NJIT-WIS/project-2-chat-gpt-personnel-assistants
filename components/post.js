@@ -24,9 +24,9 @@ export default function Post({ data = {}, preview = false }) {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout  menuData={data.menu}preview={preview}>
       <PostContainer >
-        <Header />
+     
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -34,15 +34,15 @@ export default function Post({ data = {}, preview = false }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
+                  {post.title} 
                 </title>
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
                     property="og:image"
                     content={urlForImage(post.coverImage)
-                      .width(1200)
-                      .height(627)
+                      .width(500)
+                      .height(250)
                       .fit("crop")
                       .url()}
                   />
@@ -57,6 +57,7 @@ export default function Post({ data = {}, preview = false }) {
               <PostBody
                 content={post.markdown}
               />
+         
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}

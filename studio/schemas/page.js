@@ -36,8 +36,8 @@ export const page = {
     {
       name: "content",
       title: "Content",
-      type: "reference",
-      to: [{ type: "content" }],
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "content" }] }],
       description: "Select content to be displayed on this page",
     },
    
@@ -73,7 +73,7 @@ export const page = {
           footer: 'footer.title',
         },
     prepare(selection) {
-      const { hero, menu, seoTitle, footer } = selection;
+      const { hero, menu, seoTitle, contentTitle, footer } = selection;
       return {
         title: selection.title,
         subtitle: `Hero: ${hero || 'None'}, content: ${contentTitle || 'None'}, Menu: ${menu || 'None'}, SEO: ${seoTitle || 'None'}, Footer: ${footer || 'None'}`,
