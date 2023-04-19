@@ -18,7 +18,7 @@ export default function IndexPage({ Hero, allPosts, pageData, preview }) {
   }
   // this is the page component that will be used to render the page
   // called by the page/[slug] component
-  return <Page pageData={pageData}  allPosts={allPosts}/>
+  return <Page pageData={pageData} Hero={Hero}  allPosts={allPosts}/>
 }
 
 export async function getStaticProps({ preview = false }) {
