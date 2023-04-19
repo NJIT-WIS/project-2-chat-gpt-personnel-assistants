@@ -4,7 +4,7 @@ import { PreviewSuspense } from 'next-sanity/preview'
 import { lazy } from 'react'
 import Landing from '../components/landing'
 import { pageBySlugQuery } from "../lib/queries";
-import Page from "./page/[slug]";
+import Page from "../components/page";
 const LandingPreview = lazy(() => import('../components/landing-preview'))
 
 export default function IndexPage({ Hero, allPosts, pageData, preview }) {
