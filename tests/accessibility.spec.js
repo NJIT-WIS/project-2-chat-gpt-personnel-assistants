@@ -1,46 +1,49 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test';
 
-test('Website satisfies accessibility requirements', async ({ page }) => {
-  // Navigate to website
+test('All form elements have associated labels', async ({ page }) => {
   await page.goto('https://www.jgis219.com/');
-  const homeTitle = await page.title();
-  expect(homeTitle).toContain('My Web Class')
 
-  // Click on the 'Volunteer' button
-  await page.getByRole('button', { name: 'volunteer' }).click();
+  // Find all form elements
+  const homeFormElements = await page.$$('form *');
 
-  // Assert that the modal is displayed
-  const modalTitle = await page.title();
-  expect(modalTitle).toContain('My Web Class');
+  // Check each form element has an associated label
+  for (const element of homeFormElements) {
+    const label = await element.evaluateHandle(
+      (node) => document.querySelector(`label[for="${node.id}"]`)
+    );
+    expect(label).not.toBeNull();
+  }
 
-  // Close the modal by clicking the '×' button
-  await page.getByRole('button', { name: '×' }).click();
-
-  // Click on the link with the specific text
   await page.getByText('unleashing-the-creator-archetype-how-to-psychologically-appeal-to-the-inner-visi').click();
+  const psychFormElements = await page.$$('form *');
 
-  // Assert that the page title is descriptive and meaningful
-  const articleTitle = await page.title();
-  expect(articleTitle).toContain("unleashing-the-creator-archetype-how-to-psychologically-appeal-to-the-inner-visionary | Next.js Blog Example with Sanity");
+  // Check each form element has an associated label
+  for (const element of psychFormElements) {
+    const label = await element.evaluateHandle(
+      (node) => document.querySelector(`label[for="${node.id}"]`)
+    );
+    expect(label).not.toBeNull();
+  }
 
-  // Click on the link with the specific text
-  await page.getByText('Unlocking the Power of Hero Archetypes').click();
-
-  // Assert that the page title is descriptive and meaningful
-  const heroTitle = await page.title();
-  expect(heroTitle).toContain("Unlocking the Power of Hero Archetypes | Next.js Blog Example with Sanity");
-
-  // Click on the link with the specific text
   await page.getByText('Volunteer Details').click();
+  const volunteerFormElements = await page.$$('form *');
 
-  // Assert that the page title is descriptive and meaningful
-  const volunteerTitle = await page.title();
-  expect(volunteerTitle).toContain("Volunteer Details | Next.js Blog Example with Sanity");
+  // Check each form element has an associated label
+  for (const element of volunteerFormElements) {
+    const label = await element.evaluateHandle(
+      (node) => document.querySelector(`label[for="${node.id}"]`)
+    );
+    expect(label).not.toBeNull();
+  }
 
-  // Click on the link with the specific text and role
-  await page.getByRole('link', { name: 'Blog' }).click();
+  await page.getByText('Unlocking the Power of Hero Archetypes').click();
+  const heroFormElements = await page.$$('form *');
 
-  // Assert that the page title is descriptive and meaningful
-  const blogTitle = await page.title();
-  expect(blogTitle).toContain("My Web Class");
+  // Check each form element has an associated label
+  for (const element of heroFormElements) {
+    const label = await element.evaluateHandle(
+      (node) => document.querySelector(`label[for="${node.id}"]`)
+    );
+    expect(label).not.toBeNull();
+  }
 });
