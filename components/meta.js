@@ -1,11 +1,12 @@
 import Head from 'next/head';
 
-export default function Meta(metaData) {
-  console.log(metaData,"in the meta component")
+export default function Meta(data) {
+const metaData=data.metaData;
+
   return (
     <Head>
       {/* Other meta tags */}
-      <title>{metaData.title || ''}</title>
+      <title>{metaData.metaData?.title || ''}</title>
       <meta name="description" content={metaData.description || ''} />
       <meta name="keywords" content={metaData.keywords?.join(', ') || ''} />
       <meta property="og:title" content={metaData.title || ''} />
@@ -22,6 +23,7 @@ export default function Meta(metaData) {
         name="robots"
         content={metaData.metaRobots?.join(', ') || 'index, follow'}
       />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       {/* Other tags */}
     </Head>
   );
