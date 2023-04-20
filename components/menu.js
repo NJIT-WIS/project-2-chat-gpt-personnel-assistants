@@ -1,4 +1,3 @@
-
 import { FaceIcon, ImageIcon, SunIcon, DiscordLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 
@@ -30,7 +29,7 @@ export default function Menu({ data }) {
         </ul>
       </nav>
 
-      <div className="w-3/12 flex justify-end">
+      <div className="w-3/12 flex justify-end hidden sm:flex">
         <DiscordLogoIcon className="mr-4" />
         <TwitterLogoIcon className="mr-4"/>
         <InstagramLogoIcon/>
