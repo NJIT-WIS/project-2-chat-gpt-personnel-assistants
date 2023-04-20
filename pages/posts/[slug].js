@@ -25,7 +25,7 @@ export async function getStaticProps({ params, preview = false }) {
   const menu = await getClient(preview).fetch(menuBySlugQuery, {
     slug:"main-menu",
   })
-console.log(menu);
+
   return {
     props: {
       preview,

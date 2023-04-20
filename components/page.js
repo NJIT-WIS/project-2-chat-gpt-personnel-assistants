@@ -23,6 +23,8 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   const posts = allPosts || [];
   const menu=pageData.menu;
   const heroLength = Hero.length;
+  const metaData=pageData.seo;
+
 
   useEffect(() => {
     const storedNumber = Cookies.get("number");
@@ -42,7 +44,7 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   }
   // if the generated page is not found, this will be displayed
   return (
-    <Layout menuData={menu}>
+    <Layout menuData={menu} metaData={metaData} >
       <Container>
   
         {HeroShow && (
@@ -54,13 +56,13 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
             ctaLink={hero.ctaLink}
           />
         )}
-  
+    </Container>
         {posts.length > 0 ? (
           <MoreStories posts={posts} />
         ) : (
           <AllContent Pagecontent={content} />
         )}
-      </Container>
+    
     </Layout>
   );
 }

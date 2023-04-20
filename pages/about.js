@@ -19,7 +19,7 @@ export default function AboutPage({ Hero, allPosts, pageData, preview}) {
     );
   }
   // TODO need to define about component, about component doesn't exist yet
-  return <Page pageData={pageData} Hero={Hero}  />
+  return <Page pageData={pageData} Hero={Hero} HeroShow={false} />
 }
 
 export async function getStaticProps({ preview = false }) {

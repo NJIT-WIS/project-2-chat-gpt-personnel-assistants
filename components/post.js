@@ -18,24 +18,21 @@ export default function Post({ data = {}, preview = false }) {
 
   const { post, morePosts } = data;
   const slug = post?.slug;
-
+  const metaData = post?.seo;
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <Layout  menuData={data.menu}preview={preview}>
-      <PostContainer >
-     
+    <Layout metaData={metaData} menuData={data.menu} preview={preview}>
+      <PostContainer>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
             <article>
               <Head>
-                <title>
-                  {post.title} 
-                </title>
+               
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
@@ -52,12 +49,9 @@ export default function Post({ data = {}, preview = false }) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
+               
               />
-              <PostBody
-                content={post.markdown}
-              />
-         
+              <PostBody content={post.markdown} />
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}

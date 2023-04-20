@@ -1,44 +1,28 @@
-import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import Head from 'next/head';
 
-export default function Meta() {
+export default function Meta(metaData) {
+  console.log(metaData,"in the meta component")
   return (
     <Head>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color="#000000"
-      />
-      <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      {/* Other meta tags */}
+      <title>{metaData.title || ''}</title>
+      <meta name="description" content={metaData.description || ''} />
+      <meta name="keywords" content={metaData.keywords?.join(', ') || ''} />
+      <meta property="og:title" content={metaData.title || ''} />
+      <meta property="og:description" content={metaData.description || ''} />
+      <meta property="og:type" content={metaData.ogType || ''} />
+      <meta property="og:url" content={metaData.ogUrl || ''} />
+      <meta property="og:site_name" content={metaData.ogSiteName || ''} />
+      <meta property="og:image" content={metaData.image || ''} key="ogImage" />
+      <meta name="twitter:card" content={metaData.twitterCard || ''} />
+      <meta name="twitter:title" content={metaData.title || ''} />
+      <meta name="twitter:description" content={metaData.description || ''} />
+      <meta name="twitter:image" content={metaData.image || ''} />
       <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        name="robots"
+        content={metaData.metaRobots?.join(', ') || 'index, follow'}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
+      {/* Other tags */}
     </Head>
-  
-
-  )
+  );
 }
