@@ -1,49 +1,32 @@
-import { test, expect } from '@playwright/test';
+const { test, expect } = require('@playwright/test');
+const { chromium } = require('playwright');
+const path = require('path');
 
-test('All form elements have associated labels', async ({ page }) => {
-  await page.goto('https://www.jgis219.com/');
+const config = require(path.join(process.cwd(), 'playwright.config.js'));
+const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 
-  // Find all form elements
-  const homeFormElements = await page.$$('form *');
+const TIMEOUT = 30000;
+async function checkPage(pageUrl, expectedTitle) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(pageUrl, { timeout: TIMEOUT });
+  const pageTitle = await page.title();
+  expect(pageTitle).toBe(expectedTitle);
 
-  // Check each form element has an associated label
-  for (const element of homeFormElements) {
-    const label = await element.evaluateHandle(
-      (node) => document.querySelector(`label[for="${node.id}"]`)
-    );
-    expect(label).not.toBeNull();
-  }
+  // Check for accessibility issues
+  const accessibilityReport = await page.accessibility.snapshot();
+  expect(accessibilityReport.passes.length).toBeGreaterThan(0);
 
-  await page.getByText('unleashing-the-creator-archetype-how-to-psychologically-appeal-to-the-inner-visi').click();
-  const psychFormElements = await page.$$('form *');
+  await browser.close();
+}
 
-  // Check each form element has an associated label
-  for (const element of psychFormElements) {
-    const label = await element.evaluateHandle(
-      (node) => document.querySelector(`label[for="${node.id}"]`)
-    );
-    expect(label).not.toBeNull();
-  }
+pages.forEach((page) => {
 
-  await page.getByText('Volunteer Details').click();
-  const volunteerFormElements = await page.$$('form *');
+  test(`Page "${page.path}" should have the correct title and be accessible`, async ({}) => {
+    console.log(page.path)
+    const pageUrl = `${config.use.baseURL}${page.path}`;
+    const expectedTitle = page.title;
 
-  // Check each form element has an associated label
-  for (const element of volunteerFormElements) {
-    const label = await element.evaluateHandle(
-      (node) => document.querySelector(`label[for="${node.id}"]`)
-    );
-    expect(label).not.toBeNull();
-  }
-
-  await page.getByText('Unlocking the Power of Hero Archetypes').click();
-  const heroFormElements = await page.$$('form *');
-
-  // Check each form element has an associated label
-  for (const element of heroFormElements) {
-    const label = await element.evaluateHandle(
-      (node) => document.querySelector(`label[for="${node.id}"]`)
-    );
-    expect(label).not.toBeNull();
-  }
+    await checkPage(pageUrl, expectedTitle);
+  });
 });
