@@ -29,16 +29,13 @@ jobs:
         run: |
           npm ci
           npm run build --turbo
-          
+          apt-get update
+          apt-get install -y libgbm-dev
+          npx playwright install chromium
+          npm install -g lighthouse chrome-launcher axe-core chromium wait-on
+          npx playwright install-deps  
+          npm run build --turbo  
 
-      - name: Setup Playwright
-        uses: microsoft/playwright-github-action@v1
-
-      - name: Install Playwright browsers
-        run: npx playwright install
-
-      - name: Setup XVFB
-        run: sudo apt-get install -y xvfb
       - name: Start the application
         run: |
           export DISPLAY=:1
