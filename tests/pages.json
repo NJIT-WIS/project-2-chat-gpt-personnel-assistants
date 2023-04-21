@@ -1,4 +1,21 @@
 {
+<<<<<<< HEAD
+    "pages": [
+      {
+        "path": "/",
+        "title": "MyWebClass.org"
+        
+      }
+      ,
+      {
+        "path": "/about",
+        "title": "MyWebClass.org"
+        
+      }
+    ]
+}
+  
+=======
   "pages": [
     {
       "path": "/",
@@ -68,3 +85,4 @@
     }
   ]
 }
+>>>>>>> b5c879b31e9bbd0b9df18b331af6b118d514e360
