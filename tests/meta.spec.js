@@ -1,58 +1,39 @@
-import { test, expect } from "@playwright/test";
+const { test, expect } = require('@playwright/test');
+const { chromium } = require('playwright');
+const path = require('path');
 
-test("test website functionality", async ({ page }) => {
-  // Navigate to the homepage
-  await page.goto('https://www.jgis219.com/');
+const config = require(path.join(process.cwd(), 'playwright.config.js'));
+const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 
-  // Check for the presence of the og:image meta tag
-  let ogImage = await page.$('meta[property="og:image"]');
-  expect(ogImage).not.toBeNull();
+const TIMEOUT = 30000;
 
-  // Check the content of the og:image meta tag
-  let ogImageUrl = await ogImage.getAttribute("content");
-  expect(ogImageUrl).toMatch(/^https?:\/\/.+$/);
+async function checkMetaTags(pageUrl, expectedTags) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(pageUrl, { timeout: TIMEOUT });
 
-  // Click on the first link
-  await page.getByText('unleashing-the-creator-archetype-how-to-psychologically-appeal-to-the-inner-visi').click();
+  const metaTags = await page.$$eval('head meta', tags =>
+    tags.map(tag => ({ name: tag.getAttribute('name') || tag.getAttribute('property'), content: tag.getAttribute('content') }))
+  );
 
-  // Check for the presence of the og:image meta tag
-  ogImage = await page.$('meta[property="og:image"]');
-  expect(ogImage).not.toBeNull();
+  await browser.close();
 
-  // Check the content of the og:image meta tag
-  ogImageUrl = await ogImage.getAttribute("content");
-  expect(ogImageUrl).toMatch(/^https?:\/\/.+$/);
+  expectedTags.forEach(expectedTag => {
+    const metaTag = metaTags.find(tag => tag.name === expectedTag.name);
+    expect(metaTag).toBeTruthy();
+    expect(metaTag.content).toEqual(expectedTag.content);
+  });
 
-  // Click on the second link
-  await page.getByText('Volunteer Details').click();
+  const unexpectedTags = metaTags.filter(tag => !expectedTags.find(expectedTag => expectedTag.name === tag.name));
+  expect(unexpectedTags).toEqual([]);
+}
 
-  // Check for the presence of the og:image meta tag
-  ogImage = await page.$('meta[property="og:image"]');
-  expect(ogImage).not.toBeNull();
+pages.forEach((page) => {
+  test(`Page "${page.path}" should have correct meta tags`, async ({}) => {
+    console.log(page.path);
+    const pageUrl = `${config.use.baseURL}${page.path}`;
 
-  // Check the content of the og:image meta tag
-  ogImageUrl = await ogImage.getAttribute("content");
-  expect(ogImageUrl).toMatch(/^https?:\/\/.+$/);
-
-  // Click on the third link
-  await page.getByText('Unlocking the Power of Hero Archetypes').click();
-
-  // Check for the presence of the og:image meta tag
-  ogImage = await page.$('meta[property="og:image"]');
-  expect(ogImage).not.toBeNull();
-
-  // Check the content of the og:image meta tag
-  ogImageUrl = await ogImage.getAttribute("content");
-  expect(ogImageUrl).toMatch(/^https?:\/\/.+$/);
-
-  // Click on the "Blog" link
-  await page.getByRole('link', { name: 'Blog' }).click();
-
-  // Check for the presence of the og:image meta tag
-  ogImage = await page.$('meta[property="og:image"]');
-  expect(ogImage).not.toBeNull();
-
-  // Check the content of the og:image meta tag
-  ogImageUrl = await ogImage.getAttribute("content");
-  expect(ogImageUrl).toMatch(/^https?:\/\/.+$/);
+    const expectedTags = page.metaTags;
+    await checkMetaTags(pageUrl, expectedTags);
+  });
 });
