@@ -27,7 +27,7 @@ export default function Menu({ data }) {
                 item.active ? "active" : ""
               } hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer`}
             >
-              <Link href={item.link}>{item.title}</Link>
+              <Link  key={item._key} href={item.link}>{item.title}</Link>
             </li>
           ))}
         </ul>
