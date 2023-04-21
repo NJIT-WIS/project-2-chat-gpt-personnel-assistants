@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "@playwright/test": "^1.32.3",
     "@portabletext/react": "^2.0.2",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-accordion": "^1.1.1",
@@ -29,6 +30,7 @@
     "@sanity/webhook": "^2.0.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
     "easymde": "^2.18.0",
     "i": "^0.3.7",
     "isomorphic-unfetch": "^4.0.2",
@@ -37,6 +39,7 @@
     "next-sanity": "^4.1.2",
     "npm": "^9.6.4",
     "phosphor-react": "^1.4.1",
+    "playwright": "^1.32.3",
     "react": "^18",
     "react-dom": "^18",
     "react-ga": "^3.3.1",
@@ -50,6 +53,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "lighthouse": "^10.1.1",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
   }

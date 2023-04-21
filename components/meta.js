@@ -6,7 +6,7 @@ const metaData=data.metaData;
   return (
     <Head>
       {/* Other meta tags */}
-      <title>{metaData.metaData?.title || ''}</title>
+      <title>{metaData.title || ''}</title>
       <meta name="description" content={metaData.description || ''} />
       <meta name="keywords" content={metaData.keywords?.join(', ') || ''} />
       <meta property="og:title" content={metaData.title || ''} />
