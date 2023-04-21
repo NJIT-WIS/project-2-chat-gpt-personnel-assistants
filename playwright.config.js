@@ -44,7 +44,7 @@ module.exports = defineConfig({
   webServer: {
     command: 'next dev',
     port: 3000,
-    reuseExistingServer: true,
+    reuseExistingServer: !process.env.CI,
   },
 
   // Specify the directory to save the test report files
