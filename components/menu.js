@@ -9,15 +9,13 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 
+import Logo from "./logo";
 export default function Menu({ data }) {
+  console.log(data);
   return (
     <header className="header top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
       <h1 className="w-3/12">
-        <Link href="/">
-          <div className="text-green-500 font-bold text-lg hover:text-green-600 duration-200">
-            Logo
-          </div>
-        </Link>
+       <Logo picture={data.logo}/>
       </h1>
 
       <nav className="nav font-semibold text-lg">

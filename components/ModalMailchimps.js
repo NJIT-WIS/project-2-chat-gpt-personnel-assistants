@@ -72,7 +72,7 @@ export default function ModalMailchimps({ isOpen, onClose, onSubmit }) {
                hover:bg-green-800 hover:border-green-800 transition
                duration-200 whitespace-normal md:text-lg md:px-6 md:py-2"
               >
-                Subscribe
+                Submit
               </button>
             </form>
             <button
