@@ -19,6 +19,13 @@ export const menu = {
         },
       },
       {
+        name: 'logo',
+        title: 'logo',
+        type: 'image',
+        options: { hotspot: true },
+      
+      },
+      {
         name: "items",
         title: "Menu Items",
         type: "array",

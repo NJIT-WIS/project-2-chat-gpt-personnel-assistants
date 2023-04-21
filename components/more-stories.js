@@ -1,5 +1,4 @@
 import PostPlug from './post-plug'
-
 export default function MoreStories({ posts }) {
   return (
     <section className=' heroComp '> 
