@@ -9,6 +9,7 @@ import MoreStories from "./more-stories";
 import HeroComp from "./hero"; // Import the Hero component
 import Cookies from "js-cookie";
 import React, { useState, useEffect } from "react";
+import PostContainer from "./PostContainer";
 export default function Landing({ allPosts, Hero, preview }) {
   const [heroPost, ...morePosts] = allPosts || [];
   const [number, setNumber] = useState(null);
@@ -35,15 +36,7 @@ export default function Landing({ allPosts, Hero, preview }) {
         <Head>
           <title>My Web Class</title>
         </Head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZKT9GK320"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7ZKT9GK320');
-</script>
+ 
         <Container>
           <HeroComp
             title={hero.title}

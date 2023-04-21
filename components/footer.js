@@ -1,30 +1,62 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
 
+import {
+  
+  DiscordLogoIcon,
+  TwitterLogoIcon,
+  InstagramLogoIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIco
+
+} from "@radix-ui/react-icons";
+import Link from 'next/link';
 export default function Footer() {
-  return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+  
+return (
+    <section className="bg-white">
+      <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
+          <div className="px-5 py-2">
+            <Link href="/about">
+              <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                About
+              </div>
+            </Link>
           </div>
+          <div className="px-5 py-2">
+            <Link href="/privacy">
+              <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                Privacy
+              </div>
+            </Link>
+          </div>
+        </nav>
+        <div className="flex justify-center mt-8 space-x-6">
+          <Link href="#">
+            <div className="text-gray-400 hover:text-gray-500">
+              <InstagramLogoIcon />
+            </div>
+          </Link>
+          <Link href="#">
+            <div className="text-gray-400 hover:text-gray-500">
+              <TwitterLogoIcon />
+            </div>
+          </Link>
+          <Link href="#">
+            <div className="text-gray-400 hover:text-gray-500">
+            < GitHubLogoIcon />
+            </div>
+          </Link>
+          <Link href="#">
+            <div className="text-gray-400 hover:text-gray-500">
+              <DiscordLogoIcon />
+            </div>
+          </Link>
         </div>
-      </Container>
-    </footer>
-  )
+        <p className="mt-8 text-base leading-6 text-center text-gray-400">
+          © 2021 MyWebClass, Inc. All rights reserved.
+        </p>
+      </div>
+    </section>
+  );
+  
 }

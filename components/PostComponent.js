@@ -13,33 +13,36 @@ import PostBody from "./post-body";
 import SectionSeparator from "./section-separator";
 import MoreStories from "./more-stories";
 
-export default function Post({ data = {}, preview = false }) {
+export default function PostComponent({ data = {}, preview = false }) {
   const router = useRouter();
+    const post=data
 
-  const { post, morePosts } = data;
   const slug = post?.slug;
-  const metaData = post?.seo;
+
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <Layout metaData={metaData} menuData={data.menu} preview={preview}>
-      <PostContainer>
+  
+      <PostContainer >
+        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
             <article>
               <Head>
-               
+                <title>
+                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
+                </title>
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
                     property="og:image"
                     content={urlForImage(post.coverImage)
-                      .width(500)
-                      .height(250)
+                      .width(1200)
+                      .height(627)
                       .fit("crop")
                       .url()}
                   />
@@ -49,15 +52,17 @@ export default function Post({ data = {}, preview = false }) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-               
+                author={post.author}
               />
-              <PostBody content={post.markdown} />
+              <PostBody
+                content={post.markdown}
+              />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      
           </>
         )}
       </PostContainer>
-    </Layout>
+
   );
 }

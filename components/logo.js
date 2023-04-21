@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { urlForImage } from '../lib/sanity'
 
-export default function Avatar({ name, picture }) {
+export default function Logo({ picture }) {
   return (
-    <div className="flex items-center">
       <div className="relative w-12 h-12 mr-4">
         <Image
           src={
@@ -14,10 +13,10 @@ export default function Avatar({ name, picture }) {
           className="rounded-full"
           height={96}
           width={96}
-          alt={name}
+          alt={"logo"}
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
-    </div>
+ 
+   
   );
 }

@@ -6,7 +6,7 @@ export const post = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "string", //
       validation: (Rule) => Rule.required(),
     },
     {
@@ -53,6 +53,12 @@ export const post = {
       type: "markdown",
       description: "A Github flavored markdown field with image uploading",
       name: "markdown",
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo', // Change this from 'reference' to 'seo'
+      description: 'Search engine optimization settings for this page',
     },
   ],
   preview: {

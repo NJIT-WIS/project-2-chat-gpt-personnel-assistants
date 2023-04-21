@@ -1,8 +1,7 @@
 import PostPlug from './post-plug'
-
 export default function MoreStories({ posts }) {
   return (
-    <section className=' heroComp'> 
+    <section className=' heroComp '> 
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Lesson Posts
       </h2>
@@ -13,7 +12,7 @@ export default function MoreStories({ posts }) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
+        
             slug={post.slug}
             excerpt={post.excerpt}
           />
