@@ -1,5 +1,13 @@
-import { FaceIcon, ImageIcon, SunIcon, DiscordLogoIcon, TwitterLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
+import {
+  FaceIcon,
+  ImageIcon,
+  SunIcon,
+  DiscordLogoIcon,
+  TwitterLogoIcon,
+  InstagramLogoIcon,
+  HamburgerMenuIcon 
+} from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export default function Menu({ data }) {
   return (
@@ -18,12 +26,10 @@ export default function Menu({ data }) {
             <li
               key={item._key}
               className={`p-4 border-b-2 border-green-500 border-opacity-0 ${
-                item.active ? 'active' : ''
+                item.active ? "active" : ""
               } hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer`}
             >
-              <Link href={item.link}>
-                {item.title}
-              </Link>
+              <Link href={item.link}>{item.title}</Link>
             </li>
           ))}
         </ul>
@@ -31,8 +37,9 @@ export default function Menu({ data }) {
 
       <div className="w-3/12 flex justify-end hidden sm:flex">
         <DiscordLogoIcon className="mr-4" />
-        <TwitterLogoIcon className="mr-4"/>
-        <InstagramLogoIcon/>
+        <TwitterLogoIcon className="mr-4" />
+        <InstagramLogoIcon />
+     
       </div>
     </header>
   );

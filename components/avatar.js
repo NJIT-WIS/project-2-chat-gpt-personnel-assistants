@@ -19,5 +19,5 @@ export default function Avatar({ name, picture }) {
       </div>
       <div className="text-xl font-bold">{name}</div>
     </div>
-  )
+  );
 }

@@ -46,7 +46,9 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   return (
     <Layout menuData={menu} metaData={metaData} >
       <Container>
-  
+ 
+
+
         {HeroShow && (
           <HeroComp
             title={hero.title}
@@ -62,7 +64,7 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
         ) : (
           <AllContent Pagecontent={content} />
         )}
-    
+
     </Layout>
   );
 }

@@ -67,7 +67,10 @@ export default function ModalMailchimps({ isOpen, onClose, onSubmit }) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-blue-500 text-white py-2 px-4 rounded-md"
+                className="bg-green-900 border-3 border-green-800 rounded-full 
+                text-white px-4 py-1 text-base font-bold uppercase 
+               hover:bg-green-800 hover:border-green-800 transition
+               duration-200 whitespace-normal md:text-lg md:px-6 md:py-2"
               >
                 Subscribe
               </button>
