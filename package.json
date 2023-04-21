@@ -1,11 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "studio:dev": "npm --prefix studio run start",
-    "studio:deploy": "npx vercel env pull && npm --prefix studio run deploy"
+    "test": "npx playwright test"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -29,10 +28,11 @@
     "@sanity/webhook": "^2.0.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.3",
-    "easymde": "^2.18.0",
-    "i": "^0.3.7",
-    "isomorphic-unfetch": "^4.0.2",
-    "js-cookie": "^3.0.1",
+    "dotenv": "^16.0.3",
+    "formidable": "^2.1.1",
+    "fs": "0.0.1-security",
+    "glob": "^9.3.2",
+    "gray-matter": "^4.0.3",
     "next": "latest",
     "next-sanity": "^4.1.2",
     "npm": "^9.6.4",
@@ -49,8 +49,11 @@
     "victormono": "^1.5.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "@playwright/test": "^1.32.1",
+    "lighthouse": "^10.1.0",
+    "node-fetch": "^3.3.1",
+    "playwright": "^1.32.1",
+    "playwright-lighthouse": "^3.0.0",
+    "util": "^0.12.5"
   }
 }
