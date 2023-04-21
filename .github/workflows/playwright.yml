@@ -30,12 +30,15 @@ jobs:
         run: |
           apt-get update
           apt-get install -y libgbm-dev
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list
+          apt-get update
           apt-get install -y google-chrome-stable
           npm ci
           npx playwright install chromium
           npm install -g lighthouse chrome-launcher axe-core chromium wait-on
           npx playwright install-deps  
-          npm run build --turbo
+          npm run build --tur
 
       - name: Set CHROME_PATH environment variable
         run: echo "CHROME_PATH=$(which google-chrome-stable)" >> $GITHUB_ENV
