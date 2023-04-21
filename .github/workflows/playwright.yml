@@ -1,4 +1,3 @@
-
 name: Run Playwright and Generate a video, screenshots, and LightHouse HTML Report
 
 on:
@@ -27,26 +26,33 @@ jobs:
         with:
           node-version: "18.x"
 
-      - name: Install dependencies
+      - name: Install dependencies and Chrome
         run: |
           apt-get update
-          apt-get install -y libgbm-dev         
+          apt-get install -y libgbm-dev
+          apt-get install -y google-chrome-stable
           npm ci
           npx playwright install chromium
           npm install -g lighthouse chrome-launcher axe-core chromium wait-on
           npx playwright install-deps  
           npm run build --turbo
+
+      - name: Set CHROME_PATH environment variable
+        run: echo "CHROME_PATH=$(which google-chrome-stable)" >> $GITHUB_ENV
+
       - name: Start the application
         run: |
           export DISPLAY=:1
           npm run start 2>&1 > app.log &
           npx wait-on --timeout 30000 http://localhost:3000 || (cat app.log && exit 1)
+
       - name: Run Playwright tests
         run: npx playwright test --config=playwright.config.js
 
       - name: Generate Lighthouse Report
         run: |
           lighthouse http://localhost:3000 --output html --output-path ./reports/report.html --chrome-flags="--headless --no-sandbox --disable-gpu"
+
       - name: Upload report, screenshots and videos of failed tests
         uses: actions/upload-artifact@v3
         with:
