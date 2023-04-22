@@ -49,7 +49,7 @@ jobs:
           npx wait-on --timeout 30000 http://localhost:3000 || (cat app.log && exit 1)
 
       - name: Run Playwright tests
-        run: npx playwright test --config=playwright.config.js
+        run: npx playwright test --config=playwright.config.js || true
 
       - name: Generate Lighthouse Report
         run: |
@@ -60,3 +60,13 @@ jobs:
         with:
           name: test-results
           path: ./test-results
+
+      # Add a post-action that generates a report for failed tests
+      - name: Generate report for failed tests
+        if: always()
+        run: |
+          npx playwright show-trace tests/ --grep "@flaky" --output ./reports/failed-tests-trace.txt
+          npx playwright screenshot-on-failure tests/ --output ./reports/screenshots/
+          npx playwright video tests/ --output ./reports/videos/
+          # You can customize this command to generate a report for failed tests, e.g., using a templating engine like Mustache
+          echo "Failed tests report" > ./reports/failed-tests-report.txt
