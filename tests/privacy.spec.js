@@ -18,7 +18,7 @@ async function checkPagePrivacy(pageUrl) {
   const page = await browser.newPage();
   await page.goto(pageUrl, { timeout: TIMEOUT });
 
-  const hasGDPRConsent = await page.evaluate(() => {
+  const hasGoogleConsent = await page.evaluate(() => {
     const privacyExcerptSelectors = [
       'p:contains("Google Analytics")', // Look for the string "Google Analytics" within <p> tags
       'div:contains("GDPR")', // Look for the string "GDPR" within <div> tags
@@ -39,7 +39,7 @@ async function checkPagePrivacy(pageUrl) {
 
   await browser.close();
 
-  if (!hasGDPRConsent) {
+  if (!hasGoogleConsent) {
     throw new Error('The privacy page does not contain the required excerpt about GDPR and consent to have data collected by Google Analytics.');
   }
 }
