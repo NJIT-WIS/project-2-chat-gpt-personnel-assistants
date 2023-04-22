@@ -46,7 +46,7 @@ jobs:
         run: |
           export DISPLAY=:1
           npm run start 2>&1 > app.log &
-          npx wait-on --timeout 30000 http://localhost:3000 || (cat app.log && exit 1)
+          npx wait-on --timeout 300000 http://localhost:3000 || (cat app.log && exit 1)
       - name: Run Playwright tests
         run: npx playwright test --config=playwright.config.js || echo "Tests failed, generating Lighthouse report for failed tests."
 
