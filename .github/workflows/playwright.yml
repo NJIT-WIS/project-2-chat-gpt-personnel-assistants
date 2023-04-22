@@ -46,13 +46,15 @@ jobs:
         run: |
           export DISPLAY=:1
           npm run start 2>&1 > app.log &
-          npx wait-on --timeout 300000 http://localhost:3000 || (cat app.log && exit 1)
-      - name: Run Playwright tests
-        run: npx playwright test --config=playwright.config.js || echo "Tests failed, generating Lighthouse report for failed tests."
-
-      - name: Generate Lighthouse Report
+          npx wait-on --timeout 60000 http://localhost:3000 || (echo "Timeout while waiting for the application to start. App log:" && cat app.log)
+      - name: Run Playwright and Lighthouse tests
         run: |
-          lighthouse http://localhost:3000 --output html --output-path ./reports/report.html --chrome-flags="--headless --no-sandbox --disable-gpu"
+          npx playwright test --config=playwright.config.js &> playwright.log & playwright_pid=$!
+          lighthouse http://localhost:3000 --output html --output-path ./reports/report.html --chrome-flags="--headless --no-sandbox --disable-gpu" &> lighthouse.log & lighthouse_pid=$!
+          wait $playwright_pid || { echo "Playwright tests failed"; PLAYWRIGHT_EXIT_CODE=1; }
+          wait $lighthouse_pid || { echo "Lighthouse tests failed"; LIGHTHOUSE_EXIT_CODE=1; }
+          test -z "$PLAYWRIGHT_EXIT_CODE" || exit $PLAYWRIGHT_EXIT_CODE
+          test -z "$LIGHTHOUSE_EXIT_CODE" || exit $LIGHTHOUSE_EXIT_CODE
       - name: Upload report, screenshots and videos of failed tests
         uses: actions/upload-artifact@v3
         with:
