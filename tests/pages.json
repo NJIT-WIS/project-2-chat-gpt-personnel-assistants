@@ -1,15 +1,11 @@
 {
     "pages": [
       {
-        "path": "/",
-        "title": "MyWebClass.org"
-        
+        "path": "/"
       }
       ,
       {
-        "path": "/about",
-        "title": "MyWebClass.org"
-        
+        "path": "/about"
       }
     ]
 }

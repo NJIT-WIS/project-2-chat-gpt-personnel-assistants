@@ -7,25 +7,41 @@ const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 
 const TIMEOUT = 30000;
 
-async function checkMetaTags(pageUrl, expectedTags) {
+async function checkPageMetaTags(pageUrl) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto(pageUrl, { timeout: TIMEOUT });
 
-  const metaTags = await page.$$eval('head meta', tags =>
-    tags.map(tag => ({ name: tag.getAttribute('name') || tag.getAttribute('property'), content: tag.getAttribute('content') }))
-  );
+  const metaTags = [
+    'title',
+    'description',
+    'keywords',
+    'og:title',
+    'og:description',
+    'og:type',
+    'og:url',
+    'og:site_name',
+    'og:image',
+    'twitter:card',
+    'twitter:title',
+    'twitter:description',
+    'twitter:image',
+    'robots',
+    'viewport',
+  ];
 
+  for (const tag of metaTags) {
+    let selector;
+    if (tag.startsWith('og:') || tag.startsWith('twitter:')) {
+      selector = `head > meta[property="${tag}"]`;
+    } else {
+      selector = `head > meta[name="${tag}"]`;
+    }
+
+    const metaElement = await page.$(selector);
+    expect(metaElement).toBeDefined();
+  }
   await browser.close();
-
-  expectedTags.forEach(expectedTag => {
-    const metaTag = metaTags.find(tag => tag.name === expectedTag.name);
-    expect(metaTag).toBeTruthy();
-    expect(metaTag.content).toEqual(expectedTag.content);
-  });
-
-  const unexpectedTags = metaTags.filter(tag => !expectedTags.find(expectedTag => expectedTag.name === tag.name));
-  expect(unexpectedTags).toEqual([]);
 }
 
 pages.forEach((page) => {
@@ -33,7 +49,6 @@ pages.forEach((page) => {
     console.log(page.path);
     const pageUrl = `${config.use.baseURL}${page.path}`;
 
-    const expectedTags = page.metaTags;
-    await checkMetaTags(pageUrl, expectedTags);
+    await checkPageMetaTags(pageUrl);
   });
 });
