@@ -51,13 +51,6 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --config=playwright.config.js || true
 
-      - name: Generate report for failed tests
-        if: always()
-        run: |
-        npx playwright show-trace tests/ --grep "@flaky" --output ./reports/failed-tests-trace.txt
-        npx playwright screenshot-on-failure tests/ --output ./reports/screenshots/
-        npx playwright video tests/ --output ./reports/videos/
-
       - name: Generate Lighthouse Report
         run: |
           lighthouse http://localhost:3000 --output html --output-path ./reports/report.html --chrome-flags="--headless --no-sandbox --disable-gpu"
