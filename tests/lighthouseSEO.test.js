@@ -21,6 +21,7 @@ const runLighthouseAudit = async (pageUrl, expectedAccessibilityScore) => {
   const lhr = JSON.parse(readFileSync(reportPath));
 
   const accessibilityScore = lhr.categories.seo.score * 100;
+  console.log(accessibilityScore)
   expect(accessibilityScore).toBeGreaterThanOrEqual(expectedAccessibilityScore);
 };
 
