@@ -33,22 +33,26 @@ return (
         <div className="flex justify-center mt-8 space-x-6">
           <Link href="#">
             <div className="text-gray-400 hover:text-gray-500">
+            <span className="sr-only">mywebclass instagram link </span>
               <InstagramLogoIcon />
             </div>
           </Link>
           <Link href="#">
             <div className="text-gray-400 hover:text-gray-500">
+            <span className="sr-only">mywebclass twitter link </span>
               <TwitterLogoIcon />
             </div>
           </Link>
           <Link href="#">
             <div className="text-gray-400 hover:text-gray-500">
             < GitHubLogoIcon />
+            <span className="sr-only">Checkout MyWebClass Github repository </span>
             </div>
           </Link>
           <Link href="#">
             <div className="text-gray-400 hover:text-gray-500">
               <DiscordLogoIcon />
+              <span className="sr-only">join My Web Class Discord </span>
             </div>
           </Link>
         </div>
