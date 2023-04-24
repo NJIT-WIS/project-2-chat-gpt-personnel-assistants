@@ -1,0 +1,62 @@
+name: Full Lighthouse Audit
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      tests_failed: ''
+      SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_API_DATASET }} 
+      SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }} 
+      SANITY_API_WRITE_TOKEN: ${{ secrets.SANITY_API_WRITE_TOKEN }} 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Playwright
+        uses: microsoft/playwright-github-action@v1
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Setup XVFB
+        run: sudo apt-get install -y xvfb
+
+      - name: Run tests
+        env:
+          PLAYWRIGHT_CLI_EXIT_ON_FIRST_FAILURE: '1'
+        run: xvfb-run --auto-servernum --server-args='-screen 0 1280x1024x24' npx playwright test tests/lighthouse_audit || echo "tests_failed=true" >> $GITHUB_ENV
+
+      - name: Print tests_failed
+        run: echo "tests_failed=$tests_failed"
+
+      - name: Install jq
+        run: sudo apt-get install jq
+
+      - name: Archive Lighthouse report, videos, and screenshots
+        if: env.tests_failed == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-artifacts
+          path: |
+            lighthouse-report.json
+            test-results/
+            **/*.mp4
+            **/*.png
+
+      - name: Exit with failure if tests failed
+        if: env.tests_failed == 'true'
+        run: exit 1
