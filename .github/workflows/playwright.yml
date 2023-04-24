@@ -1,0 +1,64 @@
+name: Run Playwright and Generate a video, screenshots, and LightHouse HTML Report
+
+on:
+  push:
+    branches: "*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
+      options: --cpus 2 --memory 4G --user root
+    env:
+      SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_API_DATASET }} 
+      SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }} 
+      SANITY_API_WRITE_TOKEN: ${{ secrets.SANITY_API_WRITE_TOKEN }} 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: Install dependencies and Chrome
+        run: |
+          apt-get update
+          apt-get install -y libgbm-dev wget gnupg
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list
+          apt-get update
+          apt-get install -y google-chrome-stable
+          npm ci
+          npx playwright install chromium
+          npm install -g lighthouse chrome-launcher axe-core chromium wait-on
+          npx playwright install-deps  
+          npm run build --turbo
+      - name: Set CHROME_PATH environment variable
+        run: echo "CHROME_PATH=$(which google-chrome-stable)" >> $GITHUB_ENV
+
+      - name: Start the application
+        run: |
+          export DISPLAY=:1
+          npm run start 2>&1 > app.log &
+          npx wait-on --timeout 60000 http://localhost:3000 || (echo "Timeout while waiting for the application to start. App log:" && cat app.log)
+
+      - name: Run Playwright and Lighthouse tests
+        run: |
+          npx playwright test --config=playwright.config.js &> playwright.log & playwright_pid=$!
+          lighthouse http://localhost:3000 --output html --output-path ./reports/report.html --chrome-flags="--headless --no-sandbox --disable-gpu" &> lighthouse.log & lighthouse_pid=$!
+          wait $playwright_pid || { echo "Playwright tests failed"; PLAYWRIGHT_EXIT_CODE=1; }
+          wait $lighthouse_pid || { echo "Lighthouse tests failed"; LIGHTHOUSE_EXIT_CODE=1; }
+          test -z "$PLAYWRIGHT_EXIT_CODE" || exit $PLAYWRIGHT_EXIT_CODE
+          test -z "$LIGHTHOUSE_EXIT_CODE" || exit $LIGHTHOUSE_EXIT_CODE
+
+      - name: Upload report, screenshots and videos of failed tests
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./test-results
