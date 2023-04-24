@@ -24,7 +24,7 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   const menu=pageData.menu;
   const heroLength = Hero.length;
   const metaData=pageData.seo;
-
+  const footer=pageData.footer;
 
   useEffect(() => {
     const storedNumber = Cookies.get("number");
@@ -44,7 +44,7 @@ export default function Page({ pageData, allPosts ,Hero,HeroShow}) {
   }
   // if the generated page is not found, this will be displayed
   return (
-    <Layout menuData={menu} metaData={metaData} >
+    <Layout menuData={menu} metaData={metaData} footerData={footer}>
       <Container>
  
 

@@ -1,62 +1,102 @@
-
 import {
-  
-  DiscordLogoIcon,
-  TwitterLogoIcon,
-  InstagramLogoIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIco
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaRedditAlien,
+} from "react-icons/fa"; // Import social icons
+import Link from "next/link";
 
-} from "@radix-ui/react-icons";
-import Link from 'next/link';
-export default function Footer() {
-  
-return (
-    <section className="bg-white">
-      <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-          <div className="px-5 py-2">
-            <Link href="/about">
-              <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                About
-              </div>
+import Logo from "./logo";
+export default function Footer({ data }) {
+  const { websiteTitle, logo, sections } = data;
+  const postUrl = encodeURIComponent(`https://www.jgis219.com`);
+  const title = encodeURIComponent("MyWebClass.org");
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${postUrl}`;
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${postUrl}&text=${title}`;
+  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`;
+  const redditShareUrl = `https://www.reddit.com/submit?url=${postUrl}&title=${title}`;
+  const discordShareUrl = `https://discord.com/invite/${postUrl}`;
+  const openInNewWindow = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <div className="max-w-screen-lg mx-auto">
+      <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
+      <div className="md:flex md:justify-between">
+          <div className="mb-6 md:mb-0">
+            <Link href="/" target="_blank" className="flex items-center">
+              <Logo picture={logo} />
+              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                {websiteTitle}
+              </span>
             </Link>
           </div>
-          <div className="px-5 py-2">
-            <Link href="/privacy">
-              <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                Privacy
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            {sections.map((section) => (
+              <div key={section.title}>
+                <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  {section.title}
+                </h3>
+                <ul>
+                  {section.items.map((item) => (
+                    <li key={item.title} className="mb-4">
+                      <Link
+                        href={item.link}
+                        target="_blank"
+                        className="text-gray-600 hover:underline dark:text-gray-400"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </Link>
+            ))}
           </div>
-        </nav>
-        <div className="flex justify-center mt-8 space-x-6">
-          <Link href="#">
-            <div className="text-gray-400 hover:text-gray-500">
-              <InstagramLogoIcon />
-            </div>
-          </Link>
-          <Link href="#">
-            <div className="text-gray-400 hover:text-gray-500">
-              <TwitterLogoIcon />
-            </div>
-          </Link>
-          <Link href="#">
-            <div className="text-gray-400 hover:text-gray-500">
-            < GitHubLogoIcon />
-            </div>
-          </Link>
-          <Link href="#">
-            <div className="text-gray-400 hover:text-gray-500">
-              <DiscordLogoIcon />
-            </div>
-          </Link>
         </div>
-        <p className="mt-8 text-base leading-6 text-center text-gray-400">
-          © 2021 MyWebClass, Inc. All rights reserved.
-        </p>
-      </div>
-    </section>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2022{" "}
+            <Link
+              href="https://www.jgis219.com/"
+              target="_blank"
+              className="hover:underline"
+            >
+              {websiteTitle}™
+            </Link>
+            . All Rights Reserved.
+          </span>
+          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+        
+            <button
+              onClick={() => openInNewWindow(facebookShareUrl)}
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <FaFacebookF />
+            </button>
+            <button
+              onClick={() => openInNewWindow(twitterShareUrl)}
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <FaTwitter />
+            </button>
+            <button
+              onClick={() => openInNewWindow(linkedInShareUrl)}
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <FaLinkedinIn />
+            </button>
+            <button
+              onClick={() => openInNewWindow(redditShareUrl)}
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <FaRedditAlien />
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
-  
 }
