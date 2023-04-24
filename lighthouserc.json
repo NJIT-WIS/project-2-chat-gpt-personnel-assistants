@@ -1,0 +1,20 @@
+{
+    "ci": {
+      "collect": {
+        "url": ["https://eds435.github.io/mywebclass-simulation-intermediate/"],
+        "numberOfRuns": 3,
+        "settings": {
+          "budgets": "./lighthouse-budgets.json"
+        }
+      },
+      "assert": {
+        "assertions": "./lighthouse-assertions.json"
+      },
+      "upload": {
+        "target": "lhci",
+        "serverBaseUrl": "http://localhost:9001",
+        "ignoreDuplicateBuildFailure": true
+      }
+    }
+  }
+  

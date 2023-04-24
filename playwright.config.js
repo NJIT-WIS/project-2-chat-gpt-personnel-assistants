@@ -10,7 +10,10 @@ dotenv.config();
 module.exports = defineConfig({
   testDir: path.join(__dirname, './tests'),
   retries: process.env.CI ? 2 : 0,
-  reporter: 'list',
+  reporter: [
+    ['list'],
+    ['json', {  outputFile: 'test-results.json' }], ['html', { open: 'never' }]
+  ],
 
   // Define shared settings for all projects
   use: {
