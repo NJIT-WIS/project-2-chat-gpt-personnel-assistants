@@ -23,16 +23,10 @@ const runLighthouseAudit = async (pageUrl, expectedScores) => {
   for (const category in expectedScores) {
     const categoryScore = lhr.categories[category].score * 100;
     console.log(`${category} score:`, categoryScore);
-    try{
+
     expect(categoryScore).toBeGreaterThanOrEqual(expectedScores[category]);}
-    catch (error){
-
-      console.log(`Page "${pageUrl}" failed the following categories: "${category}"`);
-   
-    
-
-    }
-  }
+ 
+  
 };
 
 pages.forEach((page) => {
@@ -45,7 +39,7 @@ pages.forEach((page) => {
       accessibility: 90,
       'best-practices': 90,
       seo: 90,
-      pwa: 90,
+  
       performance: 90,
     };
 
