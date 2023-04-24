@@ -1,0 +1,25 @@
+[
+    {
+      "path": "/",
+      "resourceCounts": {
+        "total": 20,
+        "image": 10,
+        "font": 2
+      },
+      "timings": [
+        {
+          "metric": "first-contentful-paint",
+          "budget": 2000
+        },
+        {
+          "metric": "largest-contentful-paint",
+          "budget": 2500
+        },
+        {
+          "metric": "cumulative-layout-shift",
+          "budget": 0.1
+        }
+      ]
+    }
+  ]
+  

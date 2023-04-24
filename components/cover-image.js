@@ -29,6 +29,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}
+          <span className="sr-only">{title}</span>
         </Link>
       ) : (
         image
