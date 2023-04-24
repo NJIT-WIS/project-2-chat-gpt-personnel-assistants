@@ -1,0 +1,209 @@
+  [36;1mLH:ChromeLauncher [0mWaiting for browser. [36m+0ms[0m
+  [36;1mLH:ChromeLauncher [0mWaiting for browser... [36m+1ms[0m
+  [36;1mLH:ChromeLauncher [0mWaiting for browser..... [36m+513ms[0m
+  [36;1mLH:ChromeLauncher [0mWaiting for browser.....[32m√[0m [36m+2ms[0m
+  [36;1mLH:status [0mConnecting to browser [36m+575ms[0m
+  [36;1mLH:status [0mNavigating to about:blank [36m+7ms[0m
+  [36;1mLH:status [0mBenchmarking machine [36m+8ms[0m
+  [36;1mLH:status [0mPreparing target for navigation mode [36m+1s[0m
+  [36;1mLH:status [0mNavigating to about:blank [36m+14ms[0m
+  [36;1mLH:status [0mPreparing target for navigation [36m+6ms[0m
+  [36;1mLH:status [0mCleaning origin data [36m+14ms[0m
+  [36;1mLH:status [0mCleaning browser cache [36m+8ms[0m
+  [36;1mLH:status [0mPreparing network conditions [36m+11ms[0m
+  [36;1mLH:status [0mNavigating to http://localhost:3000/about [36m+60ms[0m
+  [35;1mLH:artifacts:getArtifact [0mDevtoolsLog [35m+4s[0m
+  [35;1mLH:artifacts:getArtifact [0mTrace [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mDevtoolsLog [35m+2ms[0m
+  [35;1mLH:artifacts:getArtifact [0mTrace [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mAccessibility [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mAnchorElements [35m+155ms[0m
+  [35;1mLH:artifacts:getArtifact [0mConsoleMessages [35m+17ms[0m
+  [35;1mLH:artifacts:getArtifact [0mCSSUsage [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mDoctype [35m+20ms[0m
+  [35;1mLH:artifacts:getArtifact [0mDOMStats [35m+1ms[0m
+  [35;1mLH:artifacts:getArtifact [0mEmbeddedContent [35m+4ms[0m
+  [35;1mLH:artifacts:getArtifact [0mFontSize [35m+2ms[0m
+  [35;1mLH:artifacts:getArtifact [0mInputs [35m+13ms[0m
+  [35;1mLH:artifacts:getArtifact [0mGlobalListeners [35m+2ms[0m
+  [35;1mLH:artifacts:getArtifact [0mImageElements [35m+3ms[0m
+  [35;1mLH:artifacts:getArtifact [0mInstallabilityErrors [35m+24ms[0m
+  [36;1mLH:status [0mGet webapp installability errors [36m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mInspectorIssues [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mJsUsage [35m+1ms[0m
+  [35;1mLH:artifacts:getArtifact [0mLinkElements [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mMainDocumentContent [35m+3ms[0m
+  [35;1mLH:artifacts:getArtifact [0mMetaElements [35m+3ms[0m
+  [35;1mLH:artifacts:getArtifact [0mNetworkUserAgent [35m+4ms[0m
+  [35;1mLH:artifacts:getArtifact [0mOptimizedImages [35m+1ms[0m
+  [35;1mLH:artifacts:getArtifact [0mResponseCompression [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mRobotsTxt [35m+6ms[0m
+  [35;1mLH:artifacts:getArtifact [0mServiceWorker [35m+34ms[0m
+  [35;1mLH:artifacts:getArtifact [0mScripts [35m+2ms[0m
+  [35;1mLH:artifacts:getArtifact [0mSourceMaps [35m+1ms[0m
+  [35;1mLH:artifacts:getArtifact [0mStacks [35m+39ms[0m
+  [36;1mLH:status [0mCollect stacks [36m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mTagsBlockingFirstPaint [35m+15ms[0m
+  [35;1mLH:artifacts:getArtifact [0mTapTargets [35m+3ms[0m
+  [35;1mLH:artifacts:getArtifact [0mTraceElements [35m+14ms[0m
+  [35;1mLH:artifacts:getArtifact [0mViewportDimensions [35m+39ms[0m
+  [35;1mLH:artifacts:getArtifact [0mWebAppManifest [35m+1ms[0m
+  [36;1mLH:status [0mGet webapp manifest [36m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mdevtoolsLogs [35m+1ms[0m
+  [35;1mLH:artifacts:getArtifact [0mtraces [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mFullPageScreenshot [35m+0ms[0m
+  [35;1mLH:artifacts:getArtifact [0mBFCacheFailures [35m+2s[0m
+  [36;1mLH:status [0mAnalyzing and running audits... [36m+899ms[0m
+  [36;1mLH:status [0mAuditing: Uses HTTPS [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Registers a service worker that controls page and `start_url` [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Has a `<meta name="viewport">` tag with `width` or `initial-scale` [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: First Contentful Paint [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Largest Contentful Paint [36m+20ms[0m
+  [36;1mLH:status [0mAuditing: First Meaningful Paint [36m+10ms[0m
+  [36;1mLH:status [0mAuditing: Speed Index [36m+5ms[0m
+  [36;1mLH:status [0mAuditing: Screenshot Thumbnails [36m+235ms[0m
+  [36;1mLH:status [0mAuditing: Final Screenshot [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Total Blocking Time [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Max Potential First Input Delay [36m+9ms[0m
+  [36;1mLH:status [0mAuditing: Cumulative Layout Shift [36m+5ms[0m
+  [36;1mLH:status [0mAuditing: No browser errors logged to the console [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Initial server response time was short [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Time to Interactive [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: User Timing marks and measures [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoid chaining critical requests [36m+3ms[0m
+  [36;1mLH:status [0mAuditing: Avoid multiple page redirects [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Web app manifest and service worker meet the installability requirements [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Configured for a custom splash screen [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Sets a theme color for the address bar. [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Manifest has a maskable icon [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Content is sized correctly for the viewport [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Displays images with correct aspect ratio [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Serves images with appropriate resolution [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Fonts with `font-display: optional` are preloaded [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids deprecated APIs [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Minimizes main-thread work [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: JavaScript execution time [36m+13ms[0m
+  [36;1mLH:status [0mAuditing: Preload key requests [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Preconnect to required origins [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: All text remains visible during webfont loads [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Diagnostics [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Network Requests [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Network Round Trip Times [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Server Backend Latencies [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Tasks [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Metrics [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Performance budget [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Timing budget [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Keep request counts low and transfer sizes small [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Minimize third-party usage [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Lazy load third-party resources with facades [36m+3ms[0m
+  [36;1mLH:status [0mAuditing: Largest Contentful Paint element [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Largest Contentful Paint image was not lazily loaded [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Avoid large layout shifts [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoid long main-thread tasks [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids `unload` event listeners [36m+3ms[0m
+  [36;1mLH:status [0mAuditing: Avoid non-composited animations [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Image elements have explicit `width` and `height` [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Page has valid source maps [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Preload Largest Contentful Paint image [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Ensure CSP is effective against XSS attacks [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Script Treemap Data [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Site works cross-browser [36m+63ms[0m
+  [36;1mLH:status [0mAuditing: Page transitions don't feel like they block on the network [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Each page has a URL [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[accesskey]` values are unique [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[aria-*]` attributes match their roles [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `button`, `link`, and `menuitem` elements have accessible names [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[aria-hidden="true"]` is not present on the document `<body>` [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[aria-hidden="true"]` elements do not contain focusable descendents [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: ARIA input fields have accessible names [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: ARIA `meter` elements have accessible names [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: ARIA `progressbar` elements have accessible names [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `[role]`s have all required `[aria-*]` attributes [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children. [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[role]`s are contained by their required parent element [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[role]` values are valid [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: ARIA toggle fields have accessible names [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: ARIA `tooltip` elements have accessible names [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: ARIA `treeitem` elements have accessible names [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[aria-*]` attributes have valid values [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[aria-*]` attributes are valid and not misspelled [36m+3ms[0m
+  [36;1mLH:status [0mAuditing: Buttons have an accessible name [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: The page contains a heading, skip link, or landmark region [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Background and foreground colors have a sufficient contrast ratio [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements. [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Definition list items are wrapped in `<dl>` elements [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Document has a `<title>` element [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `[id]` attributes on active, focusable elements are unique [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: ARIA IDs are unique [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: No form fields have multiple labels [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `<frame>` or `<iframe>` elements have a title [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Heading elements appear in a sequentially-descending order [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `<html>` element has a `[lang]` attribute [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `<html>` element has a valid value for its `[lang]` attribute [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Image elements have `[alt]` attributes [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `<input type="image">` elements have `[alt]` text [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Form elements have associated labels [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Links have a discernible name [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`). [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: The document does not use `<meta http-equiv="refresh">` [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5. [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `<object>` elements have alternate text [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: No element has a `[tabindex]` value greater than 0 [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table. [36m+4ms[0m
+  [36;1mLH:status [0mAuditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe. [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: `[lang]` attributes have a valid value [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: `<video>` elements contain a `<track>` element with `[kind="captions"]` [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Custom controls have associated labels [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Custom controls have ARIA roles [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: User focus is not accidentally trapped in a region [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Interactive controls are keyboard focusable [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Interactive elements indicate their purpose and state [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: The page has a logical tab order [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: The user's focus is directed to new content added to the page [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Offscreen content is hidden from assistive technology [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: HTML5 landmark elements are used to improve navigation [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Visual order on the page follows DOM order [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Uses efficient cache policy on static assets [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids enormous network payloads [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Defer offscreen images [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Eliminate render-blocking resources [36m+5ms[0m
+  [36;1mLH:status [0mAuditing: Minify CSS [36m+55ms[0m
+  [36;1mLH:status [0mAuditing: Minify JavaScript [36m+53ms[0m
+  [36;1mLH:status [0mAuditing: Reduce unused CSS [36m+266ms[0m
+  [36;1mLH:status [0mAuditing: Reduce unused JavaScript [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Serve images in next-gen formats [36m+7ms[0m
+  [36;1mLH:status [0mAuditing: Efficiently encode images [36m+4ms[0m
+  [36;1mLH:status [0mAuditing: Enable text compression [36m+3ms[0m
+  [36;1mLH:status [0mAuditing: Properly size images [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Use video formats for animated content [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Remove duplicate modules in JavaScript bundles [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Avoid serving legacy JavaScript to modern browsers [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Page has the HTML doctype [36m+256ms[0m
+  [36;1mLH:status [0mAuditing: Properly defines charset [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids an excessive DOM size [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids requesting the geolocation permission on page load [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: No issues in the `Issues` panel in Chrome Devtools [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Avoids `document.write()` [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Detected JavaScript libraries [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Avoids requesting the notification permission on page load [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Allows users to paste into input fields [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Use HTTP/2 [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Uses passive listeners to improve scrolling performance [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Document has a meta description [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Page has successful HTTP status code [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Document uses legible font sizes [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Links have descriptive text [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Links are crawlable [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Page isn’t blocked from indexing [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: robots.txt is valid [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Tap targets are sized appropriately [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Document has a valid `hreflang` [36m+2ms[0m
+  [36;1mLH:status [0mAuditing: Document avoids plugins [36m+1ms[0m
+  [36;1mLH:status [0mAuditing: Document has a valid `rel=canonical` [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Structured data is valid [36m+0ms[0m
+  [36;1mLH:status [0mAuditing: Page didn't prevent back/forward cache restoration [36m+1ms[0m
+  [36;1mLH:status [0mGenerating results... [36m+0ms[0m
+  [36;1mLH:Printer [0mjson output written to lighthouse-report.json [36m+34ms[0m
+  [36;1mLH:ChromeLauncher [0mKilling Chrome instance 10704 [36m+0ms[0m

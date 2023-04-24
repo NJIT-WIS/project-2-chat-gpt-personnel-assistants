@@ -3,7 +3,7 @@ import Footer from '../components/footer'
 import Meta from '../components/meta'
 import Menu from "./menu";
 
-export default function Layout({ preview, children,menuData,metaData }) {
+export default function Layout({ preview, children,menuData,metaData,footerData }) {
   return (
     <>
       <Meta metaData={metaData } />
@@ -12,7 +12,8 @@ export default function Layout({ preview, children,menuData,metaData }) {
    
         <main>{children}</main>
       </div>
-      <Footer />
+      {footerData&& <Footer  data={footerData} />}
+     
     </>
   )
 }
