@@ -11,7 +11,7 @@ export default function ModalPrivacy() {
     }
   }, []);
 
-  function handleOkayClick() {
+  function onClose() {
     localStorage.setItem('gdprResponse', 'accepted');
     setIsOpen(false);
   }
@@ -22,7 +22,7 @@ export default function ModalPrivacy() {
         as="div"
         className="fixed inset-0 z-50 overflow-y-auto"
         open={isOpen}
-        onClose={() => {}}
+        onClose={() => {onClose()}}
       >
         <div className="min-h-screen px-4 text-center">
           <Dialog.Overlay className="fixed inset-0 bg-black opacity-40" />
@@ -54,7 +54,7 @@ export default function ModalPrivacy() {
                 text-white px-4 py-1 text-base font-bold uppercase 
                hover:bg-green-800 hover:border-green-800 transition
                duration-200 whitespace-normal md:text-lg md:px-6 md:py-2"
-                onClick={handleOkayClick}
+                onClick={onClose}
               >
                 Okay
               </button>
