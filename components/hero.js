@@ -89,9 +89,9 @@ export default function HeroComp({
             <h2 className="text-white text-lg font-bold md:text-xl">
               My Webclass
             </h2>
-            <h1 className="text-white text-2xl font-bold max-w-xl md:text-3xl lg:text-4xl">
+            <h3 className="text-white text-2xl font-bold max-w-xl md:text-3xl lg:text-4xl">
               {title}
-            </h1>
+            </h3>
             {subtitle && (
               <p className="text-white text-lg mt-2 max-w-md md:text-xl lg:text-2xl">
                 {subtitle}
