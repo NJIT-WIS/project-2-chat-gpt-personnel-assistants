@@ -25,8 +25,13 @@ async function checkPageAltImg(pageUrl) {
   const images = await page.$$('img');
   for (const image of images) {
     const altText = await image.getAttribute('alt');
+    const srcAttribute = await image.getAttribute('src');
     expect(altText).toBeDefined();
     expect(altText).not.toBe('');
+    console.log(altText);
+    expect(srcAttribute).toBeDefined();
+    expect(srcAttribute).not.toBe('');
+    console.log(srcAttribute);
   }
 
   await browser.close();
