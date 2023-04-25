@@ -40,3 +40,4 @@ next-env.d.ts
 .env
 studio/.env.development
 lighthouse-report.json
+playwright-report/*
