@@ -5,8 +5,8 @@
     "build": "next build",
     "start": "next start",
     "studio:dev": "npm --prefix studio run start",
-    "studio:deploy": "npx vercel env pull && npm --prefix studio run deploy",
-    "validate-html": "node validate-html.js"
+    "studio:deploy": "npx vercel env pull && npm --prefix studio run deploy"
+
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -51,9 +51,7 @@
     "sanity-plugin-asset-source-openai": "^1.1.2",
     "sanity-plugin-asset-source-unsplash": "^1.0.6",
     "sanity-plugin-markdown": "^4.1.0",
-    "tailgrids": "^2.0.1",
-    "victormono": "^1.5.4",
-    "vnu-jar": "^21.7.12"
+    "victormono": "^1.5.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
