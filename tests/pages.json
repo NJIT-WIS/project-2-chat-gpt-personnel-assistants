@@ -21,29 +21,8 @@
           "content": "index,follow"
         }
       ]
-    },
-    {
-      "path": "/about",
-      "title": "About",
-      "metaTags": [
-        {
-          "name": "description",
-          "content": "This is a description of the about page content"
-        },
-        {
-          "name": "keywords",
-          "content": "keyword1, keyword2, keyword3"
-        },
-        {
-          "name": "viewport",
-          "content": "width=device-width, initial-scale=1.0"
-        },
-        {
-          "name": "robots",
-          "content": "index,follow"
-        }
-      ]
     }
+   
 
   ]
 }
