@@ -28,39 +28,45 @@ export default function ShareButtons({ slug }) {
         <button
           onClick={() => openInNewWindow(facebookShareUrl)}
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Share on Facebook"
         >
-          <FaFacebookF />
+          <FaFacebookF aria-hidden="true"/>
         </button>
       </HoverCard>
       <HoverCard label="Share on Twitter">
         <button
           onClick={() => openInNewWindow(twitterShareUrl)}
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Share on Twitter"
         >
-          <FaTwitter />
+          <FaTwitter aria-hidden="true"/>
         </button>
       </HoverCard>
       <HoverCard label="Share on LinkedIn">
         <button
           onClick={() => openInNewWindow(linkedInShareUrl)}
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Share on LinkedIn"
         >
-          <FaLinkedinIn />
+          <FaLinkedinIn  aria-hidden="true"/>
         </button>
       </HoverCard>
       <HoverCard label="Share on Reddit">
         <button
           onClick={() => openInNewWindow(redditShareUrl)}
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Share on Reddit"
         >
-          <FaRedditAlien />
+          <FaRedditAlien aria-hidden="true"/>
         </button>
       </HoverCard>
       <HoverCard label="Copy link">
         <button
+        className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+         aria-label="Copy link"
           onClick={() => copyLink(`https://www.jgis219.com/posts/${slug}`)}
         >
-          <Link2Icon className="text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+          <Link2Icon aria-hidden="true"  />
         </button>
       </HoverCard>
     </div>
