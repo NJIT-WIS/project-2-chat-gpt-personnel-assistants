@@ -9,7 +9,7 @@ const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 const TIMEOUT = 30000;
 pages.forEach((page) => {
 
-  test(`Page "${page.path}" should have header tags`, async ({}) => {
+  test(`Page "${page.path}" should have cookie modal`, async ({}) => {
     console.log(page.path)
     const pageUrl = `${config.use.baseURL}${page.path}`;
 
