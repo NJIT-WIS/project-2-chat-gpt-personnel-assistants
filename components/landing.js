@@ -1,34 +1,34 @@
-import Layout from "./layout";
-import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
-import Container from "./container";
-import HeroContainer from "./heroContainers";
-import Intro from "./intro";
-import HeroPost from "./hero-post";
-import MoreStories from "./more-stories";
-import HeroComp from "./hero"; // Import the Hero component
-import Cookies from "js-cookie";
-import React, { useState, useEffect } from "react";
-import PostContainer from "./PostContainer";
+import Layout from './layout'
+import Head from 'next/head'
+import { CMS_NAME } from '../lib/constants'
+import Container from './container'
+import HeroContainer from './heroContainers'
+import Intro from './intro'
+import HeroPost from './hero-post'
+import MoreStories from './more-stories'
+import HeroComp from './hero' // Import the Hero component
+import Cookies from 'js-cookie'
+import React, { useState, useEffect } from 'react'
+import PostContainer from './PostContainer'
 export default function Landing({ allPosts, Hero, preview }) {
-  const [heroPost, ...morePosts] = allPosts || [];
-  const [number, setNumber] = useState(null);
-  const posts = allPosts || [];
+  const [heroPost, ...morePosts] = allPosts || []
+  const [number, setNumber] = useState(null)
+  const posts = allPosts || []
 
-  const heroLength = Hero.length;
+  const heroLength = Hero.length
 
   useEffect(() => {
-    const storedNumber = Cookies.get("number");
+    const storedNumber = Cookies.get('number')
     if (storedNumber) {
-      setNumber(parseInt(storedNumber, 10));
+      setNumber(parseInt(storedNumber, 10))
     } else {
-      const newNumber = Math.floor(Math.random() * heroLength);
-      Cookies.set("number", newNumber, { expires: 1 });
-      setNumber(newNumber);
+      const newNumber = Math.floor(Math.random() * heroLength)
+      Cookies.set('number', newNumber, { expires: 1 })
+      setNumber(newNumber)
     }
-  }, [heroLength]);
+  }, [heroLength])
 
-  const hero = Hero[number] || [];
+  const hero = Hero[number] || []
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Landing({ allPosts, Hero, preview }) {
         <Head>
           <title>My Web Class</title>
         </Head>
- 
+
         <Container>
           <HeroComp
             title={hero.title}
@@ -47,11 +47,9 @@ export default function Landing({ allPosts, Hero, preview }) {
           />
         </Container>
         {heroPost && (
-          <Container>
-            {morePosts.length >= 0 && <MoreStories posts={posts} />}
-          </Container>
+          <Container>{morePosts.length >= 0 && <MoreStories posts={posts} />}</Container>
         )}
       </Layout>
     </>
-  );
+  )
 }

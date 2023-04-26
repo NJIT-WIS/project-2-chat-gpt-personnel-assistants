@@ -3,6 +3,30 @@
     {
       "path": "/",
       "title": "MyWebClass.org",
+      "pageName":"home",
+      "metaTags": [
+        {
+          "name": "description",
+          "content": "This is a description of the home page content"
+        },
+        {
+          "name": "keywords",
+          "content": "keyword1, keyword2, keyword3"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "index,follow"
+        }
+      ]
+    },
+    {
+      "path": "/about",
+      "title": "MyWebClass.org/about",
+      "pageName":"about",
       "metaTags": [
         {
           "name": "description",
@@ -22,6 +46,30 @@
         }
       ]
     }
+   ,    {
+    "path": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying",
+    "title": "MyWebClass.org//posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying",
+    "pageName":"post",
+    "metaTags": [
+      {
+        "name": "description",
+        "content": "This is a description of the home page content"
+      },
+      {
+        "name": "keywords",
+        "content": "keyword1, keyword2, keyword3"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow"
+      }
+    ]
+  }
+ 
    
 
   ]

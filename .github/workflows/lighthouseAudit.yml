@@ -52,10 +52,7 @@ jobs:
         with:
           name: test-artifacts
           path: |
-            lighthouse-report.json
-            test-results/
-            **/*.mp4
-            **/*.png
+                test-results/**/*.json
 
       - name: Exit with failure if tests failed
         if: env.tests_failed == 'true'

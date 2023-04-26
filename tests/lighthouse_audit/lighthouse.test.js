@@ -8,8 +8,8 @@ const TIMEOUT = 30000;
 
 const { chromium } = require('playwright');
 
-const runLighthouseAudit = async (pageUrl, expectedScores) => {
-  const reportPath = 'lighthouse-report.json';
+const runLighthouseAudit = async (pageUrl, expectedScores,page) => {
+  const reportPath = `test-results/${page.pageName}_lighthouse-report.json`;
   const command = `npx lighthouse ${pageUrl} --output json --output-path ${reportPath} --chrome-flags="--headless --no-sandbox"`;
 
   try {
@@ -43,6 +43,6 @@ pages.forEach((page) => {
       performance: 90,
     };
 
-    await runLighthouseAudit(pageUrl, expectedScores);
+    await runLighthouseAudit(pageUrl, expectedScores,page);
   });
 });
