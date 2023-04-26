@@ -1,13 +1,16 @@
 {
   "pages": [
     {
-      "path": "/"
+      "path": "/",
+      "title": "MyWebClass.org"
     },
     {
-      "path": "/about"
+      "path": "/about",
+      "title": "MyWebClass.org"
     },
     {
-      "path": "/privacy"
+      "path": "/privacy",
+      "title": "MyWebClass.org"
     }
   ]
 }
