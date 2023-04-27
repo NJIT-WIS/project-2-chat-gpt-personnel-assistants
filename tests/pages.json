@@ -1,16 +1,28 @@
 {
-    "pages": [
-      {
-        "path": "/",
-        "title": "MyWebClass.org"
-        
-      }
-      ,
-      {
-        "path": "/about",
-        "title": "MyWebClass.org"
-        
-      }
-    ]
+  "pages": [
+    {
+      "path": "/",
+      "title": "MyWebClass.org",
+      "metaTags": [
+        {
+          "name": "description",
+          "content": "This is a description of the home page content"
+        },
+        {
+          "name": "keywords",
+          "content": "keyword1, keyword2, keyword3"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "index,follow"
+        }
+      ]
+    }
+   
+
+  ]
 }
-  

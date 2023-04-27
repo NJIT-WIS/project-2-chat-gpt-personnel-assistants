@@ -5,13 +5,9 @@ import { urlForImage } from '../lib/sanity'
 
 export default function CoverImage({ title, slug, image: source, priority }) {
   const image = source?.asset?._ref ? (
-    <div
-      className={cn('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug,
-      })}
-    >
+    <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
       <Image
-        className="w-full h-auto"
+            className="object-cover"
         width={2000}
         height={1000}
         alt={`Cover Image for ${title}`}
@@ -21,7 +17,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <div />
   )
 
   return (
@@ -29,6 +25,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}
+          <span className="sr-only">{title}</span>
         </Link>
       ) : (
         image
