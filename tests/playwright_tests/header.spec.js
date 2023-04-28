@@ -23,9 +23,26 @@ async function checkPageHeaderTags(pageUrl) {
   await page.goto(pageUrl, { timeout: TIMEOUT });
 
   const headingTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  const illegalTags = ["h1", "h2", "h3", "h4", "h5", "h6", "section", "article", "aside", "nav", "header", "footer", "form", "input", "select", "textarea", "div", "p", "ul", "ol"];
+
   for (const tag of headingTags) {
     const headingElement = await page.$(tag);
     expect(headingElement).toBeDefined();
+
+    // check if the tag has content
+    const tagContent = await page.evaluate((tag) => tag.textContent.trim(), headingElement);
+    expect(tagContent).not.toBe('');
+
+    // check if the tag closes correctly
+    const tagHtml = await page.evaluate((tag) => tag.outerHTML, headingElement);
+    expect(tagHtml.endsWith(`</${tag}>`)).toBe(true);
+
+    // check if no illegal tags are present inside the heading tag
+    const illegalTag = await page.evaluate((tag, illegalTags) => {
+      const illegalTag = Array.from(tag.querySelectorAll(illegalTags.join(',')));
+      return illegalTag.length > 0 ? illegalTag[0].tagName : null;
+    }, headingElement, illegalTags);
+    expect(illegalTag).toBeNull();
   }
 
   await browser.close();

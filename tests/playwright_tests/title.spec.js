@@ -9,11 +9,9 @@ const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 const TIMEOUT = 30000;
 pages.forEach((page) => {
 
-  test(`Page "${page.path}" should have the correct title`, async ({}) => {
+  test(`Page "${page.path}" should have a title`, async ({}) => {
     console.log(page.path)
     const pageUrl = `${config.use.baseURL}${page.path}`;
-
-    const expectedTitle = page.title;
     await checkPageForTitle(pageUrl);
   });
 });
