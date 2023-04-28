@@ -1,11 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import { logEvent } from "../lib/gtm";
 import React, { useState } from "react";
 import ModalMailchimps from "./ModalMailchimps";
 import * as Toast from "@radix-ui/react-toast";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
-import { Cross2Icon } from '@radix-ui/react-icons';
+import { Cross2Icon } from "@radix-ui/react-icons";
+import { urlForImage } from "../lib/sanity";
 export default function HeroComp({
   title,
   subtitle,
@@ -56,7 +57,7 @@ export default function HeroComp({
 
   return (
     <section>
-      <Toast.Provider >
+      <Toast.Provider>
         <Toast.Root
           className="ToastRoot"
           open={toastOpen}
@@ -68,10 +69,11 @@ export default function HeroComp({
           </Toast.Description>
           <Toast.Action className="ToastAction" asChild altText="Close">
             <button
-              className="IconButton" aria-label="Close"
+              className="IconButton"
+              aria-label="Close"
               onClick={() => setToastOpen(false)}
             >
-                 <Cross2Icon />
+              <Cross2Icon />
             </button>
           </Toast.Action>
         </Toast.Root>
@@ -79,19 +81,24 @@ export default function HeroComp({
       </Toast.Provider>
       <div className="relative heroComp ">
         <div className="relative w-full h-[500px]">
-          <img
-            src={backgroundImage}
+          <Image
             className="absolute w-full h-full object-cover object-center"
-            alt={title}
+            width={2000}
+            height={1000}
+            alt={`Cover Image for ${title}`}
+            src={urlForImage(backgroundImage).height(1000).width(2000).url()}
+            sizes="100vw"
+            priority
           />
+
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
           <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-start p-6 space-y-2 md:space-y-4">
             <h2 className="text-white text-lg font-bold md:text-xl">
               My Webclass
             </h2>
-            <h1 className="text-white text-2xl font-bold max-w-xl md:text-3xl lg:text-4xl">
+            <h3 className="text-white text-2xl font-bold max-w-xl md:text-3xl lg:text-4xl">
               {title}
-            </h1>
+            </h3>
             {subtitle && (
               <p className="text-white text-lg mt-2 max-w-md md:text-xl lg:text-2xl">
                 {subtitle}
@@ -104,6 +111,7 @@ export default function HeroComp({
                           text-white px-4 py-1 text-base font-bold uppercase 
                          hover:bg-green-800 hover:border-green-800 transition
                          duration-200 whitespace-normal md:text-lg md:px-6 md:py-2"
+                aria-label="volunteer to work on my web class"
               >
                 volunteer
               </button>

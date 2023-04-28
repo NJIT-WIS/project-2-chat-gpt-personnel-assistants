@@ -10,6 +10,12 @@ export const page = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "showHero",
+      title: "Show Hero",
+      type: "boolean",
+      description: "Toggle to show hero on the frontend",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
