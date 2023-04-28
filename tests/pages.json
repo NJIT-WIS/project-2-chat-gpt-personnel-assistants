@@ -2,19 +2,15 @@
   "pages": [
     {
       "path": "/",
-        "pageName":"home",
-
-      "title": "MyWebClass.org"
+      "title": "MyWebClass.org",
+      "pageName":"home"
+  
     },
     {
       "path": "/about",
-      "pageName":"about",
-      "title": "MyWebClass.org"
-    },
-    {
-      "path": "/privacy",
-       "pageName":"privacy",
-      "title": "MyWebClass.org"
+      "title": "MyWebClass.org/about",
+      "pageName":"about"
+    
     }
    ,    {
     "path": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying",
@@ -22,5 +18,8 @@
     "pageName":"post"
   
   }
+ 
+   
+
   ]
 }

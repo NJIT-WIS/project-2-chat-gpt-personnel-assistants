@@ -75,13 +75,13 @@
   },
   "suites": [
     {
-      "title": "lighthouse_audit\\lighthouse.test.js",
-      "file": "lighthouse_audit/lighthouse.test.js",
+      "title": "playwright_tests\\accessibilityALL.spec.js",
+      "file": "playwright_tests/accessibilityALL.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Page \"/\" should have minimum scores for all categories",
+          "title": "Page \"/\" checking all pages for any accessibility issues",
           "ok": false,
           "tags": [],
           "tests": [
@@ -95,63 +95,143 @@
                 {
                   "workerIndex": 0,
                   "status": "failed",
-                  "duration": 18783,
+                  "duration": 2150,
                   "error": {
-                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m\n    at runLighthouseAudit (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:27:27)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:46:11"
+                    "message": "Cannot read properties of undefined (reading 'id')",
+                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js",
-                        "column": 27,
-                        "line": 27
+                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                        "column": 22,
+                        "line": 43
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m\n\n\u001b[90m   at \u001b[39mlighthouse_audit\\lighthouse.test.js:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m`${category} score:`\u001b[39m\u001b[33m,\u001b[39m categoryScore)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     expect(categoryScore)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(expectedScores[category])\u001b[33m;\u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m  \u001b[0m\n\u001b[0m \u001b[90m 29 |\u001b[39m   \u001b[0m\n\u001b[0m \u001b[90m 30 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at runLighthouseAudit (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:27:27)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:46:11\u001b[22m"
+                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
                     }
                   ],
                   "stdout": [
                     {
                       "text": "/\n"
-                    },
-                    {
-                      "text": "accessibility score: \u001b[33m100\u001b[39m\n"
-                    },
-                    {
-                      "text": "best-practices score: \u001b[33m92\u001b[39m\n"
-                    },
-                    {
-                      "text": "seo score: \u001b[33m100\u001b[39m\n"
-                    },
-                    {
-                      "text": "performance score: \u001b[33m45\u001b[39m\n"
                     }
                   ],
-                  "stderr": [
-                    {
-                      "buffer": "ICAbWzM2OzFtTEg6Q2hyb21lTGF1bmNoZXIgG1swbVdhaXRpbmcgZm9yIGJyb3dzZXIuIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6Q2hyb21lTGF1bmNoZXIgG1swbVdhaXRpbmcgZm9yIGJyb3dzZXIuLi4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpDaHJvbWVMYXVuY2hlciAbWzBtV2FpdGluZyBmb3IgYnJvd3Nlci4uLi4uIBtbMzZtKzUxNm1zG1swbQogIBtbMzY7MW1MSDpDaHJvbWVMYXVuY2hlciAbWzBtV2FpdGluZyBmb3IgYnJvd3Nlci4uLi4uG1szMm3iiJobWzBtIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1Db25uZWN0aW5nIHRvIGJyb3dzZXIgG1szNm0rNTIwbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtTmF2aWdhdGluZyB0byBhYm91dDpibGFuayAbWzM2bSs4bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQmVuY2htYXJraW5nIG1hY2hpbmUgG1szNm0rN21zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbVByZXBhcmluZyB0YXJnZXQgZm9yIG5hdmlnYXRpb24gbW9kZSAbWzM2bSsxcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1OYXZpZ2F0aW5nIHRvIGFib3V0OmJsYW5rIBtbMzZtKzEzbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtUHJlcGFyaW5nIHRhcmdldCBmb3IgbmF2aWdhdGlvbiAbWzM2bSs2bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQ2xlYW5pbmcgb3JpZ2luIGRhdGEgG1szNm0rMjBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1DbGVhbmluZyBicm93c2VyIGNhY2hlIBtbMzZtKzExbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtUHJlcGFyaW5nIG5ldHdvcmsgY29uZGl0aW9ucyAbWzM2bSsxMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbU5hdmlnYXRpbmcgdG8gaHR0cDovL2xvY2FsaG9zdDozMDAwLyAbWzM2bSs3MW1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbURldnRvb2xzTG9nIBtbMzVtKzdzG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbVRyYWNlIBtbMzVtKzBtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1EZXZ0b29sc0xvZyAbWzM1bSszbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtVHJhY2UgG1szNW0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUFjY2Vzc2liaWxpdHkgG1szNW0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUFuY2hvckVsZW1lbnRzIBtbMzVtKzE2Mm1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUNvbnNvbGVNZXNzYWdlcyAbWzM1bSsyN21zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUNTU1VzYWdlIBtbMzVtKzBtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1Eb2N0eXBlIBtbMzVtKzIxbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtRE9NU3RhdHMgG1szNW0rMW1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUVtYmVkZGVkQ29udGVudCAbWzM1bSszbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtRm9udFNpemUgG1szNW0rMm1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUlucHV0cyAbWzM1bSsxNW1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUdsb2JhbExpc3RlbmVycyAbWzM1bSszbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSW1hZ2VFbGVtZW50cyAbWzM1bSsybXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSW5zdGFsbGFiaWxpdHlFcnJvcnMgG1szNW0rMTU1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtR2V0IHdlYmFwcCBpbnN0YWxsYWJpbGl0eSBlcnJvcnMgG1szNm0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUluc3BlY3Rvcklzc3VlcyAbWzM1bSsxbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSnNVc2FnZSAbWzM1bSswbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtTGlua0VsZW1lbnRzIBtbMzVtKzFtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1NYWluRG9jdW1lbnRDb250ZW50IBtbMzVtKzNtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1NZXRhRWxlbWVudHMgG1szNW0rMm1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbU5ldHdvcmtVc2VyQWdlbnQgG1szNW0rNG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbU9wdGltaXplZEltYWdlcyAbWzM1bSswbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtUmVzcG9uc2VDb21wcmVzc2lvbiAbWzM1bSswbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtUm9ib3RzVHh0IBtbMzVtKzRtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1TZXJ2aWNlV29ya2VyIBtbMzVtKzMxMm1z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bSsxMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBDdW11bGF0aXZlIExheW91dCBTaGlmdCAbWzM2bSs1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE5vIGJyb3dzZXIgZXJyb3JzIGxvZ2dlZCB0byB0aGUgY29uc29sZSAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEluaXRpYWwgc2VydmVyIHJlc3BvbnNlIHRpbWUgd2FzIHNob3J0IBtbMzZtKzNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVGltZSB0byBJbnRlcmFjdGl2ZSAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFVzZXIgVGltaW5nIG1hcmtzIGFuZCBtZWFzdXJlcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkIGNoYWluaW5nIGNyaXRpY2FsIHJlcXVlc3RzIBtbMzZtKzVtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWQgbXVsdGlwbGUgcGFnZSByZWRpcmVjdHMgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBXZWIgYXBwIG1hbmlmZXN0IGFuZCBzZXJ2aWNlIHdvcmtlciBtZWV0IHRoZSBpbnN0YWxsYWJpbGl0eSByZXF1aXJlbWVudHMgG1szNm0rM21zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBDb25maWd1cmVkIGZvciBhIGN1c3RvbSBzcGxhc2ggc2NyZWVuIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogU2V0cyBhIHRoZW1lIGNvbG9yIGZvciB0aGUgYWRkcmVzcyBiYXIuIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTWFuaWZlc3QgaGFzIGEgbWFza2FibGUgaWNvbiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IENvbnRlbnQgaXMgc2l6ZWQgY29ycmVjdGx5IGZvciB0aGUgdmlld3BvcnQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEaXNwbGF5cyBpbWFnZXMgd2l0aCBjb3JyZWN0IGFzcGVjdCByYXRpbyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFNlcnZlcyBpbWFnZXMgd2l0aCBhcHByb3ByaWF0ZSByZXNvbHV0aW9uIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRm9udHMgd2l0aCBgZm9udC1kaXNwbGF5OiBvcHRpb25hbGAgYXJlIHByZWxvYWRlZCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkcyBkZXByZWNhdGVkIEFQSXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBNaW5pbWl6ZXMgbWFpbi10aHJlYWQgd29yayAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEphdmFTY3JpcHQgZXhlY3V0aW9uIHRpbWUgG1szNm0rMTNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUHJlbG9hZCBrZXkgcmVxdWVzdHMgG1szNm0rM21zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQcmVjb25uZWN0IHRvIHJlcXVpcmVkIG9yaWdpbnMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBbGwgdGV4dCByZW1haW5zIHZpc2libGUgZHVyaW5nIHdlYmZvbnQgbG9hZHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEaWFnbm9zdGljcyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE5ldHdvcmsgUmVxdWVzdHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBOZXR3b3JrIFJvdW5kIFRyaXAgVGltZXMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBTZXJ2ZXIgQmFja2VuZCBMYXRlbmNpZXMgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUYXNrcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE1ldHJpY3MgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQZXJmb3JtYW5jZSBidWRnZXQgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUaW1pbmcgYnVkZ2V0IBtbMzZtKzNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogS2VlcCByZXF1ZXN0IGNvdW50cyBsb3cgYW5kIHRyYW5zZmVyIHNpemVzIHNtYWxsIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTWluaW1pemUgdGhpcmQtcGFydHkgdXNhZ2UgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBMYXp5IGxvYWQgdGhpcmQtcGFydHkgcmVzb3VyY2VzIHdpdGggZmFjYWRlcyAbWzM2bSs2bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExhcmdlc3QgQ29udGVudGZ1bCBQYWludCBlbGVtZW50IBtbMzZtKzNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTGFyZ2VzdCBDb250ZW50ZnVsIFBhaW50IGltYWdlIHdhcyBub3QgbGF6aWx5IGxvYWRlZCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkIGxhcmdlIGxheW91dCBzaGlmdHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZCBsb25nIG1haW4tdGhyZWFkIHRhc2tzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWRzIGB1bmxvYWRgIGV2ZW50IGxpc3RlbmVycyAbWzM2bSszbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkIG5vbi1jb21wb3NpdGVkIGFuaW1hdGlvbnMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBJbWFnZSBlbGVtZW50cyBoYXZlIGV4cGxpY2l0IGB3aWR0aGAgYW5kIGBoZWlnaHRgIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUGFnZSBoYXMgdmFsaWQgc291cmNlIG1hcHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQcmVsb2FkIExhcmdlc3QgQ29udGVudGZ1bCBQYWludCBpbWFnZSAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVuc3VyZSBDU1AgaXMgZWZmZWN0aXZlIGFnYWluc3QgWFNTIGF0dGFja3MgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBTY3JpcHQgVHJlZW1hcCBEYXRhIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogU2l0ZSB3b3JrcyBjcm9zcy1icm93c2VyIBtbMzZtKzg1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFBhZ2UgdHJhbnNpdGlvbnMgZG9uJ3QgZmVlbCBsaWtlIHRoZXkgYmxvY2sgb24gdGhlIG5ldHdvcmsgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBFYWNoIHBhZ2UgaGFzIGEgVVJMIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthY2Nlc3NrZXldYCB2YWx1ZXMgYXJlIHVuaXF1ZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbYXJpYS0qXWAgYXR0cmlidXRlcyBtYXRjaCB0aGVpciByb2xlcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBidXR0b25gLCBgbGlua2AsIGFuZCBgbWVudWl0ZW1gIGVsZW1lbnRzIGhhdmUgYWNjZXNzaWJsZSBuYW1lcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbYXJpYS1oaWRkZW49InRydWUiXWAgaXMgbm90IHByZXNlbnQgb24gdGhlIGRvY3VtZW50IGA8Ym9keT5gIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthcmlhLWhpZGRlbj0idHJ1ZSJdYCBlbGVtZW50cyBkbyBub3QgY29udGFpbiBmb2N1c2FibGUgZGVzY2VuZGVudHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIGlucHV0IGZpZWxkcyBoYXZlIGFjY2Vzc2libGUgbmFtZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIGBtZXRlcmAgZWxlbWVudHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQVJJQSBgcHJvZ3Jlc3NiYXJgIGVsZW1lbnRzIGhhdmUgYWNjZXNzaWJsZSBuYW1lcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbcm9sZV1gcyBoYXZlIGFsbCByZXF1aXJlZCBgW2FyaWEtKl1gIGF0dHJpYnV0ZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBFbGVtZW50cyB3aXRoIGFuIEFSSUEgYFtyb2xlXWAgdGhhdCByZXF1aXJlIGNoaWxkcmVuIHRvIGNvbnRhaW4gYSBzcGVjaWZpYyBgW3JvbGVdYCBoYXZlIGFsbCByZXF1aXJlZCBjaGlsZHJlbi4gG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgW3JvbGVdYHMgYXJlIGNvbnRhaW5lZCBieSB0aGVpciByZXF1aXJlZCBwYXJlbnQgZWxlbWVudCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbcm9sZV1gIHZhbHVlcyBhcmUgdmFsaWQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIHRvZ2dsZSBmaWVsZHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQVJJQSBgdG9vbHRpcGAgZWxlbWVudHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQVJJQSBgdHJlZWl0ZW1gIGVsZW1lbnRzIGhhdmUgYWNjZXNzaWJsZSBuYW1lcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbYXJpYS0qXWAgYXR0cmlidXRlcyBoYXZlIHZhbGlkIHZhbHVlcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbYXJpYS0qXWAgYXR0cmlidXRlcyBhcmUgdmFsaWQgYW5kIG5vdCBtaXNzcGVsbGVkIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQnV0dG9ucyBoYXZlIGFuIGFjY2Vzc2libGUgbmFtZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFRoZSBwYWdlIGNvbnRhaW5zIGEgaGVhZGluZywgc2tpcCBsaW5rLCBvciBsYW5kbWFyayByZWdpb24gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBCYWNrZ3JvdW5kIGFuZCBmb3JlZ3JvdW5kIGNvbG9ycyBoYXZlIGEgc3VmZmljaWVudCBjb250cmFzdCByYXRpbyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8ZGw+YCdzIGNvbnRhaW4gb25seSBwcm9wZXJseS1vcmRlcmVkIGA8ZHQ+YCBhbmQgYDxkZD5gIGdyb3VwcywgYDxzY3JpcHQ+YCwgYDx0ZW1wbGF0ZT5gIG9yIGA8ZGl2PmAgZWxlbWVudHMuIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRGVmaW5pdGlvbiBsaXN0IGl0ZW1zIGFyZSB3cmFwcGVkIGluIGA8ZGw+YCBlbGVtZW50cyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERvY3VtZW50IGhhcyBhIGA8dGl0bGU+YCBlbGVtZW50IBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFtpZF1gIGF0dHJpYnV0ZXMgb24gYWN0aXZlLCBmb2N1c2FibGUgZWxlbWVudHMgYXJlIHVuaXF1ZSAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEFSSUEgSURzIGFyZSB1bmlxdWUgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBObyBmb3JtIGZpZWxkcyBoYXZlIG11bHRpcGxlIGxhYmVscyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8ZnJhbWU+YCBvciBgPGlmcmFtZT5gIGVsZW1lbnRzIGhhdmUgYSB0aXRsZSAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEhlYWRpbmcgZWxlbWVudHMgYXBwZWFyIGluIGEgc2VxdWVudGlhbGx5LWRlc2NlbmRpbmcgb3JkZXIgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgPGh0bWw+YCBlbGVtZW50IGhhcyBhIGBbbGFuZ11gIGF0dHJpYnV0ZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8aHRtbD5gIGVsZW1lbnQgaGFzIGEgdmFsaWQgdmFsdWUgZm9yIGl0cyBgW2xhbmddYCBhdHRyaWJ1dGUgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBJbWFnZSBlbGVtZW50cyBoYXZlIGBbYWx0XWAgYXR0cmlidXRlcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8aW5wdXQgdHlwZT0iaW1hZ2UiPmAgZWxlbWVudHMgaGF2ZSBgW2FsdF1gIHRleHQgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBGb3JtIGVsZW1lbnRzIGhhdmUgYXNzb2NpYXRlZCBsYWJlbHMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBMaW5rcyBoYXZlIGEgZGlzY2VybmlibGUgbmFtZSAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExpc3RzIGNvbnRhaW4gb25seSBgPGxpPmAgZWxlbWVudHMgYW5kIHNjcmlwdCBzdXBwb3J0aW5nIGVsZW1lbnRzIChgPHNjcmlwdD5gIGFuZCBgPHRlbXBsYXRlPmApLiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExpc3QgaXRlbXMgKGA8bGk+YCkgYXJlIGNvbnRhaW5lZCB3aXRoaW4gYDx1bD5gLCBgPG9sPmAgb3IgYDxtZW51PmAgcGFyZW50IGVsZW1lbnRzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVGhlIGRvY3VtZW50IGRvZXMgbm90IHVzZSBgPG1ldGEgaHR0cC1lcXVpdj0icmVmcmVzaCI+YCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbdXNlci1zY2FsYWJsZT0ibm8iXWAgaXMgbm90IHVzZWQgaW4gdGhlIGA8bWV0YSBuYW1lPSJ2aWV3cG9ydCI+YCBlbGVtZW50IGFuZCB0aGUgYFttYXhpbXVtLXNjYWxlXWAgYXR0cmlidXRlIGlzIG5vdCBsZXNzIHRoYW4gNS4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgPG9iamVjdD5gIGVsZW1lbnRzIGhhdmUgYWx0ZXJuYXRlIHRleHQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBObyBlbGVtZW50IGhhcyBhIGBbdGFiaW5kZXhdYCB2YWx1ZSBncmVhdGVyIHRoYW4gMCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IENlbGxzIGluIGEgYDx0YWJsZT5gIGVsZW1lbnQgdGhhdCB1c2UgdGhlIGBbaGVhZGVyc11gIGF0dHJpYnV0ZSByZWZlciB0byB0YWJsZSBjZWxscyB3aXRoaW4gdGhlIHNhbWUgdGFibGUuIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDx0aD5gIGVsZW1lbnRzIGFuZCBlbGVtZW50cyB3aXRoIGBbcm9sZT0iY29sdW1uaGVhZGVyIi8icm93aGVhZGVyIl1gIGhhdmUgZGF0YSBjZWxscyB0aGV5IGRlc2NyaWJlLiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbbGFuZ11gIGF0dHJpYnV0ZXMgaGF2ZSBhIHZhbGlkIHZhbHVlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDx2aWRlbz5gIGVsZW1lbnRzIGNvbnRhaW4gYSBgPHRyYWNrPmAgZWxlbWVudCB3aXRoIGBba2luZD0iY2FwdGlvbnMiXWAgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBDdXN0b20gY29udHJvbHMgaGF2ZSBhc3NvY2lhdGVkIGxhYmVscyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEN1c3RvbSBjb250cm9scyBoYXZlIEFSSUEgcm9sZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBVc2VyIGZvY3VzIGlzIG5vdCBhY2NpZGVudGFsbHkgdHJhcHBlZCBpbiBhIHJlZ2lvbiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEludGVyYWN0aXZlIGNvbnRyb2xzIGFyZSBrZXlib2FyZCBmb2N1c2FibGUgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBJbnRlcmFjdGl2ZSBlbGVtZW50cyBpbmRpY2F0ZSB0aGVpciBwdXJwb3NlIGFuZCBzdGF0ZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFRoZSBwYWdlIGhhcyBhIGxvZ2ljYWwgdGFiIG9yZGVyIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVGhlIHVzZXIncyBmb2N1cyBpcyBkaXJlY3RlZCB0byBuZXcgY29udGVudCBhZGRlZCB0byB0aGUgcGFnZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE9mZnNjcmVlbiBjb250ZW50IGlzIGhpZGRlbiBmcm9tIGFzc2lzdGl2ZSB0ZWNobm9sb2d5IBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogSFRNTDUgbGFuZG1hcmsgZWxlbWVudHMgYXJlIHVzZWQgdG8gaW1wcm92ZSBuYXZpZ2F0aW9uIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVmlzdWFsIG9yZGVyIG9uIHRoZSBwYWdlIGZvbGxvd3MgRE9NIG9yZGVyIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVXNlcyBlZmZpY2llbnQgY2FjaGUgcG9saWN5IG9uIHN0YXRpYyBhc3NldHMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgZW5vcm1vdXMgbmV0d29yayBwYXlsb2FkcyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERlZmVyIG9mZnNjcmVlbiBpbWFnZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBFbGltaW5hdGUgcmVuZGVyLWJsb2NraW5nIHJlc291cmNlcyAbWzM2bSsxMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBNaW5pZnkgQ1NTIBtbMzZtKzQ1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE1pbmlmeSBKYXZhU2NyaXB0IBtbMzZtKzUybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFJlZHVjZSB1bnVzZWQgQ1NTIBtbMzZtKzMzOG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBSZWR1Y2UgdW51c2VkIEphdmFTY3JpcHQgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBTZXJ2ZSBpbWFnZXMgaW4gbmV4dC1nZW4gZm9ybWF0cyAbWzM2bSs0bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVmZmljaWVudGx5IGVuY29kZSBpbWFnZXMgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBFbmFibGUgdGV4dCBjb21wcmVzc2lvbiAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFByb3Blcmx5IHNpemUgaW1hZ2VzIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVXNlIHZpZGVvIGZvcm1hdHMgZm9yIGFuaW1hdGVkIGNvbnRlbnQgG1szNm0rNG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBSZW1vdmUgZHVwbGljYXRlIG1vZHVsZXMgaW4gSmF2YVNjcmlwdCBidW5kbGVzIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWQgc2VydmluZyBsZWdhY3kgSmF2YVNjcmlwdCB0byBtb2Rlcm4gYnJvd3NlcnMgG1szNm0rM21zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQYWdlIGhhcyB0aGUgSFRNTCBkb2N0eXBlIBtbMzZtKzMwNG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQcm9wZXJseSBkZWZpbmVzIGNoYXJzZXQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgYW4gZXhjZXNzaXZlIERPTSBzaXplIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWRzIHJlcXVlc3RpbmcgdGhlIGdlb2xvY2F0aW9uIHBlcm1pc3Npb24gb24gcGFnZSBsb2FkIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTm8gaXNzdWVzIGluIHRoZSBgSXNzdWVzYCBwYW5lbCBpbiBDaHJvbWUgRGV2dG9vbHMgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgYGRvY3VtZW50LndyaXRlKClgIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRGV0ZWN0ZWQgSmF2YVNjcmlwdCBsaWJyYXJpZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgcmVxdWVzdGluZyB0aGUgbm90aWZpY2F0aW9uIHBlcm1pc3Npb24gb24gcGFnZSBsb2FkIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQWxsb3dzIHVzZXJzIHRvIHBhc3RlIGludG8gaW5wdXQgZmllbGRzIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVXNlIEhUVFAvMiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFVzZXMgcGFzc2l2ZSBsaXN0ZW5lcnMgdG8gaW1wcm92ZSBzY3JvbGxpbmcgcGVyZm9ybWFuY2UgG1szNm0rNW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEb2N1bWVudCBoYXMgYSBtZXRhIGRlc2NyaXB0aW9uIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUGFnZSBoYXMgc3VjY2Vzc2Z1bCBIVFRQIHN0YXR1cyBjb2RlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRG9jdW1lbnQgdXNlcyBsZWdpYmxlIGZvbnQgc2l6ZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBMaW5rcyBoYXZlIGRlc2NyaXB0aXZlIHRleHQgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBMaW5rcyBhcmUgY3Jhd2xhYmxlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUGFnZSBpc27igJl0IGJsb2NrZWQgZnJvbSBpbmRleGluZyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IHJvYm90cy50eHQgaXMgdmFsaWQgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUYXAgdGFyZ2V0cyBhcmUgc2l6ZWQgYXBwcm9wcmlhdGVseSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERvY3VtZW50IGhhcyBhIHZhbGlkIGBocmVmbGFuZ2AgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEb2N1bWVudCBhdm9pZHMgcGx1Z2lucyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERvY3VtZW50IGhhcyBhIHZhbGlkIGByZWw9Y2Fub25pY2FsYCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFN0cnVjdHVyZWQgZGF0YSBpcyB2YWxpZCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFBhZ2UgZGlkbid0IHByZXZlbnQgYmFjay9mb3J3YXJkIGNhY2hlIHJlc3RvcmF0aW9uIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1HZW5lcmF0aW5nIHJlc3VsdHMuLi4gG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpQcmludGVyIBtbMG1qc29uIG91dHB1dCB3cml0dGVuIHRvIGxpZ2h0aG91c2UtcmVwb3J0Lmpzb24gG1szNm0rMjZtcxtbMG0KICAbWzM2OzFtTEg6Q2hyb21lTGF1bmNoZXIgG1swbUtpbGxpbmcgQ2hyb21lIGluc3RhbmNlIDQ2NjAgG1szNm0rMG1zG1swbQo="
-                    }
-                  ],
+                  "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-04-25T19:47:17.828Z",
+                  "startTime": "2023-04-28T23:10:35.460Z",
                   "attachments": [],
                   "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js",
-                    "column": 27,
-                    "line": 27
+                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                    "column": 22,
+                    "line": 43
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "48e0a2cb09b329fe518a-542b5d11f8960052f1d5",
-          "file": "lighthouse_audit/lighthouse.test.js",
-          "line": 33,
+          "id": "35d095eb0ee4e7b67f97-d4723fa853192697d2a6",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
           "column": 3
         },
         {
-          "title": "Page \"/\" should have minimum scores for all categories",
+          "title": "Page \"/about\" checking all pages for any accessibility issues",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Desktop Chrome",
+              "projectName": "Desktop Chrome",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 1758,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "/about\n"
+                    },
+                    {
+                      "text": "[ \u001b[32m'0'\u001b[39m ]\n"
+                    },
+                    {
+                      "text": "Accessibility issues found [\n  {\n    id: \u001b[32m'color-contrast'\u001b[39m,\n    impact: \u001b[32m'serious'\u001b[39m,\n    tags: [ \u001b[32m'cat.color'\u001b[39m, \u001b[32m'wcag2aa'\u001b[39m, \u001b[32m'wcag143'\u001b[39m, \u001b[32m'ACT'\u001b[39m, \u001b[32m'TTv5'\u001b[39m, \u001b[32m'TT13.c'\u001b[39m ],\n    description: \u001b[32m'Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'\u001b[39m,\n    help: \u001b[32m'Elements must meet minimum color contrast ratio thresholds'\u001b[39m,\n    helpUrl: \u001b[32m'https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=axeAPI'\u001b[39m,\n    nodes: [ \u001b[36m[Object]\u001b[39m ]\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-04-28T23:10:39.123Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "35d095eb0ee4e7b67f97-9aa20d6724a7f448eb5e",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
+          "column": 3
+        },
+        {
+          "title": "Page \"/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\" checking all pages for any accessibility issues",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Desktop Chrome",
+              "projectName": "Desktop Chrome",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "failed",
+                  "duration": 2815,
+                  "error": {
+                    "message": "Cannot read properties of undefined (reading 'id')",
+                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                        "column": 22,
+                        "line": 43
+                      },
+                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-04-28T23:10:40.883Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                    "column": 22,
+                    "line": 43
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "35d095eb0ee4e7b67f97-a10cd1242181ae4a7383",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
+          "column": 3
+        },
+        {
+          "title": "Page \"/\" checking all pages for any accessibility issues",
           "ok": false,
           "tags": [],
           "tests": [
@@ -165,59 +245,139 @@
                 {
                   "workerIndex": 1,
                   "status": "failed",
-                  "duration": 18761,
+                  "duration": 2630,
                   "error": {
-                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m\n    at runLighthouseAudit (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:27:27)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:46:11"
+                    "message": "Cannot read properties of undefined (reading 'id')",
+                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js",
-                        "column": 27,
-                        "line": 27
+                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                        "column": 22,
+                        "line": 43
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m90\u001b[39m\nReceived:    \u001b[31m45\u001b[39m\n\n\u001b[90m   at \u001b[39mlighthouse_audit\\lighthouse.test.js:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m`${category} score:`\u001b[39m\u001b[33m,\u001b[39m categoryScore)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     expect(categoryScore)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(expectedScores[category])\u001b[33m;\u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m  \u001b[0m\n\u001b[0m \u001b[90m 29 |\u001b[39m   \u001b[0m\n\u001b[0m \u001b[90m 30 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at runLighthouseAudit (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:27:27)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js:46:11\u001b[22m"
+                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
                     }
                   ],
                   "stdout": [
                     {
                       "text": "/\n"
-                    },
-                    {
-                      "text": "accessibility score: \u001b[33m100\u001b[39m\n"
-                    },
-                    {
-                      "text": "best-practices score: \u001b[33m92\u001b[39m\n"
-                    },
-                    {
-                      "text": "seo score: \u001b[33m100\u001b[39m\n"
-                    },
-                    {
-                      "text": "performance score: \u001b[33m45\u001b[39m\n"
                     }
                   ],
-                  "stderr": [
-                    {
-                      "buffer": "ICAbWzM2OzFtTEg6Q2hyb21lTGF1bmNoZXIgG1swbVdhaXRpbmcgZm9yIGJyb3dzZXIuIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6Q2hyb21lTGF1bmNoZXIgG1swbVdhaXRpbmcgZm9yIGJyb3dzZXIuLi4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpDaHJvbWVMYXVuY2hlciAbWzBtV2FpdGluZyBmb3IgYnJvd3Nlci4uLi4uIBtbMzZtKzUxNm1zG1swbQogIBtbMzY7MW1MSDpDaHJvbWVMYXVuY2hlciAbWzBtV2FpdGluZyBmb3IgYnJvd3Nlci4uLi4uG1szMm3iiJobWzBtIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1Db25uZWN0aW5nIHRvIGJyb3dzZXIgG1szNm0rNTIwbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtTmF2aWdhdGluZyB0byBhYm91dDpibGFuayAbWzM2bSs3bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQmVuY2htYXJraW5nIG1hY2hpbmUgG1szNm0rOG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbVByZXBhcmluZyB0YXJnZXQgZm9yIG5hdmlnYXRpb24gbW9kZSAbWzM2bSsxcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1OYXZpZ2F0aW5nIHRvIGFib3V0OmJsYW5rIBtbMzZtKzEzbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtUHJlcGFyaW5nIHRhcmdldCBmb3IgbmF2aWdhdGlvbiAbWzM2bSs2bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQ2xlYW5pbmcgb3JpZ2luIGRhdGEgG1szNm0rMTltcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1DbGVhbmluZyBicm93c2VyIGNhY2hlIBtbMzZtKzEwbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtUHJlcGFyaW5nIG5ldHdvcmsgY29uZGl0aW9ucyAbWzM2bSsxMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbU5hdmlnYXRpbmcgdG8gaHR0cDovL2xvY2FsaG9zdDozMDAwLyAbWzM2bSs3M21zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbURldnRvb2xzTG9nIBtbMzVtKzdzG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbVRyYWNlIBtbMzVtKzBtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1EZXZ0b29sc0xvZyAbWzM1bSszbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtVHJhY2UgG1szNW0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUFjY2Vzc2liaWxpdHkgG1szNW0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUFuY2hvckVsZW1lbnRzIBtbMzVtKzE2MG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUNvbnNvbGVNZXNzYWdlcyAbWzM1bSsyN21zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUNTU1VzYWdlIBtbMzVtKzBtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1Eb2N0eXBlIBtbMzVtKzI1bXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtRE9NU3RhdHMgG1szNW0rMm1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUVtYmVkZGVkQ29udGVudCAbWzM1bSs1bXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtRm9udFNpemUgG1szNW0rMm1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUlucHV0cyAbWzM1bSsxOW1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUdsb2JhbExpc3RlbmVycyAbWzM1bSszbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSW1hZ2VFbGVtZW50cyAbWzM1bSsybXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSW5zdGFsbGFiaWxpdHlFcnJvcnMgG1szNW0rMTQ2bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtR2V0IHdlYmFwcCBpbnN0YWxsYWJpbGl0eSBlcnJvcnMgG1szNm0rMG1zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbUluc3BlY3Rvcklzc3VlcyAbWzM1bSswbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtSnNVc2FnZSAbWzM1bSsxbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtTGlua0VsZW1lbnRzIBtbMzVtKzBtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1NYWluRG9jdW1lbnRDb250ZW50IBtbMzVtKzNtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1NZXRhRWxlbWVudHMgG1szNW0rM21zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbU5ldHdvcmtVc2VyQWdlbnQgG1szNW0rM21zG1swbQogIBtbMzU7MW1MSDphcnRpZmFjdHM6Z2V0QXJ0aWZhY3QgG1swbU9wdGltaXplZEltYWdlcyAbWzM1bSswbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtUmVzcG9uc2VDb21wcmVzc2lvbiAbWzM1bSsxbXMbWzBtCiAgG1szNTsxbUxIOmFydGlmYWN0czpnZXRBcnRpZmFjdCAbWzBtUm9ib3RzVHh0IBtbMzVtKzRtcxtbMG0KICAbWzM1OzFtTEg6YXJ0aWZhY3RzOmdldEFydGlmYWN0IBtbMG1TZXJ2aWNlV29ya2VyIBtbMzVtKzI3OW1z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KzEybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEN1bXVsYXRpdmUgTGF5b3V0IFNoaWZ0IBtbMzZtKzVtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTm8gYnJvd3NlciBlcnJvcnMgbG9nZ2VkIHRvIHRoZSBjb25zb2xlIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogSW5pdGlhbCBzZXJ2ZXIgcmVzcG9uc2UgdGltZSB3YXMgc2hvcnQgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUaW1lIHRvIEludGVyYWN0aXZlIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVXNlciBUaW1pbmcgbWFya3MgYW5kIG1lYXN1cmVzIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWQgY2hhaW5pbmcgY3JpdGljYWwgcmVxdWVzdHMgG1szNm0rNG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZCBtdWx0aXBsZSBwYWdlIHJlZGlyZWN0cyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFdlYiBhcHAgbWFuaWZlc3QgYW5kIHNlcnZpY2Ugd29ya2VyIG1lZXQgdGhlIGluc3RhbGxhYmlsaXR5IHJlcXVpcmVtZW50cyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IENvbmZpZ3VyZWQgZm9yIGEgY3VzdG9tIHNwbGFzaCBzY3JlZW4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBTZXRzIGEgdGhlbWUgY29sb3IgZm9yIHRoZSBhZGRyZXNzIGJhci4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBNYW5pZmVzdCBoYXMgYSBtYXNrYWJsZSBpY29uIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQ29udGVudCBpcyBzaXplZCBjb3JyZWN0bHkgZm9yIHRoZSB2aWV3cG9ydCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERpc3BsYXlzIGltYWdlcyB3aXRoIGNvcnJlY3QgYXNwZWN0IHJhdGlvIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogU2VydmVzIGltYWdlcyB3aXRoIGFwcHJvcHJpYXRlIHJlc29sdXRpb24gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBGb250cyB3aXRoIGBmb250LWRpc3BsYXk6IG9wdGlvbmFsYCBhcmUgcHJlbG9hZGVkIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWRzIGRlcHJlY2F0ZWQgQVBJcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE1pbmltaXplcyBtYWluLXRocmVhZCB3b3JrIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogSmF2YVNjcmlwdCBleGVjdXRpb24gdGltZSAbWzM2bSsxNW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQcmVsb2FkIGtleSByZXF1ZXN0cyAbWzM2bSszbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFByZWNvbm5lY3QgdG8gcmVxdWlyZWQgb3JpZ2lucyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEFsbCB0ZXh0IHJlbWFpbnMgdmlzaWJsZSBkdXJpbmcgd2ViZm9udCBsb2FkcyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERpYWdub3N0aWNzIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTmV0d29yayBSZXF1ZXN0cyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE5ldHdvcmsgUm91bmQgVHJpcCBUaW1lcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFNlcnZlciBCYWNrZW5kIExhdGVuY2llcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFRhc2tzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTWV0cmljcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFBlcmZvcm1hbmNlIGJ1ZGdldCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFRpbWluZyBidWRnZXQgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBLZWVwIHJlcXVlc3QgY291bnRzIGxvdyBhbmQgdHJhbnNmZXIgc2l6ZXMgc21hbGwgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBNaW5pbWl6ZSB0aGlyZC1wYXJ0eSB1c2FnZSAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExhenkgbG9hZCB0aGlyZC1wYXJ0eSByZXNvdXJjZXMgd2l0aCBmYWNhZGVzIBtbMzZtKzRtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTGFyZ2VzdCBDb250ZW50ZnVsIFBhaW50IGVsZW1lbnQgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBMYXJnZXN0IENvbnRlbnRmdWwgUGFpbnQgaW1hZ2Ugd2FzIG5vdCBsYXppbHkgbG9hZGVkIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWQgbGFyZ2UgbGF5b3V0IHNoaWZ0cyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkIGxvbmcgbWFpbi10aHJlYWQgdGFza3MgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgYHVubG9hZGAgZXZlbnQgbGlzdGVuZXJzIBtbMzZtKzNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQXZvaWQgbm9uLWNvbXBvc2l0ZWQgYW5pbWF0aW9ucyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEltYWdlIGVsZW1lbnRzIGhhdmUgZXhwbGljaXQgYHdpZHRoYCBhbmQgYGhlaWdodGAgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQYWdlIGhhcyB2YWxpZCBzb3VyY2UgbWFwcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFByZWxvYWQgTGFyZ2VzdCBDb250ZW50ZnVsIFBhaW50IGltYWdlIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRW5zdXJlIENTUCBpcyBlZmZlY3RpdmUgYWdhaW5zdCBYU1MgYXR0YWNrcyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFNjcmlwdCBUcmVlbWFwIERhdGEgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBTaXRlIHdvcmtzIGNyb3NzLWJyb3dzZXIgG1szNm0rODVtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUGFnZSB0cmFuc2l0aW9ucyBkb24ndCBmZWVsIGxpa2UgdGhleSBibG9jayBvbiB0aGUgbmV0d29yayAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVhY2ggcGFnZSBoYXMgYSBVUkwgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgW2FjY2Vzc2tleV1gIHZhbHVlcyBhcmUgdW5pcXVlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthcmlhLSpdYCBhdHRyaWJ1dGVzIG1hdGNoIHRoZWlyIHJvbGVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYGJ1dHRvbmAsIGBsaW5rYCwgYW5kIGBtZW51aXRlbWAgZWxlbWVudHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthcmlhLWhpZGRlbj0idHJ1ZSJdYCBpcyBub3QgcHJlc2VudCBvbiB0aGUgZG9jdW1lbnQgYDxib2R5PmAgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgW2FyaWEtaGlkZGVuPSJ0cnVlIl1gIGVsZW1lbnRzIGRvIG5vdCBjb250YWluIGZvY3VzYWJsZSBkZXNjZW5kZW50cyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEFSSUEgaW5wdXQgZmllbGRzIGhhdmUgYWNjZXNzaWJsZSBuYW1lcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEFSSUEgYG1ldGVyYCBlbGVtZW50cyBoYXZlIGFjY2Vzc2libGUgbmFtZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIGBwcm9ncmVzc2JhcmAgZWxlbWVudHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFtyb2xlXWBzIGhhdmUgYWxsIHJlcXVpcmVkIGBbYXJpYS0qXWAgYXR0cmlidXRlcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVsZW1lbnRzIHdpdGggYW4gQVJJQSBgW3JvbGVdYCB0aGF0IHJlcXVpcmUgY2hpbGRyZW4gdG8gY29udGFpbiBhIHNwZWNpZmljIGBbcm9sZV1gIGhhdmUgYWxsIHJlcXVpcmVkIGNoaWxkcmVuLiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGBbcm9sZV1gcyBhcmUgY29udGFpbmVkIGJ5IHRoZWlyIHJlcXVpcmVkIHBhcmVudCBlbGVtZW50IBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFtyb2xlXWAgdmFsdWVzIGFyZSB2YWxpZCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEFSSUEgdG9nZ2xlIGZpZWxkcyBoYXZlIGFjY2Vzc2libGUgbmFtZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIGB0b29sdGlwYCBlbGVtZW50cyBoYXZlIGFjY2Vzc2libGUgbmFtZXMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBUklBIGB0cmVlaXRlbWAgZWxlbWVudHMgaGF2ZSBhY2Nlc3NpYmxlIG5hbWVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthcmlhLSpdYCBhdHRyaWJ1dGVzIGhhdmUgdmFsaWQgdmFsdWVzIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFthcmlhLSpdYCBhdHRyaWJ1dGVzIGFyZSB2YWxpZCBhbmQgbm90IG1pc3NwZWxsZWQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBCdXR0b25zIGhhdmUgYW4gYWNjZXNzaWJsZSBuYW1lIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVGhlIHBhZ2UgY29udGFpbnMgYSBoZWFkaW5nLCBza2lwIGxpbmssIG9yIGxhbmRtYXJrIHJlZ2lvbiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEJhY2tncm91bmQgYW5kIGZvcmVncm91bmQgY29sb3JzIGhhdmUgYSBzdWZmaWNpZW50IGNvbnRyYXN0IHJhdGlvIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDxkbD5gJ3MgY29udGFpbiBvbmx5IHByb3Blcmx5LW9yZGVyZWQgYDxkdD5gIGFuZCBgPGRkPmAgZ3JvdXBzLCBgPHNjcmlwdD5gLCBgPHRlbXBsYXRlPmAgb3IgYDxkaXY+YCBlbGVtZW50cy4gG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEZWZpbml0aW9uIGxpc3QgaXRlbXMgYXJlIHdyYXBwZWQgaW4gYDxkbD5gIGVsZW1lbnRzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRG9jdW1lbnQgaGFzIGEgYDx0aXRsZT5gIGVsZW1lbnQgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgW2lkXWAgYXR0cmlidXRlcyBvbiBhY3RpdmUsIGZvY3VzYWJsZSBlbGVtZW50cyBhcmUgdW5pcXVlIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQVJJQSBJRHMgYXJlIHVuaXF1ZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE5vIGZvcm0gZmllbGRzIGhhdmUgbXVsdGlwbGUgbGFiZWxzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDxmcmFtZT5gIG9yIGA8aWZyYW1lPmAgZWxlbWVudHMgaGF2ZSBhIHRpdGxlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogSGVhZGluZyBlbGVtZW50cyBhcHBlYXIgaW4gYSBzZXF1ZW50aWFsbHktZGVzY2VuZGluZyBvcmRlciAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8aHRtbD5gIGVsZW1lbnQgaGFzIGEgYFtsYW5nXWAgYXR0cmlidXRlIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDxodG1sPmAgZWxlbWVudCBoYXMgYSB2YWxpZCB2YWx1ZSBmb3IgaXRzIGBbbGFuZ11gIGF0dHJpYnV0ZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEltYWdlIGVsZW1lbnRzIGhhdmUgYFthbHRdYCBhdHRyaWJ1dGVzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYDxpbnB1dCB0eXBlPSJpbWFnZSI+YCBlbGVtZW50cyBoYXZlIGBbYWx0XWAgdGV4dCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEZvcm0gZWxlbWVudHMgaGF2ZSBhc3NvY2lhdGVkIGxhYmVscyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExpbmtzIGhhdmUgYSBkaXNjZXJuaWJsZSBuYW1lIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTGlzdHMgY29udGFpbiBvbmx5IGA8bGk+YCBlbGVtZW50cyBhbmQgc2NyaXB0IHN1cHBvcnRpbmcgZWxlbWVudHMgKGA8c2NyaXB0PmAgYW5kIGA8dGVtcGxhdGU+YCkuIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTGlzdCBpdGVtcyAoYDxsaT5gKSBhcmUgY29udGFpbmVkIHdpdGhpbiBgPHVsPmAsIGA8b2w+YCBvciBgPG1lbnU+YCBwYXJlbnQgZWxlbWVudHMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUaGUgZG9jdW1lbnQgZG9lcyBub3QgdXNlIGA8bWV0YSBodHRwLWVxdWl2PSJyZWZyZXNoIj5gIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFt1c2VyLXNjYWxhYmxlPSJubyJdYCBpcyBub3QgdXNlZCBpbiB0aGUgYDxtZXRhIG5hbWU9InZpZXdwb3J0Ij5gIGVsZW1lbnQgYW5kIHRoZSBgW21heGltdW0tc2NhbGVdYCBhdHRyaWJ1dGUgaXMgbm90IGxlc3MgdGhhbiA1LiAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IGA8b2JqZWN0PmAgZWxlbWVudHMgaGF2ZSBhbHRlcm5hdGUgdGV4dCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE5vIGVsZW1lbnQgaGFzIGEgYFt0YWJpbmRleF1gIHZhbHVlIGdyZWF0ZXIgdGhhbiAwIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQ2VsbHMgaW4gYSBgPHRhYmxlPmAgZWxlbWVudCB0aGF0IHVzZSB0aGUgYFtoZWFkZXJzXWAgYXR0cmlidXRlIHJlZmVyIHRvIHRhYmxlIGNlbGxzIHdpdGhpbiB0aGUgc2FtZSB0YWJsZS4gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgPHRoPmAgZWxlbWVudHMgYW5kIGVsZW1lbnRzIHdpdGggYFtyb2xlPSJjb2x1bW5oZWFkZXIiLyJyb3doZWFkZXIiXWAgaGF2ZSBkYXRhIGNlbGxzIHRoZXkgZGVzY3JpYmUuIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogYFtsYW5nXWAgYXR0cmlidXRlcyBoYXZlIGEgdmFsaWQgdmFsdWUgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBgPHZpZGVvPmAgZWxlbWVudHMgY29udGFpbiBhIGA8dHJhY2s+YCBlbGVtZW50IHdpdGggYFtraW5kPSJjYXB0aW9ucyJdYCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEN1c3RvbSBjb250cm9scyBoYXZlIGFzc29jaWF0ZWQgbGFiZWxzIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogQ3VzdG9tIGNvbnRyb2xzIGhhdmUgQVJJQSByb2xlcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFVzZXIgZm9jdXMgaXMgbm90IGFjY2lkZW50YWxseSB0cmFwcGVkIGluIGEgcmVnaW9uIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogSW50ZXJhY3RpdmUgY29udHJvbHMgYXJlIGtleWJvYXJkIGZvY3VzYWJsZSAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEludGVyYWN0aXZlIGVsZW1lbnRzIGluZGljYXRlIHRoZWlyIHB1cnBvc2UgYW5kIHN0YXRlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVGhlIHBhZ2UgaGFzIGEgbG9naWNhbCB0YWIgb3JkZXIgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBUaGUgdXNlcidzIGZvY3VzIGlzIGRpcmVjdGVkIHRvIG5ldyBjb250ZW50IGFkZGVkIHRvIHRoZSBwYWdlIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogT2Zmc2NyZWVuIGNvbnRlbnQgaXMgaGlkZGVuIGZyb20gYXNzaXN0aXZlIHRlY2hub2xvZ3kgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBIVE1MNSBsYW5kbWFyayBlbGVtZW50cyBhcmUgdXNlZCB0byBpbXByb3ZlIG5hdmlnYXRpb24gG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBWaXN1YWwgb3JkZXIgb24gdGhlIHBhZ2UgZm9sbG93cyBET00gb3JkZXIgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBVc2VzIGVmZmljaWVudCBjYWNoZSBwb2xpY3kgb24gc3RhdGljIGFzc2V0cyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkcyBlbm9ybW91cyBuZXR3b3JrIHBheWxvYWRzIBtbMzZtKzJtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRGVmZXIgb2Zmc2NyZWVuIGltYWdlcyAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVsaW1pbmF0ZSByZW5kZXItYmxvY2tpbmcgcmVzb3VyY2VzIBtbMzZtKzEzbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IE1pbmlmeSBDU1MgG1szNm0rNDZtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogTWluaWZ5IEphdmFTY3JpcHQgG1szNm0rNTZtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUmVkdWNlIHVudXNlZCBDU1MgG1szNm0rMzE1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFJlZHVjZSB1bnVzZWQgSmF2YVNjcmlwdCAbWzM2bSszbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFNlcnZlIGltYWdlcyBpbiBuZXh0LWdlbiBmb3JtYXRzIBtbMzZtKzNtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRWZmaWNpZW50bHkgZW5jb2RlIGltYWdlcyAbWzM2bSszbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEVuYWJsZSB0ZXh0IGNvbXByZXNzaW9uIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUHJvcGVybHkgc2l6ZSBpbWFnZXMgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBVc2UgdmlkZW8gZm9ybWF0cyBmb3IgYW5pbWF0ZWQgY29udGVudCAbWzM2bSs1bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFJlbW92ZSBkdXBsaWNhdGUgbW9kdWxlcyBpbiBKYXZhU2NyaXB0IGJ1bmRsZXMgG1szNm0rMm1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZCBzZXJ2aW5nIGxlZ2FjeSBKYXZhU2NyaXB0IHRvIG1vZGVybiBicm93c2VycyAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFBhZ2UgaGFzIHRoZSBIVE1MIGRvY3R5cGUgG1szNm0rMzAybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFByb3Blcmx5IGRlZmluZXMgY2hhcnNldCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkcyBhbiBleGNlc3NpdmUgRE9NIHNpemUgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBdm9pZHMgcmVxdWVzdGluZyB0aGUgZ2VvbG9jYXRpb24gcGVybWlzc2lvbiBvbiBwYWdlIGxvYWQgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBObyBpc3N1ZXMgaW4gdGhlIGBJc3N1ZXNgIHBhbmVsIGluIENocm9tZSBEZXZ0b29scyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkcyBgZG9jdW1lbnQud3JpdGUoKWAgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEZXRlY3RlZCBKYXZhU2NyaXB0IGxpYnJhcmllcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IEF2b2lkcyByZXF1ZXN0aW5nIHRoZSBub3RpZmljYXRpb24gcGVybWlzc2lvbiBvbiBwYWdlIGxvYWQgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBBbGxvd3MgdXNlcnMgdG8gcGFzdGUgaW50byBpbnB1dCBmaWVsZHMgG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBVc2UgSFRUUC8yIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogVXNlcyBwYXNzaXZlIGxpc3RlbmVycyB0byBpbXByb3ZlIHNjcm9sbGluZyBwZXJmb3JtYW5jZSAbWzM2bSs0bXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERvY3VtZW50IGhhcyBhIG1ldGEgZGVzY3JpcHRpb24gG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQYWdlIGhhcyBzdWNjZXNzZnVsIEhUVFAgc3RhdHVzIGNvZGUgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBEb2N1bWVudCB1c2VzIGxlZ2libGUgZm9udCBzaXplcyAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExpbmtzIGhhdmUgZGVzY3JpcHRpdmUgdGV4dCAbWzM2bSswbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IExpbmtzIGFyZSBjcmF3bGFibGUgG1szNm0rMW1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUF1ZGl0aW5nOiBQYWdlIGlzbuKAmXQgYmxvY2tlZCBmcm9tIGluZGV4aW5nIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogcm9ib3RzLnR4dCBpcyB2YWxpZCAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IFRhcCB0YXJnZXRzIGFyZSBzaXplZCBhcHByb3ByaWF0ZWx5IBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRG9jdW1lbnQgaGFzIGEgdmFsaWQgYGhyZWZsYW5nYCAbWzM2bSsybXMbWzBtCiAgG1szNjsxbUxIOnN0YXR1cyAbWzBtQXVkaXRpbmc6IERvY3VtZW50IGF2b2lkcyBwbHVnaW5zIBtbMzZtKzFtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogRG9jdW1lbnQgaGFzIGEgdmFsaWQgYHJlbD1jYW5vbmljYWxgIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogU3RydWN0dXJlZCBkYXRhIGlzIHZhbGlkIBtbMzZtKzBtcxtbMG0KICAbWzM2OzFtTEg6c3RhdHVzIBtbMG1BdWRpdGluZzogUGFnZSBkaWRuJ3QgcHJldmVudCBiYWNrL2ZvcndhcmQgY2FjaGUgcmVzdG9yYXRpb24gG1szNm0rMG1zG1swbQogIBtbMzY7MW1MSDpzdGF0dXMgG1swbUdlbmVyYXRpbmcgcmVzdWx0cy4uLiAbWzM2bSsxbXMbWzBtCiAgG1szNjsxbUxIOlByaW50ZXIgG1swbWpzb24gb3V0cHV0IHdyaXR0ZW4gdG8gbGlnaHRob3VzZS1yZXBvcnQuanNvbiAbWzM2bSsyMG1zG1swbQogIBtbMzY7MW1MSDpDaHJvbWVMYXVuY2hlciAbWzBtS2lsbGluZyBDaHJvbWUgaW5zdGFuY2UgMjc0MzYgG1szNm0rMG1zG1swbQo="
-                    }
-                  ],
+                  "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-04-25T19:47:17.828Z",
+                  "startTime": "2023-04-28T23:10:34.968Z",
                   "attachments": [],
                   "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\lighthouse_audit\\lighthouse.test.js",
-                    "column": 27,
-                    "line": 27
+                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                    "column": 22,
+                    "line": 43
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "48e0a2cb09b329fe518a-22e41d73a530e1c0b5ea",
-          "file": "lighthouse_audit/lighthouse.test.js",
-          "line": 33,
+          "id": "35d095eb0ee4e7b67f97-50c71e2faf2f773b244f",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
+          "column": 3
+        },
+        {
+          "title": "Page \"/about\" checking all pages for any accessibility issues",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile iPhone 12",
+              "projectName": "Mobile iPhone 12",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 2457,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "/about\n"
+                    },
+                    {
+                      "text": "[ \u001b[32m'0'\u001b[39m ]\n"
+                    },
+                    {
+                      "text": "Accessibility issues found [\n  {\n    id: \u001b[32m'color-contrast'\u001b[39m,\n    impact: \u001b[32m'serious'\u001b[39m,\n    tags: [ \u001b[32m'cat.color'\u001b[39m, \u001b[32m'wcag2aa'\u001b[39m, \u001b[32m'wcag143'\u001b[39m, \u001b[32m'ACT'\u001b[39m, \u001b[32m'TTv5'\u001b[39m, \u001b[32m'TT13.c'\u001b[39m ],\n    description: \u001b[32m'Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'\u001b[39m,\n    help: \u001b[32m'Elements must meet minimum color contrast ratio thresholds'\u001b[39m,\n    helpUrl: \u001b[32m'https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=axeAPI'\u001b[39m,\n    nodes: [ \u001b[36m[Object]\u001b[39m ]\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-04-28T23:10:38.494Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "35d095eb0ee4e7b67f97-f9bc50ca35d680932d6b",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
+          "column": 3
+        },
+        {
+          "title": "Page \"/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\" checking all pages for any accessibility issues",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile iPhone 12",
+              "projectName": "Mobile iPhone 12",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "failed",
+                  "duration": 2768,
+                  "error": {
+                    "message": "Cannot read properties of undefined (reading 'id')",
+                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                        "column": 22,
+                        "line": 43
+                      },
+                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-04-28T23:10:40.952Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
+                    "column": 22,
+                    "line": 43
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "35d095eb0ee4e7b67f97-dee03b50a536de91796a",
+          "file": "playwright_tests/accessibilityALL.spec.js",
+          "line": 13,
           "column": 3
         }
       ]

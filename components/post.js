@@ -16,19 +16,13 @@ export default function Post({ data = {}, preview = false }) {
 
   const { post, morePosts } = data;
   const slug = post?.slug;
-  const metaData = post?.seo;
 
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <Layout
-      metaData={metaData}
-      menuData={data.menu}
-      preview={preview}
-      footerData={data.footer}
-    >
+
       <div className="container max-w-6xl px-6 pt-10 mx-auto md:py-20">
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -72,6 +66,6 @@ export default function Post({ data = {}, preview = false }) {
           </>
         )}
       </div>
-    </Layout>
+
   );
 }

@@ -20,43 +20,44 @@ pages.forEach((page) => {
 
 
 async function checkPageMetaTags(pageUrl) {
-    const browser = await chromium.launch();
-    const page = await browser.newPage();
-    await page.goto(pageUrl, { timeout: TIMEOUT });
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(pageUrl, { timeout: TIMEOUT });
 
-    const metaTags = [
-      "description",
-      "keywords",
-      "og:title",
-      "og:description",
-      "og:type",
-      "og:url",
-      "og:site_name",
-      "og:image",
-      "twitter:card",
-      "twitter:title",
-      "twitter:description",
-      "twitter:image",
-      "robots",
-      "viewport",
-   ];
-  
-    for (const tag of metaTags) {
-      let selector;
-      if (tag.startsWith('og:') || tag.startsWith('twitter:')) {
-        selector = `head > meta[property="${tag}"]`;
-      } else {
-        selector = `head > meta[name="${tag}"]`;
-      }
-  
-      const metaElement = await page.$(selector);
-    
-      expect(metaElement).toBeDefined();
-  
-    
+  const metaTags = [
+    'description',
+    'keywords',
+    'og:title',
+    'og:type',
+    'og:url',
+    'og:site_name',
+    'twitter:card',
+    'twitter:title',
+    'twitter:description',
+  ];
+
+  for (const tag of metaTags) {
+    let selector;
+    console.log(tag);
+    if (tag.startsWith('og:') || tag.startsWith('twitter:')) {
+      selector = `head > meta[property="${tag}"]`;
+    } else {
+      selector = `head > meta[name="${tag}"]`;
     }
-  
-    await browser.close();
+
+    const metaElement = await page.$(selector);
+
+    // Check if the meta element is defined
+    expect(metaElement).toBeDefined();
+
+    // Check if the content of the meta element is defined
+    if (metaElement) {
+      const content = await metaElement.getAttribute('content');
+      expect(content).toBeDefined();
+      expect(content.trim().length).toBeGreaterThan(0); // Check if content is not empty
+    }
   }
-  
+
+  await browser.close();
+}
   

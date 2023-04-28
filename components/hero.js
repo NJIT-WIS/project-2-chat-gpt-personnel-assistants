@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import { logEvent } from "../lib/gtm";
 import React, { useState } from "react";
 import ModalMailchimps from "./ModalMailchimps";
@@ -88,7 +88,7 @@ export default function HeroComp({
             alt={`Cover Image for ${title}`}
             src={urlForImage(backgroundImage).height(1000).width(2000).url()}
             sizes="100vw"
-            priority={true}
+            priority
           />
 
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />

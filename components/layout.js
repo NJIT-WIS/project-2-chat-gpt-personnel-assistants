@@ -4,7 +4,8 @@ import Meta from '../components/meta'
 import Menu from "./menu";
 import ModalPrivacy from './ModalPrivacy';
 
-export default function Layout({ preview, children,menuData,metaData,footerData }) {
+export default function Layout({ preview, children,menuData,metaData,footerData ,privacy}) {
+
   return (
     <>
       <Meta metaData={metaData } />
@@ -12,8 +13,11 @@ export default function Layout({ preview, children,menuData,metaData,footerData 
       {menuData&& <Menu data={menuData} />}
         <main>{children}</main>
       </div>
-      <ModalPrivacy />
+      <ModalPrivacy privacy={privacy} />
       {footerData&& <Footer  data={footerData} />}
     </>
   )
 }
+
+
+
