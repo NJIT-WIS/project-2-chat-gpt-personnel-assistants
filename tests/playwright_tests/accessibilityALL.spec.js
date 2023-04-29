@@ -44,8 +44,8 @@ expect(violations[0].id).not.toBeDefined;
 console.log(Object.keys(violations));
   // Fail the test if any accessibility issues were found
   if (violations.length > 0) {
-    console.log('Accessibility issues found',violations);
-    
+    console.error(violations);
+    throw new Error('Accessibility issues found');
   }
 
   // ... existing code ...
