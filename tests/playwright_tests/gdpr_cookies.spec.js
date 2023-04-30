@@ -23,30 +23,22 @@ async function checkPageCookieModal(pageUrl) {
   await page.goto(pageUrl, { timeout: TIMEOUT });
 
   // Check if a cookie modal exists and satisfies GDPR requirements
-  const hasCookieModal = await page.evaluate(() => {
-    const cookieModalSelector = '#cookie-modal';
-    const cookieModal = document.querySelector(cookieModalSelector);
-    if (cookieModal) {
-      // Check if the cookie modal satisfies GDPR requirements
-      const gdprCheckboxSelector = '#gdpr-checkbox';
-      const gdprCheckbox = cookieModal.querySelector(gdprCheckboxSelector);
-      const gdprConsentTextSelector = 'p:contains("GDPR cookies consent")'; // Add the selector that matches the text on the modal
-      const gdprConsentText = cookieModal.querySelector(gdprConsentTextSelector);
+  let hasGDPR = false;
+  const gdprTextSelector = 'p:contains("GDPR")';
+  const modal = await page.$('[id="headlessui-dialog-overlay-:r1:"]');
+  if (modal) {
+    const modalText = await modal.textContent();
+    const regex = new RegExp(gdprTextSelector);
+    hasGDPR = regex.test(modalText);
+  }
 
-      if (gdprCheckbox && gdprConsentText) {
-        return true;
-      }
-    }
-    return false;
-  });
-  console.log(hasCookieModal);
-
-  if (hasCookieModal) {
+  if (hasGDPR) {
     // If a cookie modal exists and satisfies GDPR requirements, close it
-    await page.click('#gdpr-checkbox');
-  }else{
-    throw new Error('There is no cookie modal or it doesn\'t satisfies GDPR requirements.');
+    await page.getByRole('button', { name: 'Okay' }).click();
+  } else {
+    throw new Error("It doesn't satisfy GDPR requirements.");
   }
 
   await browser.close();
 }
+
