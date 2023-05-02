@@ -23,9 +23,18 @@ async function checkPagePrivacy(pageUrl) {
     return bodyText.includes('Google Analytics');
   });
 
+  const hasGDPR = await page.evaluate(() => {
+    const bodyText = document.body.textContent;
+    return bodyText.includes('GDPR');
+  });
+
   await browser.close();
 
   if (!hasGoogleAnalytics) {
+    throw new Error('The privacy page does not contain the required excerpt about Google Analytics.');
+  }
+
+  if (!hasGDPR) {
     throw new Error('The privacy page does not contain the required excerpt about Google Analytics.');
   }
 }

@@ -7,46 +7,36 @@ const config = require(path.join(process.cwd(), 'playwright.config.js'));
 const { pages } = require(path.join(process.cwd(), 'tests', 'pages.json'));
 
 const TIMEOUT = 30000;
-pages.forEach((page) => {
 
-  test(`Page "${page.path}" should have cookie modal`, async ({}) => {
-    console.log(page.path)
+
+// Define the function to check the modal
+async function checkPageCookieModal(pageUrl, context) {
+  const page = await context.newPage();
+  await page.goto(pageUrl);
+  
+  // Wait for the specific text content in the modal
+  await page.waitForSelector('text=We value your privacy');
+  
+  // Now select the modal and perform the checks
+  const gdprModal = await page.$('#gdprModal');
+
+  // Expect that the GDPR cookie modal is visible
+  expect(await gdprModal.isVisible()).toBe(true);
+  
+  // Check the text content of the modal
+  const gdprModalText = await gdprModal.textContent();
+  expect(gdprModalText).toContain('We value your privacy');
+  
+  await page.close();
+}
+
+// Use the function in your test
+pages.forEach((page) => {
+  test(`Page "${page.path}" should have cookie modal`, async ({ context }) => {
+    console.log(page.path);
     const pageUrl = `${config.use.baseURL}${page.path}`;
 
-    await checkPageCookieModal(pageUrl);
+    await checkPageCookieModal(pageUrl, context);
   });
 });
 
-async function checkPageCookieModal(pageUrl) {
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  await page.goto(pageUrl, { timeout: TIMEOUT });
-
-  // Check if a cookie modal exists and satisfies GDPR requirements
-  const hasCookieModal = await page.evaluate(() => {
-    const cookieModalSelector = '#cookie-modal';
-    const cookieModal = document.querySelector(cookieModalSelector);
-    if (cookieModal) {
-      // Check if the cookie modal satisfies GDPR requirements
-      const gdprCheckboxSelector = '#gdpr-checkbox';
-      const gdprCheckbox = cookieModal.querySelector(gdprCheckboxSelector);
-      const gdprConsentTextSelector = 'p:contains("GDPR cookies consent")'; // Add the selector that matches the text on the modal
-      const gdprConsentText = cookieModal.querySelector(gdprConsentTextSelector);
-
-      if (gdprCheckbox && gdprConsentText) {
-        return true;
-      }
-    }
-    return false;
-  });
-  console.log(hasCookieModal);
-
-  if (hasCookieModal) {
-    // If a cookie modal exists and satisfies GDPR requirements, close it
-    await page.click('#gdpr-checkbox');
-  }else{
-    throw new Error('There is no cookie modal or it doesn\'t satisfies GDPR requirements.');
-  }
-
-  await browser.close();
-}

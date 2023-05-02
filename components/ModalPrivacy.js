@@ -26,6 +26,7 @@ export default function ModalPrivacy({ privacy }) {
       <Dialog
         as="div"
         className="fixed inset-0 z-50 overflow-y-auto"
+         id="gdprModal"
         open={isOpen}
         onClose={() => {
           onClose()
