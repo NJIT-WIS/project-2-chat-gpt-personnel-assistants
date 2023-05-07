@@ -40,12 +40,12 @@ async function checkAccessibility(pageUrl) {
       });
     });
   });
-expect(violations[0].id).not.toBeDefined;
+
 console.log(Object.keys(violations));
   // Fail the test if any accessibility issues were found
   if (violations.length > 0) {
-    console.error(violations);
-    throw new Error('Accessibility issues found');
+    console.log('Accessibility issues found',violations);
+    expect(violations.length).toBe(0);
   }
 
   // ... existing code ...
