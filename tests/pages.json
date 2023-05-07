@@ -17,9 +17,11 @@
     "title": "MyWebClass.org//posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying",
     "pageName":"post"
   
-  }
- 
-   
+  },{
+      "path": "/privacy",
+      "title": "MyWebClass.org/privacy",
+      "pageName": "privacy"
+    }
 
   ]
 }
