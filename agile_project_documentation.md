@@ -304,7 +304,11 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
     -   _Acceptance Criteria:_
         -   Privacy webpage uses pre-built frontend components.
         -   Privacy webpage fetches required data from Sanity Content Lake using queries.
-    -   _Assigned Team Member:_  Frank Xu
+        -   Develop a privacy/GDPR modal that displays the necessary information about the site's data collection practices.
+        -   Ensure the modal includes options for users to manage their consent.
+        -   Integrate the modal into the website so that it appears for new users and users who have not yet provided their consent.
+        -   Test the functionality of the modal to ensure compliance with GDPR and other relevant privacy regulations.
+    -   _Assigned Team Members:_  Frank Xu, Carlos Segarra, Jonathan Grossman
 4.  **As a developer, I want to create a Volunteer webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can learn about volunteer opportunities and get involved with the website's cause.**
     
     -   _Acceptance Criteria:_
@@ -438,3 +442,39 @@ So that I can maintain user trust and avoid legal issues.
 1. For optimal performance, consider implementing the tracking code asynchronously.
 2. Regularly review and update tracking configurations to ensure the accuracy of data collection.
 3. Use the data collected to identify areas of improvement and optimize the user experience on the website..
+
+## Epic: AI-Powered Web Design and Layout Using Midjourney
+
+_As a web developer, I want to leverage AI-powered tools like Midjourney to generate clean and visually appealing UI designs and layouts for my website, so that I can create a user-friendly and engaging experience for my audience._
+
+### User Stories:
+
+1. **Creating an AI-generated prompt for Midjourney** _As a web developer, I want to create a refined and specific AI-generated prompt for Midjourney, incorporating elements like design style, theme, archetype focus, and neurotransmitter targeting, so that the tool can generate relevant and appealing images for my website._
+    - _Acceptance Criteria:_
+        -   Develop a prompt template based on discussions and refinements.
+        -   Create a final prompt that encompasses desired design elements and neurotransmitter targeting.
+    -   _Assigned Team Member:_ Carlos Segarra 
+
+2. **Generating images with Midjourney** _As a web developer, I want to use the refined AI-generated prompt to generate various background images and illustrations with Midjourney, so that I can review and select the most suitable visuals for my website._
+    - _Acceptance Criteria:_
+        - Submit the refined AI-generated prompt to Midjourney.
+        - Review the generated images and select the most suitable options for the website.
+    -   _Assigned Team Member:_ Carlos Segarra 
+
+3. **Integrating AI-generated images into the website** _As a web developer, I want to integrate the selected AI-generated images into the website's UI design and layout, ensuring a cohesive and visually appealing experience for users._
+    - _Acceptance Criteria:_
+        - Integrate the selected images into the website's design and layout.
+        - Ensure the images fit seamlessly with the overall aesthetic and theme of the website.
+    -   _Assigned Team Member:_ Jonathan Grossman
+
+4. **Optimizing images for user experience** _As a web developer, I want to optimize the AI-generated images for performance and user experience, ensuring that the images load quickly and display correctly across various devices and screen sizes._
+    - _Acceptance Criteria:_
+        - Optimize the selected images for faster loading times and improved performance.
+        - Ensure the images display correctly on various devices and screen resolutions.
+    -   _Assigned Team Member:_ Jonathan Grossman
+
+5. **Leveraging AI-generated images to evoke desired emotions** _As a web developer, I want to utilize the AI-generated images in conjunction with targeted neurotransmitters, to evoke specific emotions in users that align with the website's goals and brand archetype._
+    - _Acceptance Criteria:_
+        - Analyze the relationship between the AI-generated images and the targeted neurotransmitters.
+        - Implement strategies to evoke desired emotions in users based on the selected images and neurotransmitter targeting.
+    -   _Assigned Team Member:_ Carlos Segarra 
