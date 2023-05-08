@@ -79,7 +79,7 @@ export default function HeroComp({ title, subtitle, backgroundImage, ctaText, ct
                 <ToastPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   Notification
                 </ToastPrimitive.Title>
-                <ToastPrimitive.Description className="mt-1 text-sm text-gray-700 dark:text-gray-400">
+                <ToastPrimitive.Description id="toastDescription" className="mt-1 text-sm text-gray-700 dark:text-gray-400">
                   {toastContent}
                 </ToastPrimitive.Description>
               </div>
