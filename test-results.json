@@ -12,12 +12,12 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Users/jg/Documents/git/project-2-chat-gpt-personnel-assistants/reports/desktop-chrome",
+        "outputDir": "C:/Users/jg/Documents/git/219project/project-2-chat-gpt-personnel-assistants/reports/desktop-chrome",
         "repeatEach": 1,
         "retries": 0,
         "id": "Desktop Chrome",
         "name": "Desktop Chrome",
-        "testDir": "C:/Users/jg/Documents/git/project-2-chat-gpt-personnel-assistants/tests",
+        "testDir": "C:/Users/jg/Documents/git/219project/project-2-chat-gpt-personnel-assistants/tests",
         "testIgnore": [],
         "testMatch": [
           "**/?(*.)@(spec|test).*"
@@ -25,12 +25,12 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/jg/Documents/git/project-2-chat-gpt-personnel-assistants/reports/mobile-iphone-12",
+        "outputDir": "C:/Users/jg/Documents/git/219project/project-2-chat-gpt-personnel-assistants/reports/mobile-iphone-12",
         "repeatEach": 1,
         "retries": 0,
         "id": "Mobile iPhone 12",
         "name": "Mobile iPhone 12",
-        "testDir": "C:/Users/jg/Documents/git/project-2-chat-gpt-personnel-assistants/tests",
+        "testDir": "C:/Users/jg/Documents/git/219project/project-2-chat-gpt-personnel-assistants/tests",
         "testIgnore": [],
         "testMatch": [
           "**/?(*.)@(spec|test).*"
@@ -60,8 +60,8 @@
       "max": 5,
       "threshold": 15000
     },
-    "configFile": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\playwright.config.js",
-    "rootDir": "C:/Users/jg/Documents/git/project-2-chat-gpt-personnel-assistants/tests",
+    "configFile": "C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\playwright.config.js",
+    "rootDir": "C:/Users/jg/Documents/git/219project/project-2-chat-gpt-personnel-assistants/tests",
     "quiet": false,
     "shard": null,
     "updateSnapshots": "missing",
@@ -75,13 +75,13 @@
   },
   "suites": [
     {
-      "title": "playwright_tests\\accessibilityALL.spec.js",
-      "file": "playwright_tests/accessibilityALL.spec.js",
+      "title": "playwright_tests\\mailchimp.spec.js",
+      "file": "playwright_tests/mailchimp.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Page \"/\" checking all pages for any accessibility issues",
+          "title": "test",
           "ok": false,
           "tags": [],
           "tests": [
@@ -94,144 +94,50 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 2150,
+                  "status": "timedOut",
+                  "duration": 30007,
                   "error": {
-                    "message": "Cannot read properties of undefined (reading 'id')",
-                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
-                      "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                        "column": 22,
-                        "line": 43
-                      },
-                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
-                    }
-                  ],
-                  "stdout": [
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
                     {
-                      "text": "/\n"
+                      "location": {
+                        "file": "C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\mailchimp.spec.js",
+                        "column": 14,
+                        "line": 14
+                      },
+                      "message": "Error: page.waitForSelector: Target closed\n=========================== logs ===========================\nwaiting for locator('#toastMailchimps') to be visible\n============================================================\n\n\u001b[90m   at \u001b[39mplaywright_tests\\mailchimp.spec.js:14\n\n\u001b[0m \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[90m// Wait for the toast to appear\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#toastMailchimps'\u001b[39m\u001b[33m,\u001b[39m { visible\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m   \u001b[36mconst\u001b[39m toast \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39m$(\u001b[32m'#toastMailchimps'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m   expect(toast)\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\mailchimp.spec.js:14:14\u001b[22m"
+                    },
+                    {
+                      "message": "Pending operations:\n  - page.waitForSelector at tests\\playwright_tests\\mailchimp.spec.js:14:14\n"
                     }
                   ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-04-28T23:10:35.460Z",
-                  "attachments": [],
-                  "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                    "column": 22,
-                    "line": 43
-                  }
+                  "startTime": "2023-05-07T22:37:05.636Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\reports\\desktop-chrome\\playwright_tests-mailchimp-test-Desktop-Chrome\\video.webm"
+                    }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "35d095eb0ee4e7b67f97-d4723fa853192697d2a6",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
+          "id": "fc3e0014f01d3a4b0650-6eaa1a90015f9c79d91e",
+          "file": "playwright_tests/mailchimp.spec.js",
+          "line": 2,
+          "column": 5
         },
         {
-          "title": "Page \"/about\" checking all pages for any accessibility issues",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "status": "passed",
-                  "duration": 1758,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "/about\n"
-                    },
-                    {
-                      "text": "[ \u001b[32m'0'\u001b[39m ]\n"
-                    },
-                    {
-                      "text": "Accessibility issues found [\n  {\n    id: \u001b[32m'color-contrast'\u001b[39m,\n    impact: \u001b[32m'serious'\u001b[39m,\n    tags: [ \u001b[32m'cat.color'\u001b[39m, \u001b[32m'wcag2aa'\u001b[39m, \u001b[32m'wcag143'\u001b[39m, \u001b[32m'ACT'\u001b[39m, \u001b[32m'TTv5'\u001b[39m, \u001b[32m'TT13.c'\u001b[39m ],\n    description: \u001b[32m'Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'\u001b[39m,\n    help: \u001b[32m'Elements must meet minimum color contrast ratio thresholds'\u001b[39m,\n    helpUrl: \u001b[32m'https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=axeAPI'\u001b[39m,\n    nodes: [ \u001b[36m[Object]\u001b[39m ]\n  }\n]\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-04-28T23:10:39.123Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "35d095eb0ee4e7b67f97-9aa20d6724a7f448eb5e",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
-        },
-        {
-          "title": "Page \"/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\" checking all pages for any accessibility issues",
-          "ok": false,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "status": "failed",
-                  "duration": 2815,
-                  "error": {
-                    "message": "Cannot read properties of undefined (reading 'id')",
-                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                        "column": 22,
-                        "line": 43
-                      },
-                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
-                    }
-                  ],
-                  "stdout": [
-                    {
-                      "text": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-04-28T23:10:40.883Z",
-                  "attachments": [],
-                  "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                    "column": 22,
-                    "line": 43
-                  }
-                }
-              ],
-              "status": "unexpected"
-            }
-          ],
-          "id": "35d095eb0ee4e7b67f97-a10cd1242181ae4a7383",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
-        },
-        {
-          "title": "Page \"/\" checking all pages for any accessibility issues",
+          "title": "test",
           "ok": false,
           "tags": [],
           "tests": [
@@ -244,141 +150,47 @@
               "results": [
                 {
                   "workerIndex": 1,
-                  "status": "failed",
-                  "duration": 2630,
+                  "status": "timedOut",
+                  "duration": 30012,
                   "error": {
-                    "message": "Cannot read properties of undefined (reading 'id')",
-                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
-                      "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                        "column": 22,
-                        "line": 43
-                      },
-                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
-                    }
-                  ],
-                  "stdout": [
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
                     {
-                      "text": "/\n"
+                      "location": {
+                        "file": "C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\mailchimp.spec.js",
+                        "column": 14,
+                        "line": 14
+                      },
+                      "message": "Error: page.waitForSelector: Target closed\n=========================== logs ===========================\nwaiting for locator('#toastMailchimps') to be visible\n============================================================\n\n\u001b[90m   at \u001b[39mplaywright_tests\\mailchimp.spec.js:14\n\n\u001b[0m \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[90m// Wait for the toast to appear\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#toastMailchimps'\u001b[39m\u001b[33m,\u001b[39m { visible\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m   \u001b[36mconst\u001b[39m toast \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39m$(\u001b[32m'#toastMailchimps'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m   expect(toast)\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\mailchimp.spec.js:14:14\u001b[22m"
+                    },
+                    {
+                      "message": "Pending operations:\n  - page.waitForSelector at tests\\playwright_tests\\mailchimp.spec.js:14:14\n"
                     }
                   ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-04-28T23:10:34.968Z",
-                  "attachments": [],
-                  "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                    "column": 22,
-                    "line": 43
-                  }
+                  "startTime": "2023-05-07T22:37:05.650Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\jg\\Documents\\git\\219project\\project-2-chat-gpt-personnel-assistants\\reports\\mobile-iphone-12\\playwright_tests-mailchimp-test-Mobile-iPhone-12\\video.webm"
+                    }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "35d095eb0ee4e7b67f97-50c71e2faf2f773b244f",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
-        },
-        {
-          "title": "Page \"/about\" checking all pages for any accessibility issues",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Mobile iPhone 12",
-              "projectName": "Mobile iPhone 12",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 2457,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "/about\n"
-                    },
-                    {
-                      "text": "[ \u001b[32m'0'\u001b[39m ]\n"
-                    },
-                    {
-                      "text": "Accessibility issues found [\n  {\n    id: \u001b[32m'color-contrast'\u001b[39m,\n    impact: \u001b[32m'serious'\u001b[39m,\n    tags: [ \u001b[32m'cat.color'\u001b[39m, \u001b[32m'wcag2aa'\u001b[39m, \u001b[32m'wcag143'\u001b[39m, \u001b[32m'ACT'\u001b[39m, \u001b[32m'TTv5'\u001b[39m, \u001b[32m'TT13.c'\u001b[39m ],\n    description: \u001b[32m'Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'\u001b[39m,\n    help: \u001b[32m'Elements must meet minimum color contrast ratio thresholds'\u001b[39m,\n    helpUrl: \u001b[32m'https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=axeAPI'\u001b[39m,\n    nodes: [ \u001b[36m[Object]\u001b[39m ]\n  }\n]\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-04-28T23:10:38.494Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "35d095eb0ee4e7b67f97-f9bc50ca35d680932d6b",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
-        },
-        {
-          "title": "Page \"/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\" checking all pages for any accessibility issues",
-          "ok": false,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Mobile iPhone 12",
-              "projectName": "Mobile iPhone 12",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "failed",
-                  "duration": 2768,
-                  "error": {
-                    "message": "Cannot read properties of undefined (reading 'id')",
-                    "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\n    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                        "column": 22,
-                        "line": 43
-                      },
-                      "message": "TypeError: Cannot read properties of undefined (reading 'id')\n\n\u001b[90m   at \u001b[39mplaywright_tests\\accessibilityALL.spec.js:43\n\n\u001b[0m \u001b[90m 41 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m expect(violations[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeDefined\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(violations))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m   \u001b[90m// Fail the test if any accessibility issues were found\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (violations\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\u001b[0m\n\n\u001b[2m    at checkAccessibility (C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:43:22)\u001b[22m\n\u001b[2m    at C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js:17:5\u001b[22m"
-                    }
-                  ],
-                  "stdout": [
-                    {
-                      "text": "/posts/master-learning-language-models-responsibly-boost-your-web-development-skills-while-staying\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-04-28T23:10:40.952Z",
-                  "attachments": [],
-                  "errorLocation": {
-                    "file": "C:\\Users\\jg\\Documents\\git\\project-2-chat-gpt-personnel-assistants\\tests\\playwright_tests\\accessibilityALL.spec.js",
-                    "column": 22,
-                    "line": 43
-                  }
-                }
-              ],
-              "status": "unexpected"
-            }
-          ],
-          "id": "35d095eb0ee4e7b67f97-dee03b50a536de91796a",
-          "file": "playwright_tests/accessibilityALL.spec.js",
-          "line": 13,
-          "column": 3
+          "id": "fc3e0014f01d3a4b0650-5b28dbd72c71dc740986",
+          "file": "playwright_tests/mailchimp.spec.js",
+          "line": 2,
+          "column": 5
         }
       ]
     }
