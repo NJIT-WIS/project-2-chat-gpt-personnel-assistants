@@ -225,3 +225,53 @@ _As a frontend developer, I want to create frontend functions and integrations f
 - Ensure the event captures the specific hero text and image displayed when the user clicked to volunteer.
 
 - Integrate the event with the volunteer form submission process, triggering the event when the user submits the form.
+##Epic 4: Playwright Testing for Website Functionality and Compliance
+
+_As a web developer, I want to leverage Playwright to create and manage automated tests for my website, so that I can ensure a high level of quality and compliance._
+
+##User Stories:
+1.  **Testing for descriptive links**_As a web developer, I want to write automated tests using Playwright to ensure that all links on the website are descriptive, so that users can understand the purpose of the links._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that all links contain descriptive text.
+- Identify any links that do not meet the descriptive text criteria and address them.
+
+2.  **Testing for presence of a cookie modal and mentions GDPR in said cookie modal**_As a web developer, I want to write automated tests using Playwright to ensure that the website has a cookie modal that mentions GDPR compliance._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that a cookie modal appears on the website.
+- Verify that the cookie modal includes a mention of GDPR compliance.
+- Address any issues identified by the automated tests.
+
+3.  **Check the correct usage of meta tags**_As a web developer, I want to write automated tests using Playwright to ensure that the website is using meta tags correctly, so that search engines can properly index the website._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that all pages have appropriate meta tags.
+- Verify that the meta tags are being used correctly.
+- Address any issues identified by the automated tests.
+
+4.  **Checks the support of a specific language**_As a web developer, I want to write automated tests using Playwright to ensure that the website supports a specific language, so that users can access the website in their preferred language._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that the website supports the desired language.
+- Verify that all pages are correctly translated into the desired language.
+- Address any issues identified by the automated tests.
+
+5.  **Checks the presence of Google Analytics and GDPR in the privacy page**_As a web developer, I want to write automated tests using Playwright to ensure that Google Analytics is present on the website and GDPR compliance is mentioned on the privacy page._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that Google Analytics is properly integrated into the website.
+- Verify that GDPR compliance is mentioned on the privacy page.
+- Address any issues identified by the automated tests.
+
+6.  **Checks the presence of a title at a page**_As a web developer, I want to write automated tests using Playwright to ensure that all pages on the website have a title, so that users can understand the purpose of the page._
+**Assigned to:** Frank Xu
+- Write automated tests using Playwright to ensure that all pages have a title.
+- Verify that the title is descriptive and accurately represents the purpose of the page.
+- Address any issues identified by the automated tests.
+
+7.  **Check accessibility of a page**_As a website developer, I want to ensure that my website is accessible to all users, including those with disabilities, so that I can provide an inclusive user experience._
+- Use the Playwright test framework to check for common accessibility issues, such as missing or incorrect HTML tags, low contrast text, and non-descriptive link text.
+- Check for compliance with Web Content Accessibility Guidelines (WCAG) 2.1, including standards for keyboard navigation, text alternatives for non-text content, and sufficient color contrast.
+- Ensure that the website can be navigated using a screen reader, and that all content is read out in a logical order.
+- Verify that all interactive elements have appropriate focus states and are accessible via keyboard navigation.
+- Check that there are no time-based elements on the page that could cause issues for users with cognitive or visual disabilities.
+- Ensure that any forms on the page are accessible, including appropriate labels and error messaging.
+- Run the test suite with accessibility tools such as Axe, Wave or Chrome's Lighthouse, to ensure that the website meets accessibility standards.
+
+By using Playwright to create and manage automated tests for our website, we can ensure that our website is of high quality and compliance. Additionally, integrating automated testing into our development process will allow us to catch any issues early on and address them before they become major problems.
