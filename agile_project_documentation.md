@@ -324,7 +324,7 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
         -   Menu and footer are set for each page.
         -   Markdown or Portable Text schemas are used for content creation.
         -   Images are added to each page if required.
-    -   _Assigned Team Member:_ 
+    -   _Assigned Team Member:_ Arqam Usman Ali
 7.  **As a content creator, I want to create and manage the content for the individual posts in Sanity, including filling in SEO details, setting the menu and footer, using Markdown or Portable Text schemas, and adding images if required, so that they can be easily fetched and displayed on the Posts webpage.**
     
     -   _Acceptance Criteria:_
@@ -333,4 +333,4 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
         -   Menu and footer are set for each post.
         -   Markdown or Portable Text schemas are used for content creation.
         -   Images are added to each post if required.
-    -   _Assigned Team Member:_ 
+    -   _Assigned Team Member:_ Arqam Usman Ali
