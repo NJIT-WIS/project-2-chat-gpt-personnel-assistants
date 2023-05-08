@@ -303,13 +303,13 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
     -   _Acceptance Criteria:_
         -   Privacy webpage uses pre-built frontend components.
         -   Privacy webpage fetches required data from Sanity Content Lake using queries.
-    -   _Assigned Team Member:_
+    -   _Assigned Team Member:_  Frank Xu
 4.  **As a developer, I want to create a Volunteer webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can learn about volunteer opportunities and get involved with the website's cause.**
     
     -   _Acceptance Criteria:_
         -   Volunteer webpage uses pre-built frontend components.
         -   Volunteer webpage fetches required data from Sanity Content Lake using queries.
-    -   _Assigned Team Member:_  Jonathan Grossman
+    -   _Assigned Team Members:_  Jonathan Grossman, Frank Xu  
 5.  **As a developer, I want to create a Posts webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can view and interact with the content published on the website.**
     
     -   _Acceptance Criteria:_
@@ -324,7 +324,7 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
         -   Menu and footer are set for each page.
         -   Markdown or Portable Text schemas are used for content creation.
         -   Images are added to each page if required.
-    -   _Assigned Team Member:_
+    -   _Assigned Team Member:_ 
 7.  **As a content creator, I want to create and manage the content for the individual posts in Sanity, including filling in SEO details, setting the menu and footer, using Markdown or Portable Text schemas, and adding images if required, so that they can be easily fetched and displayed on the Posts webpage.**
     
     -   _Acceptance Criteria:_
