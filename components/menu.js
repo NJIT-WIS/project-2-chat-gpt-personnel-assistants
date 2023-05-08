@@ -38,13 +38,14 @@ export default function Menu({ data }) {
               return (
                 <DropdownMenuPrimitive.Item
                   key={item._key}
-                  as={Link}
-                  href={item.link}
+                
                   className={`flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none ${
                     isActive ? 'active text-green-500 bg-gray-50' : 'text-gray-400'
                   } hover:bg-gray-50 hover:text-green-500 duration-200`}
                 >
-                  {item.title}
+                  <Link key={item._key} href={item.link}>
+                    {item.title}
+                  </Link>
                 </DropdownMenuPrimitive.Item>
               )
             })}
