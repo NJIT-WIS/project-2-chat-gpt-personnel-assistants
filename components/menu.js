@@ -43,9 +43,11 @@ export default function Menu({ data }) {
                     isActive ? 'active text-green-500 bg-gray-50' : 'text-gray-400'
                   } hover:bg-gray-50 hover:text-green-500 duration-200`}
                 >
+
                   <Link key={item._key} href={item.link}>
                     {item.title}
                   </Link>
+
                 </DropdownMenuPrimitive.Item>
               )
             })}
