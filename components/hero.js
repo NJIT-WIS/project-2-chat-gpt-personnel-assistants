@@ -16,7 +16,7 @@ export default function HeroComp({ title, subtitle, backgroundImage, ctaText, ct
   const [toastOpen, setToastOpen] = useState(false)
   const [toastContent, setToastContent] = useState('')
   const isMd = useMediaQuery('(min-width: 768px)')
-
+  const logGtagEvent = useGtag();
   const handleSubmit = async (e) => {
     e.preventDefault()
 
