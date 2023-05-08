@@ -10,6 +10,7 @@ import * as Toast from '@radix-ui/react-toast'
 import * as AspectRatio from '@radix-ui/react-aspect-ratio'
 import { Cross2Icon } from '@radix-ui/react-icons'
 import { urlForImage } from '../lib/sanity'
+import useGtag from '../hooks/useGtag';
 export default function HeroComp({ title, subtitle, backgroundImage, ctaText, ctaLink }) {
   const [modalOpen, setModalOpen] = useState(false)
   const [toastOpen, setToastOpen] = useState(false)
@@ -36,7 +37,10 @@ export default function HeroComp({ title, subtitle, backgroundImage, ctaText, ct
 
       if (response.ok) {
         setModalOpen(false)
-        logEvent('Subscription', 'Successful', `Title: ${title}, Subtitle: ${subtitle}`)
+        logGtagEvent('Subscription', {
+          'event_category': 'Successful',
+          'event_label': `Title: ${title}, Subtitle: ${subtitle}`
+        });
         setToastContent('Subscription successful!')
         setToastOpen(true)
       } else {
@@ -103,7 +107,7 @@ export default function HeroComp({ title, subtitle, backgroundImage, ctaText, ct
             alt={`Cover Image for ${title}`}
             src={urlForImage(backgroundImage).height(1000).width(2000).url()}
             sizes="100vw"
-            priority
+            priority={true}
           />
 
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
