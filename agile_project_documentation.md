@@ -275,3 +275,62 @@ _As a web developer, I want to leverage Playwright to create and manage automate
 - Run the test suite with accessibility tools such as Axe, Wave or Chrome's Lighthouse, to ensure that the website meets accessibility standards.
 
 By using Playwright to create and manage automated tests for our website, we can ensure that our website is of high quality and compliance. Additionally, integrating automated testing into our development process will allow us to catch any issues early on and address them before they become major problems.
+
+
+
+
+
+## Epic: Creation of Webpages for a Content-Driven Website
+
+_As a website owner, I want to create webpages for posts, home, about, privacy, and volunteer, so that users can navigate and interact with my website easily and understand the purpose and policies of the site._
+
+**User Stories:**
+
+1.  **As a developer, I want to create a Home webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can view an organized and appealing landing page.**
+    
+    -   _Acceptance Criteria:_ 
+        -   Home webpage uses pre-built frontend components.
+        -   Home webpage fetches required data from Sanity Content Lake using queries.
+    -   _Assigned Team Member:_ Jonathan Grossman
+2.  **As a developer, I want to create an About webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can learn about the organization or individuals behind the website.**
+    
+    -   _Acceptance Criteria:_
+        -   About webpage uses pre-built frontend components.
+        -   About webpage fetches required data from Sanity Content Lake using queries.
+    -   _Assigned Team Member:_
+3.  **As a developer, I want to create a Privacy webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can understand the website's privacy policies and practices.**
+    
+    -   _Acceptance Criteria:_
+        -   Privacy webpage uses pre-built frontend components.
+        -   Privacy webpage fetches required data from Sanity Content Lake using queries.
+    -   _Assigned Team Member:_
+4.  **As a developer, I want to create a Volunteer webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can learn about volunteer opportunities and get involved with the website's cause.**
+    
+    -   _Acceptance Criteria:_
+        -   Volunteer webpage uses pre-built frontend components.
+        -   Volunteer webpage fetches required data from Sanity Content Lake using queries.
+    -   _Assigned Team Member:_  Jonathan Grossman
+5.  **As a developer, I want to create a Posts webpage using pre-built frontend components and fetch data from Sanity Content Lake, so that users can view and interact with the content published on the website.**
+    
+    -   _Acceptance Criteria:_
+        -   Posts webpage uses pre-built frontend components.
+        -   Posts webpage fetches required data from Sanity Content Lake using queries.
+    -   _Assigned Team Member:_ Jonathan Grossman
+6.  **As a content creator, I want to create and manage the content for the Home, About, Privacy, and Volunteer pages in Sanity, including filling in SEO details, setting the menu and footer, using Markdown or Portable Text schemas, and adding images if required, so that it can be easily fetched and displayed on the corresponding webpages.**
+    
+    -   _Acceptance Criteria:_
+        -   Content for each page is created and managed in Sanity.
+        -   SEO details are filled in for each page.
+        -   Menu and footer are set for each page.
+        -   Markdown or Portable Text schemas are used for content creation.
+        -   Images are added to each page if required.
+    -   _Assigned Team Member:_
+7.  **As a content creator, I want to create and manage the content for the individual posts in Sanity, including filling in SEO details, setting the menu and footer, using Markdown or Portable Text schemas, and adding images if required, so that they can be easily fetched and displayed on the Posts webpage.**
+    
+    -   _Acceptance Criteria:_
+        -   Content for individual posts is created and managed in Sanity.
+        -   SEO details are filled in for each post.
+        -   Menu and footer are set for each post.
+        -   Markdown or Portable Text schemas are used for content creation.
+        -   Images are added to each post if required.
+    -   _Assigned Team Member:_ 
