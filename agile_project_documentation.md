@@ -335,7 +335,7 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
         -   Menu and footer are set for each page.
         -   Markdown or Portable Text schemas are used for content creation.
         -   Images are added to each page if required.
-    -   _Assigned Team Member:_ 
+    -   _Assigned Team Member:_ Arqam Usman Ali
 7.  **As a content creator, I want to create and manage the content for the individual posts in Sanity, including filling in SEO details, setting the menu and footer, using Markdown or Portable Text schemas, and adding images if required, so that they can be easily fetched and displayed on the Posts webpage.**
     
     -   _Acceptance Criteria:_
@@ -344,7 +344,7 @@ _As a website owner, I want to create webpages for posts, home, about, privacy, 
         -   Menu and footer are set for each post.
         -   Markdown or Portable Text schemas are used for content creation.
         -   Images are added to each post if required.
-    -   _Assigned Team Member:_
+    -   _Assigned Team Member:_ Arqam Usman Ali
    
   ## Epic - Sales Funnel Strategy with Google Analytics Tracking
 
@@ -396,18 +396,19 @@ As a website owner, I want to integrate Google Analytics tracking into my site, 
 _As a developer,_  
 I want to implement the Google Analytics tracking code on all pages of the website,  
 So that user interactions can be monitored and analyzed.
-    -   _Assigned Team Member:
+
 **Acceptance Criteria:**
 1. Add the Google Analytics tracking code to all pages of the website.
 2. Ensure the tracking code is correctly configured and connected to the appropriate Google Analytics account.
-    -   _Assigned Team Member:
+    -   _Assigned Team Member: Arqam Usman Ali
 ### User Story 2: Real-time Tracking and Reporting
 _As a website owner,_  
 - I want to access real-time tracking and reporting of user interactions within the Google Analytics dashboard,  So that I can make informed decisions based on current user behavior.
- -   _Assigned Team Member:
+ -   _Assigned Team Member: Arqam Usman Ali
 
 **Acceptance Criteria:**
 1. Real-time tracking and reporting of user interactions are available within the Google Analytics dashboard.
+    -   _Assigned Team Member: Arqam Usman Ali
 
 ### User Story 3: Track Key Metrics
 _As a website owner,_  
@@ -419,6 +420,7 @@ So that I can assess the performance of my website.
    a. Page views
    b. Bounce rate
    c. Session duration
+    -   _Assigned Team Member: Arqam Usman Ali
 
 ### User Story 4: Data Storage and Accessibility
 _As a website owner,_  
@@ -427,6 +429,7 @@ So that I can evaluate the performance of my website over time.
 
 **Acceptance Criteria:**
 1. Data is stored and accessible within the Google Analytics dashboard for historical analysis and comparison.
+    -   _Assigned Team Member: Arqam Usman Ali
 
 ### User Story 5: Customizable Reports and Filters
 _As a website owner,_  
@@ -435,6 +438,7 @@ So that I can gain insights into specific user behavior and trends.
 
 **Acceptance Criteria:**
 1. The Google Analytics dashboard provides customizable reports and filters for various user behavior analyses.
+    -   _Assigned Team Member: Arqam Usman Ali
 
 ### User Story 6: Compliance with Data Protection Regulations
 _As a website owner,_  
@@ -443,6 +447,7 @@ So that I can maintain user trust and avoid legal issues.
 
 **Acceptance Criteria:**
 1. Implement necessary measures to comply with relevant data protection regulations during data collection and processing.
+    -   _Assigned Team Member: Arqam Usman Ali
 
 ## Notes:
 1. For optimal performance, consider implementing the tracking code asynchronously.
