@@ -8,6 +8,8 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    environment:
+        name: vercel deployment
     steps:
       - uses: actions/checkout@v3
       - name: Install Vercel CLI
