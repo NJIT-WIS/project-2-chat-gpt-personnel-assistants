@@ -28,6 +28,11 @@ async function checkPagePrivacy(pageUrl) {
     return bodyText.includes('GDPR');
   });
 
+  const hasCOPPA = await page.evaluate(() => {
+    const bodyText = document.body.textContent;
+    return bodyText.includes('COPPA');
+  });
+
   await browser.close();
 
   if (!hasGoogleAnalytics) {
@@ -35,6 +40,10 @@ async function checkPagePrivacy(pageUrl) {
   }
 
   if (!hasGDPR) {
-    throw new Error('The privacy page does not contain the required excerpt about Google Analytics.');
+    throw new Error('The privacy page does not contain the required excerpt about GDPR.');
+  }
+
+  if (!hasCOPPA) {
+    throw new Error('The privacy page does not contain the required excerpt about COPPA.');
   }
 }
